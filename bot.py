@@ -56,7 +56,7 @@ def run_bot():
     now = datetime.now(ZoneInfo('Europe/Istanbul'))
 
     # Sağlık raporu: 00, 06, 12, 18 (TSİ) saatlerinde ilk çalışmada
-    if now.hour % 6 == 0 and now.minute < 5:
+    if now.hour % 6 == 0 and now.minute < 25:
         msg = (
             f'🟢 Bot Sağlık Raporu: Aktif.\n'
             f'Son Kontrol: {now.strftime("%H:%M - %d/%m/%Y")} (TSİ)'
