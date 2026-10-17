@@ -68,7 +68,7 @@ def run_bot():
     if bars is None:
         err_text = ' | '.join(symbol)
         print(f'Veri alınamadı: {err_text}')
-        send_notification(f'⚠️ Veri alınamadı:\n{err_text}', title='Bot Hatası')
+        send_notification(f'⚠️ Veri alınamadı:\n{err_text}', title='Bot Hatasi')
         return
 
     try:
@@ -121,7 +121,7 @@ def run_bot():
 
     except Exception as e:
         print(f'Hata oluştu: {e}')
-        send_notification(f'⚠️ Hesaplama hatası: {str(e)[:150]}', title='Bot Hatası')
+        send_notification(f'⚠️ Hesaplama hatası: {str(e)[:150]}', title='Bot Hatasi')
 
 
 if __name__ == '__main__':
