@@ -16,4 +16,4 @@ jobs:
       - run: python backtest.py
         env:
           NTFY_TOPIC: ${{ secrets.NTFY_TOPIC }}
-          BT_DAYS: '60'
+          BT_DAYS: '365'
