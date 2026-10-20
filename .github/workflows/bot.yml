@@ -37,26 +37,7 @@ jobs:
         id: data
         env:
           REMOTE: https://x-access-token:${{ secrets.GITHUB_TOKEN }}@github.com/${{ github.repository }}.git
-        run: |
-          set +e
-          git ls-remote --exit-code --heads "$REMOTE" data >/dev/null 2>&1
-          rc=$?
-          set -e
-          if [ "$rc" -eq 0 ]; then
-            git clone --quiet --depth 1 --branch data "$REMOTE" data
-            echo "init=" >> "$GITHUB_OUTPUT"
-          elif [ "$rc" -eq 2 ]; then
-            echo "data dalı yok: ilk kurulum"
-            mkdir data
-            git -C data init -q -b data
-            git -C data remote add origin "$REMOTE"
-            echo "init=--init" >> "$GITHUB_OUTPUT"
-          else
-            echo "::error::GitHub'a erişilemedi (kod $rc); state sıfırlanmasın diye durduruldu"
-            exit 1
-          fi
-          git -C data config user.name "paper-bot"
-          git -C data config user.email "paper-bot@users.noreply.github.com"
+        run: bash scripts/prepare_data.sh
 
       - name: Botu çalıştır
         run: python bot.py --state data/paper_state.json ${{ steps.data.outputs.init }} ${{ inputs.dry_run && '--dry-run' || '' }}
@@ -66,20 +47,4 @@ jobs:
 
       - name: State'i kaydet
         if: ${{ !inputs.dry_run }}
-        env:
-          REMOTE: https://x-access-token:${{ secrets.GITHUB_TOKEN }}@github.com/${{ github.repository }}.git
-        run: |
-          cd data
-          git add -A
-          if git diff --cached --quiet; then
-            echo "State değişmedi."
-            exit 0
-          fi
-          git commit -q -m "state: $(date -u +%Y-%m-%dT%H:%MZ)"
-          for i in 1 2 3; do
-            if git push -q origin HEAD:data; then exit 0; fi
-            git pull -q --rebase origin data || true
-            sleep 3
-          done
-          echo "::error::State push edilemedi"
-          exit 1
+        run: bash scripts/save_state.sh
