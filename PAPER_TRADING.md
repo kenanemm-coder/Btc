@@ -15,7 +15,7 @@ okur (GET) ve sanal bir portföyde işlem simüle eder. Stratejinin kârlı oldu
 | `paper/notify.py` | ntfy bildirimleri (mevcut topic/format korunur) |
 | `paper/report.py` | Bildirim ve günlük rapor metinleri |
 | `paper/runner.py` | Çalıştırma akışı (`--init`, `--loop`, `--dry-run`) |
-| `tests/` | 64 birim testi (internetsiz, sahte veri) |
+| `tests/` | 69 birim testi (internetsiz, sahte veri) |
 | `.github/workflows/bot.yml` | Her 5 dk çalışır, state'i `data` dalına kaydeder |
 | `.github/workflows/test.yml` | Her push'ta testleri çalıştırır |
 
@@ -60,10 +60,12 @@ State yerelde `paper_data/paper_state.json` (git'e girmez). State yoksa `--init`
 
 ## GitHub Actions'ta kalıcılık
 State repoda `data` dalında `paper_state.json` olarak tutulur (ana dal kirlenmez). Her çalıştırma:
-1. `data` dalını çeker (dal hiç yoksa ilk kurulum için `--init` verilir; GitHub'a erişilemezse iş durur,
-   portföy yanlışlıkla sıfırlanmaz).
+1. `scripts/prepare_data.sh` `data` dalını çeker. State hiç oluşmamışsa (dal yok ya da dalda state'in geçmişi yok)
+   ilk kurulum için `--init` verilir. State bir zamanlar vardıysa ama kaybolduysa veya GitHub'a erişilemezse
+   iş durur, portföy yanlışlıkla sıfırlanmaz.
 2. Botu çalıştırır: state'i atomik yazar, **sonra** bildirimleri gönderir.
-3. State değiştiyse commit + push eder (çakışmada yeniden dener).
+3. `scripts/save_state.sh`: `paper_state.json` varsa ve değiştiyse commit + push eder (çakışmada yeniden dener).
+   State yokken (ör. Binance hatası) hiçbir şey commit edilmez; kilit dosyaları depoya girmez.
 Aynı anda iki çalıştırma olmaması için `concurrency` grubu vardır. Mum işlenmişliği state içindeki
 `last_candle_open_ms` ile izlenir; aynı mum iki kez işlenmez.
 `data` dalı public repoda **herkese açıktır** (sanal portföy verisi; sır içermez).
