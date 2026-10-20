@@ -1,0 +1,4 @@
+paper_data/
+__pycache__/
+*.pyc
+.state.*.tmp
