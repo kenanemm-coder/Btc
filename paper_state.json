@@ -4,7 +4,7 @@
  "created_at": "2026-10-20T23:31:27+00:00",
  "daily_equity": [
   {
-   "btc_price": 4074879.0,
+   "btc_price": 4094739.0,
    "date": "2026-10-21",
    "equity_try": 49380.0
   }
@@ -16,8 +16,8 @@
   "usdt": 1000.0,
   "usdt_try_rate": 49.38
  },
- "last_candle_open_ms": 1792562100000,
- "last_price": 4074879.0,
+ "last_candle_open_ms": 1792564200000,
+ "last_price": 4094739.0,
  "last_report_date": "2026-10-20",
  "max_drawdown_pct": 0.0,
  "mode": "PAPER",
