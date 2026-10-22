@@ -9,7 +9,7 @@
    "equity_try": 49380.0
   },
   {
-   "btc_price": 4165879.0,
+   "btc_price": 4144949.0,
    "date": "2026-10-22",
    "equity_try": 49380.0
   }
@@ -21,8 +21,8 @@
   "usdt": 1000.0,
   "usdt_try_rate": 49.38
  },
- "last_candle_open_ms": 1792631400000,
- "last_price": 4165879.0,
+ "last_candle_open_ms": 1792633200000,
+ "last_price": 4144949.0,
  "last_report_date": "2026-10-21",
  "max_drawdown_pct": 0.0,
  "mode": "PAPER",
