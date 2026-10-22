@@ -63,6 +63,16 @@ def close_message(state, cfg, trade):
     )
 
 
+def gap_message(cfg, gap):
+    a = datetime.fromtimestamp(gap["from_ms"] / 1000.0, ZoneInfo(cfg.tz)).strftime("%d/%m %H:%M")
+    if gap["kind"] == "filled":
+        return (f"ℹ️ {gap['missing']} eksik mum Binance'ten tamamlandı ({a} TSİ'den itibaren) "
+                f"ve sırayla işlendi.")
+    return (f"⚠️ Binance'te {gap['missing']} mum yok ({a} TSİ'den itibaren), telafi edilemedi.\n"
+            f"Bu mumlar için sinyal ÜRETİLMEDİ. Bot yalnızca boşluk sonrası ardışık veriyle devam ediyor; "
+            f"açık pozisyon varsa bu sürede bir sinyal kaçırılmış olabilir.")
+
+
 def daily_report(state, cfg, report_date, usdt_try_now, missed_days=0):
     price = state["last_price"]
     ini = state["initial"]
@@ -101,6 +111,21 @@ def daily_report(state, cfg, report_date, usdt_try_now, missed_days=0):
         f"kazanma oranı {wr(st_all)}",
         f"Maks. drawdown: %{state['max_drawdown_pct']:.2f}",
     ]
+    if st_all["closed"]:
+        def tl(x):
+            return money(x) if x is not None else "-"
+        pf_txt = f"{st_all['profit_factor']:.2f}" if st_all["profit_factor"] is not None else "-"
+        lines += [
+            f"Ort. kazanç: {tl(st_all['avg_win_try'])} | Ort. kayıp: {tl(st_all['avg_loss_try'])} | "
+            f"Kâr faktörü: {pf_txt}",
+            f"Maliyet: komisyon {money(st_all['fees_try'])} + slipaj {money(st_all['slippage_try'])} "
+            f"(maliyetsiz sonuç {signed(st_all['gross_pnl_try'])} → net {signed(st_all['net_pnl_try'])})",
+        ]
+    h = state.get("health") or {}
+    if h.get("runs"):
+        lag = f"{h['data_lag_s'] / 60:.0f} dk" if h.get("data_lag_s") is not None else "-"
+        lines.append(f"Sağlık: {h['runs']} çalışma, {h['failures']} hata, "
+                     f"ardışık hata {h['consecutive_failures']}, veri gecikmesi {lag}")
     lines.append(f"Kur (USDT/TRY): başlangıç {ini['usdt_try_rate']:,.4f}")
     if usdt_try_now:
         now_val = eq / usdt_try_now

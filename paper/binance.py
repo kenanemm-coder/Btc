@@ -41,6 +41,9 @@ def parse_klines(rows):
 
 def closed_tail(candles, server_ms, interval_ms, stale_s, min_candles):
     """Kapanmış, tekrarsız, ardışık (boşluksuz) son mum dizisini döndürür."""
+    for c in candles:
+        if c.open_ms % interval_ms != 0:
+            raise DataError("Mum zaman damgası aralık ızgarasına oturmuyor")
     closed = [c for c in candles if c.close_ms < server_ms]  # oluşmakta olan mum atılır
     if not closed:
         raise DataError("Kapanmış mum yok")
@@ -123,6 +126,32 @@ class BinanceClient:
             return _num(data["price"])
         except (KeyError, TypeError, ValueError):
             raise DataError(f"Geçersiz fiyat ({symbol})")
+
+    def candles_between(self, cfg, start_open_ms, end_open_ms, server_ms):
+        """[start_open_ms, end_open_ms] aralığındaki KAPANMIŞ mumlar (eksik mum telafisi).
+        Borsada o mumlar yoksa eksik döner; çağıran süreklilik kontrolü yapar."""
+        out, cur, pages = [], start_open_ms, 0
+        while cur <= end_open_ms and pages < cfg.backfill_max_pages:
+            rows = self._get("/api/v3/klines", {
+                "symbol": cfg.symbol, "interval": cfg.interval, "startTime": cur,
+                "endTime": end_open_ms + cfg.interval_ms - 1, "limit": cfg.backfill_page_limit})
+            if not isinstance(rows, list):
+                raise DataError("Geçersiz mum cevabı (telafi)")
+            if not rows:
+                break
+            page = [c for c in parse_klines(rows)
+                    if start_open_ms <= c.open_ms <= end_open_ms and c.close_ms < server_ms]
+            if not page:
+                break
+            out.extend(page)
+            cur = page[-1].open_ms + cfg.interval_ms
+            pages += 1
+            if len(rows) < cfg.backfill_page_limit:
+                break
+        for a, b in zip(out, out[1:]):
+            if b.open_ms <= a.open_ms:
+                raise DataError("Telafi mumları sıralı değil veya tekrar ediyor")
+        return out
 
     def closed_candles(self, cfg):
         """(kapanmış ardışık mumlar, sunucu zamanı ms) döndürür."""

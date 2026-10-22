@@ -1,0 +1,47 @@
+name: BTC Paper Bot Bekci
+
+# Bot beklenenden uzun süredir başarılı çalışmadıysa ntfy ile uyarır (varsayılan sınır 120 dk).
+# Not: bekçi de GitHub Actions üzerinde çalışır; GitHub'ın tamamı kesilirse o da çalışamaz.
+
+on:
+  schedule:
+    - cron: '17 * * * *'
+  workflow_dispatch:
+    inputs:
+      dry_run:
+        description: 'Kuru deneme (bildirim göndermez)'
+        type: boolean
+        default: false
+
+permissions:
+  contents: read
+
+concurrency:
+  group: paper-watchdog
+  cancel-in-progress: false
+
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    timeout-minutes: 3
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - run: pip install -r requirements.txt
+
+      - name: State'i data dalından al
+        run: |
+          rm -f watch_state.json
+          if git fetch --depth=1 origin data; then
+            git show FETCH_HEAD:paper_state.json > watch_state.json || rm -f watch_state.json
+          fi
+
+      - name: Bekçi kontrolü
+        run: python -m paper.watchdog --state watch_state.json ${{ inputs.dry_run && '--dry-run' || '' }}
+        env:
+          NTFY_TOPIC: ${{ secrets.NTFY_TOPIC }}
+          PAPER_WATCHDOG_MAX_AGE_MIN: ${{ vars.PAPER_WATCHDOG_MAX_AGE_MIN }}

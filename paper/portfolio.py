@@ -44,6 +44,7 @@ def new_state(cfg, usdt_try_rate, now_ms, last_candle_open_ms, last_price, repor
         "daily_equity": [],
         "last_report_date": report_date,
         "skipped_stale_signals": 0,
+        "gaps": [],
         "outbox": [],
         "next_outbox_id": 1,
     }
@@ -162,15 +163,25 @@ def stats(state, only_date=None, date_of=None):
     trades = state["trades"]
     if only_date is not None:
         trades = [t for t in trades if date_of(t) == only_date]
-    wins = sum(1 for t in trades if t["net_pnl_try"] > 0)
-    losses = sum(1 for t in trades if t["net_pnl_try"] < 0)
+    pnls = [t["net_pnl_try"] for t in trades]
+    win_p = [x for x in pnls if x > 0]
+    loss_p = [x for x in pnls if x < 0]
     n = len(trades)
+    fees = sum(t["entry_fee_try"] + t["exit_fee_try"] for t in trades)
+    slip = sum(t["slippage_cost_try"] for t in trades)
+    net = sum(pnls)
     return {
         "closed": n,
-        "wins": wins,
-        "losses": losses,
-        "win_rate": (wins / n * 100.0) if n else None,
-        "net_pnl_try": sum(t["net_pnl_try"] for t in trades),
+        "wins": len(win_p),
+        "losses": len(loss_p),
+        "win_rate": (len(win_p) / n * 100.0) if n else None,
+        "net_pnl_try": net,
+        "avg_win_try": (sum(win_p) / len(win_p)) if win_p else None,
+        "avg_loss_try": (sum(loss_p) / len(loss_p)) if loss_p else None,
+        "profit_factor": (sum(win_p) / -sum(loss_p)) if loss_p else None,
+        "fees_try": fees,
+        "slippage_try": slip,
+        "gross_pnl_try": net + fees + slip,  # maliyetsiz (komisyon ve slipaj yokken) sonuç
     }
 
 

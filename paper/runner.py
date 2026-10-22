@@ -16,7 +16,7 @@ import time
 from datetime import date, datetime, timedelta
 from zoneinfo import ZoneInfo
 
-from . import MODE
+from . import MODE, health
 from . import portfolio as pf
 from . import report
 from .binance import BinanceClient, DataError
@@ -117,6 +117,33 @@ def process_candles(state, cfg, candles, server_ms, tz, notes):
     return new_count, events
 
 
+def reconcile_gap(state, cfg, client, candles, server_ms):
+    """Son işlenen mumla gelen mumlar arasında boşluk varsa telafi eder.
+
+    Dönüş: (mumlar, bilgi). bilgi None = boşluk yok.
+      'filled'    : eksik mumlar Binance'ten tamamlandı, hepsi sırayla işlenecek.
+      'permanent' : borsada o mumlar yok. Boşluktaki mumlar için SİNYAL ÜRETİLMEZ; devam
+                    yalnızca boşluk sonrası ardışık (>= min_candles) mumlarla yapılır.
+    Telafi isteği başarısızsa DataError yükselir -> çalışma güvenle durur, state değişmez.
+    """
+    expected = state["last_candle_open_ms"] + cfg.interval_ms
+    first = candles[0].open_ms
+    if first <= expected:
+        return candles, None
+    missing = (first - expected) // cfg.interval_ms
+    fill = client.candles_between(cfg, expected, first - cfg.interval_ms, server_ms)
+    merged = fill + candles
+    start = len(merged) - 1
+    while start > 0 and merged[start].open_ms - merged[start - 1].open_ms == cfg.interval_ms:
+        start -= 1
+    merged = merged[start:]
+    if merged[0].open_ms <= expected:
+        return merged, {"kind": "filled", "missing": missing, "from_ms": expected}
+    left = (merged[0].open_ms - expected) // cfg.interval_ms
+    return merged, {"kind": "permanent", "missing": left, "from_ms": expected,
+                    "to_ms": merged[0].open_ms - cfg.interval_ms}
+
+
 def run_once(cfg, client, notifier, state_path, init=False, dry_run=False, wall_ms=None):
     tz = ZoneInfo(cfg.tz)
     wall_ms = _wall_ms() if wall_ms is None else wall_ms
@@ -127,6 +154,12 @@ def run_once(cfg, client, notifier, state_path, init=False, dry_run=False, wall_
     def fail(status, key, text):
         result["status"] = status
         print(f"[{status}] {text}")
+        if not dry_run and state is not None and status in ("data_error", "gap_halt"):
+            health.record_failure(state, wall_ms, text)
+            try:
+                save_state(state_path, state)
+            except OSError as e:
+                print(f"Sağlık kaydı yazılamadı: {type(e).__name__}")
         if not dry_run:
             error_notice(notifier, throttle, key, f"⚠️ {text}", wall_ms, cfg.error_notify_interval_h)
         return result
@@ -142,6 +175,8 @@ def run_once(cfg, client, notifier, state_path, init=False, dry_run=False, wall_
             )
     except StateError as e:
         return fail("state_error", "state", f"State hatası, bot DURDU: {e}")
+    if state is not None:
+        health.ensure(state)
 
     # 2) Veri
     try:
@@ -149,6 +184,27 @@ def run_once(cfg, client, notifier, state_path, init=False, dry_run=False, wall_
         fx_rate = client.price(cfg.fx_symbol) if state is None else None
     except DataError as e:
         return fail("data_error", "data", f"Binance veri hatası, işlem yapılmadı (bekleniyor): {e}")
+
+    gap = None
+    if state is not None:
+        try:
+            candles, gap = reconcile_gap(state, cfg, client, candles, server_ms)
+        except DataError as e:
+            return fail("gap_halt", "gap",
+                        f"Mum boşluğu telafi edilemedi, sinyal üretimi durduruldu (bekleniyor): {e}")
+        if gap:
+            gap["detected_at"] = pf.iso(wall_ms)
+            state["gaps"].append(gap)
+            del state["gaps"][:-20]
+            result["notes"].append(f"boşluk {gap['kind']}: {gap['missing']} mum")
+            if gap["kind"] == "permanent":
+                last_n = [g.get("notified_ms") for g in state["gaps"][:-1] if g.get("notified_ms")]
+                if not last_n or wall_ms - max(last_n) >= cfg.error_notify_interval_h * 3600 * 1000:
+                    gap["notified_ms"] = wall_ms
+                    pf.enqueue(state, "Paper Mum Boslugu",
+                               report.gap_message(cfg, gap), server_ms)
+            elif gap["missing"] >= 12:
+                pf.enqueue(state, "Paper Mum Telafisi", report.gap_message(cfg, gap), server_ms)
 
     now_local = datetime.fromtimestamp(server_ms / 1000.0, tz)
     due = due_report_date(now_local, cfg.report_hour)
@@ -176,6 +232,13 @@ def run_once(cfg, client, notifier, state_path, init=False, dry_run=False, wall_
         pf.enqueue(state, "Paper Gunluk Rapor", body, server_ms)
         state["last_report_date"] = due.isoformat()
         result["reported"] = True
+
+    prev_fail = health.record_success(state, wall_ms, server_ms,
+                                      state["last_candle_open_ms"], cfg.interval_ms)
+    if prev_fail >= cfg.recovery_notify_failures:
+        pf.enqueue(state, "Paper Bot Toparlandi",
+                   f"✅ Bot toparlandı: {prev_fail} başarısız çalışmadan sonra veri yeniden alındı.",
+                   server_ms)
 
     if dry_run:
         for m in state["outbox"]:

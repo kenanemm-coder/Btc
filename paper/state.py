@@ -65,6 +65,10 @@ def validate_state(state, cfg):
             raise StateError(f"State sayısı geçersiz: {k}")
     if state["cash_try"] < 0 or state["btc"] < 0 or state["last_price"] <= 0:
         raise StateError("State bakiyeleri geçersiz (negatif)")
+    if "health" in state and not isinstance(state["health"], dict):
+        raise StateError("State alanı geçersiz: health")
+    if "gaps" in state and not isinstance(state["gaps"], list):
+        raise StateError("State alanı geçersiz: gaps")
     pos = state["position"]
     if pos is None:
         if state["btc"] != 0:

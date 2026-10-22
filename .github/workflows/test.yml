@@ -15,5 +15,5 @@ jobs:
       - uses: actions/setup-python@v5
         with:
           python-version: '3.11'
-      - run: pip install -r requirements-dev.txt
+      - run: pip install -r requirements-dev.txt && pip check
       - run: python -W error::ResourceWarning -m unittest discover -s tests -t . -v

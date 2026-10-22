@@ -17,6 +17,10 @@ from tests.helpers import (CFG, IV, FakeClient, FakeNotifier, base_closes, buy_s
 T0 = ms_at(2026, 10, 20, 8, 0)
 
 
+def without_health(st):
+    return {k: v for k, v in st.items() if k != "health"}
+
+
 def close_ms_for(n_candles):
     """n mumluk seri, T0'dan başlayıp son mumu bu anda kapanacak şekilde."""
     return T0 + n_candles * IV
@@ -72,7 +76,9 @@ class InitAndTradingTests(RunnerBase):
         sent = len(self.n.sent)
         res2, _ = self.run_with(buy_series())
         self.assertEqual(res2["new_candles"], 0)
-        self.assertEqual(self.state(), before)
+        after = self.state()
+        self.assertEqual(without_health(after), without_health(before))  # işlem/bakiye aynı
+        self.assertEqual(after["health"]["runs"], before["health"]["runs"] + 1)  # yalnız sayaç arttı
         self.assertEqual(len(self.n.sent), sent)
 
     def test_sell_closes_position_and_reports_pnl(self):
@@ -148,8 +154,10 @@ class DataAndNotifyFailureTests(RunnerBase):
         client.fail = DataError("HTTP 451")
         res, _ = self.run_with(buy_series(), client=client)
         self.assertEqual(res["status"], "data_error")
-        with open(self.p, encoding="utf-8") as f:
-            self.assertEqual(f.read(), before)
+        after = self.state()
+        self.assertEqual(without_health(after), without_health(json.loads(before)))
+        self.assertEqual(after["health"]["consecutive_failures"], 1)  # hata sağlık kaydına işlendi
+        self.assertIn("451", after["health"]["last_error"])
         self.assertEqual(self.n.sent[-1][0], "Paper Bot Hatasi")
 
     def test_stale_exchange_data_waits(self):

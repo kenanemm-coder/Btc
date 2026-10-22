@@ -6,7 +6,7 @@ from paper.binance import (ALLOWED_PATHS, BinanceClient, Candle, DataError, clos
                            parse_klines)
 from tests.helpers import CFG, IV, base_closes, candles_from_closes
 
-END = 1_760_000_000_000
+END = 1_760_000_100_000  # 5 dakikalık ızgaraya oturur
 
 
 class FakeResp:

@@ -60,6 +60,7 @@ class FakeClient:
     def __init__(self, closes, last_close_ms, lag_ms=10_000, rate=40.0, price_now=None):
         self.rate = rate
         self.fail = None
+        self.full = None  # eksik mum telafisi için eksiksiz seri (yoksa telafi hatası)
         self.set(closes, last_close_ms, lag_ms)
         self.calls = []
 
@@ -73,6 +74,15 @@ class FakeClient:
             raise self.fail
         tail = closed_tail(self.all, self.server_ms, cfg.interval_ms, cfg.stale_data_s, cfg.min_candles)
         return tail, self.server_ms
+
+    def candles_between(self, cfg, start_open_ms, end_open_ms, server_ms):
+        self.calls.append("candles_between")
+        if self.backfill_error:
+            raise self.backfill_error
+        src = self.full if self.full is not None else []
+        return [c for c in src if start_open_ms <= c.open_ms <= end_open_ms and c.close_ms < server_ms]
+
+    backfill_error = None
 
     def price(self, symbol):
         self.calls.append("price:" + symbol)

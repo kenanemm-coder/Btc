@@ -15,6 +15,7 @@ on:
 
 permissions:
   contents: write
+  actions: read   # test sonuçlarını okumak için (test kapısı)
 
 concurrency:
   group: paper-bot
@@ -25,13 +26,30 @@ jobs:
     runs-on: ubuntu-latest
     timeout-minutes: 4
     steps:
+      # TEST KAPISI: bot yalnızca testleri BAŞARIYLA geçmiş son main sürümüyle çalışır.
+      # Yeni bir commit'in testi başarısız olursa bot önceki sağlam sürümde kalır.
+      - name: Testten geçmiş son sürümü seç
+        id: good
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          sha=$(gh api "repos/${GITHUB_REPOSITORY}/actions/workflows/test.yml/runs?branch=main&status=success&per_page=1" --jq '.workflow_runs[0].head_sha')
+          if [ -z "$sha" ] || [ "$sha" = "null" ]; then
+            echo "Testten geçmiş main sürümü bulunamadı; bot çalıştırılmadı."
+            exit 1
+          fi
+          echo "Kullanılan sürüm: $sha"
+          echo "sha=$sha" >> "$GITHUB_OUTPUT"
+
       - uses: actions/checkout@v4
+        with:
+          ref: ${{ steps.good.outputs.sha }}
 
       - uses: actions/setup-python@v5
         with:
           python-version: '3.11'
 
-      - run: pip install -r requirements.txt
+      - run: pip install -r requirements.txt && pip check
 
       - name: Veri dalını hazırla (state)
         id: data

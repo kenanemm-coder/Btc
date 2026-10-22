@@ -70,6 +70,26 @@ Aynı anda iki çalıştırma olmaması için `concurrency` grubu vardır. Mum i
 `last_candle_open_ms` ile izlenir; aynı mum iki kez işlenmez.
 `data` dalı public repoda **herkese açıktır** (sanal portföy verisi; sır içermez).
 
+## Eksik mum, sağlık takibi ve bekçi
+
+- **Eksik mum:** Her çalışmada son işlenen mumla Binance'ten gelen mumlar arasında boşluk aranır.
+  Boşluk varsa eksik mumlar `klines` (startTime/endTime) ile tamamlanır ve sırayla işlenir.
+  Telafi isteği hata verirse çalışma güvenle durur (işlem yok, state ilerlemez, uyarı gider).
+  Borsada o mumlar gerçekten yoksa boşluktaki mumlar için sinyal üretilmez; bot yalnızca boşluk
+  sonrası ardışık (>= 60) mumla devam eder ve ntfy ile uyarır. Açık pozisyon varken boşlukta bir
+  satış sinyali kaçmış olabilir. Boşluklar state'te `gaps` listesinde tutulur.
+- **Sağlık:** state içinde `health`: çalışma sayısı, hata sayısı, ardışık hata, son başarılı çalışma,
+  son işlenen mum, veri gecikmesi, son hata. Günlük raporda bir satır olarak görünür. 3+ ardışık
+  hatadan sonra düzelince "toparlandı" mesajı gider.
+- **Bekçi:** `watchdog.yml` saatte bir state'i okur; son başarılı çalışma 120 dakikadan eskiyse
+  aynı ntfy kanalına acil öncelikli "BEKCI ALARM" gönderir (6 saatte bir tekrar). Sınır, repo
+  değişkeni `PAPER_WATCHDOG_MAX_AGE_MIN` ile değiştirilir (en az 30). Bekçi de GitHub Actions'ta
+  çalıştığı için GitHub'ın tamamı kesilirse o da susar; bunu yakalamak için bot dışında bir
+  hizmet gerekir.
+- **Test kapısı:** `bot.yml`, kodu çekmeden önce `Tests` workflow'unun BAŞARIYLA bitirdiği son
+  `main` commit'ini seçer ve botu o sürümle çalıştırır. Testi başarısız bir commit devreye girmez,
+  bot önceki sağlam sürümde kalır.
+
 ## Bilinen sınırlar / varsayımlar
 - **Binance, GitHub'ın ABD sunucularından HTTP 451/403 ile engellenebilir.** Bu durumda bot güvenle bekler ve
   hata bildirimi gönderir. Çözüm seçenekleri: repo ayarlarında `BINANCE_BASE_URL` Variable'ı
@@ -81,3 +101,5 @@ Aynı anda iki çalıştırma olmaması için `concurrency` grubu vardır. Mum i
 - Test edilemeyenler: gerçek Binance bağlantısı ve gerçek ntfy gönderimi (geliştirme ortamında internet erişimi yoktu); ilk gerçek doğrulama `workflow_dispatch` ile `dry_run` seçilerek yapılmalıdır.
 - Kaydedilen state commit'i push edilemezse o çalıştırmanın sonucu kaybolur ve sonraki çalıştırmada aynı mumlar yeniden işlenir
   (işlem mükerrer olmaz, ama bildirim tekrar gelebilir).
+- Binance'in minimum emir tutarı ve miktar adımı (lot size) modellenmedi; sanal alım/satım her zaman tam dolar.
+- Kısmi dolum yok: her işlem tüm nakitle alım / tüm BTC ile satım.

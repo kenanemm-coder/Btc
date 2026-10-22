@@ -28,6 +28,10 @@ class Config:
     tz: str = "Europe/Istanbul"
     error_notify_interval_h: float = 6.0
     base_url: str = "https://api.binance.com"
+    backfill_page_limit: int = 1000  # eksik mum telafisinde sayfa başına mum
+    backfill_max_pages: int = 3      # en fazla ~10 günlük boşluk telafi edilir
+    watchdog_max_age_min: int = 120  # bekçi: bu kadar dakikadır başarılı çalışma yoksa alarm
+    recovery_notify_failures: int = 3  # bu kadar ardışık hatadan sonra düzelince "toparlandı" mesajı
 
     def validate(self):
         for name in ("fee_buy", "fee_sell", "slippage_buy", "slippage_sell"):
@@ -40,6 +44,8 @@ class Config:
             raise ConfigError("report_hour 0-23 olmalı")
         if self.interval_ms <= 0 or self.min_candles < 51:
             raise ConfigError("interval_ms > 0 ve min_candles >= 51 olmalı")
+        if self.watchdog_max_age_min < 30:
+            raise ConfigError("watchdog_max_age_min en az 30 olmalı")
         if not self.base_url.startswith("https://"):
             raise ConfigError("base_url https:// ile başlamalı")
         return self
@@ -56,6 +62,7 @@ _FLOATS = {
 _INTS = {
     "PAPER_REPORT_HOUR": "report_hour",
     "PAPER_MAX_SIGNAL_AGE_S": "max_signal_age_s",
+    "PAPER_WATCHDOG_MAX_AGE_MIN": "watchdog_max_age_min",
 }
 
 
