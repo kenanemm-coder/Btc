@@ -19,7 +19,7 @@ class WorkflowTests(unittest.TestCase):
 
     def test_only_expected_workflows_exist(self):
         names = sorted(os.listdir(os.path.join(ROOT, ".github", "workflows")))
-        self.assertEqual(names, ["bot.yml", "test.yml", "watchdog.yml"])
+        self.assertEqual(names, ["bot.yml", "research.yml", "test.yml", "watchdog.yml"])
 
     def test_bot_runs_only_tested_version(self):
         self.assertIn("workflows/test.yml/runs?branch=main&status=success", self.bot)
@@ -53,6 +53,15 @@ class WorkflowTests(unittest.TestCase):
         self.assertIn("contents: read", self.dog)
         self.assertNotIn("contents: write", self.dog)
         self.assertIn("python -m paper.watchdog", self.dog)
+
+    def test_research_is_manual_only_and_cannot_touch_main_or_bot_state(self):
+        r = read(".github", "workflows", "research.yml")
+        self.assertNotIn("schedule:", r)
+        self.assertIn("workflow_dispatch", r)
+        self.assertIn("research:research", r)
+        self.assertNotRegex(r, r"push[^\n]*(main|data)\b")
+        self.assertNotIn("NTFY_TOPIC", r)
+        self.assertIn("unittest tests.test_research", r)
 
     def test_tests_run_on_push_but_not_for_data_branch(self):
         self.assertIn("branches-ignore: [data]", self.test)

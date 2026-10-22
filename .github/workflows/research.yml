@@ -1,0 +1,52 @@
+name: Strateji Dayanıklılık Analizi
+
+# Elle çalıştırılır. Geçmiş BTC/TRY 5 dk verisini Binance genel API'sinden çeker, botun mevcut
+# sabit parametreleriyle rejim/dönem/duyarlılık analizi yapar ve sonucu 'research' dalına yazar.
+# Canlı botu etkilemez. Hiçbir sonuç kârlılık kanıtı değildir.
+
+on:
+  workflow_dispatch:
+    inputs:
+      start:
+        description: 'Başlangıç tarihi (YYYY-AA-GG)'
+        default: '2022-01-01'
+
+permissions:
+  contents: write
+
+concurrency:
+  group: paper-research
+  cancel-in-progress: false
+
+jobs:
+  analyze:
+    runs-on: ubuntu-latest
+    timeout-minutes: 45
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - run: pip install -r requirements-dev.txt && pip check
+
+      - name: Testler (analiz kodu doğrulanmadan çalıştırılmaz)
+        run: python -m unittest tests.test_research -v
+
+      - name: Analizi çalıştır
+        run: python -m research.analyze --start "${{ inputs.start }}" --out research_out
+        env:
+          BINANCE_BASE_URL: ${{ vars.BINANCE_BASE_URL }}
+
+      - name: Sonucu research dalına yaz
+        env:
+          REMOTE: https://x-access-token:${{ secrets.GITHUB_TOKEN }}@github.com/${{ github.repository }}.git
+        run: |
+          cd research_out
+          git init -q -b research
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add -A
+          git commit -q -m "Dayanıklılık raporu $(date -u +%F)"
+          git push -q --force "$REMOTE" research:research
