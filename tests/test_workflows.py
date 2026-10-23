@@ -19,7 +19,7 @@ class WorkflowTests(unittest.TestCase):
 
     def test_only_expected_workflows_exist(self):
         names = sorted(os.listdir(os.path.join(ROOT, ".github", "workflows")))
-        self.assertEqual(names, ["bot.yml", "lab.yml", "research.yml", "test.yml", "watchdog.yml"])
+        self.assertEqual(names, ["bot.yml", "lab.yml", "paper-b.yml", "research.yml", "test.yml", "watchdog.yml"])
 
     def test_bot_runs_only_tested_version(self):
         self.assertIn("workflows/test.yml/runs?branch=main&status=success", self.bot)
