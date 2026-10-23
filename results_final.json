@@ -1,0 +1,1049 @@
+{
+ "accepted": [],
+ "active_bot_changed_files": [],
+ "base_sha": "39ea75f",
+ "e_name": "E[al-tut 4h]",
+ "evaluated_test_once": true,
+ "frozen": {
+  "B": "B[4h N=40 k=3.0 trail]",
+  "C": "C[4h EMA25/100]",
+  "D": "D[4h mom20/50]"
+ },
+ "gates": {
+  "B": {
+   "G1": [
+    true,
+    "temel TEST net getiri 10.7%"
+   ],
+   "G2": [
+    true,
+    "yüksek maliyet TEST net getiri 6.2%"
+   ],
+   "G3": [
+    true,
+    "gecikmeli TEST net getiri 7.3%"
+   ],
+   "G4": [
+    false,
+    "TEST işlem 21, en iyi işlem çıkarılınca -7.2%"
+   ],
+   "G5": [
+    true,
+    "4 parçadan 2 pozitif: 6.2%, -2.5%, -5.2%, 12.8%"
+   ],
+   "G6": [
+    true,
+    "komşu ayarların %88'i TEST'te pozitif"
+   ],
+   "G7": [
+    true,
+    "walk-forward ileri-örneklem 171.3%"
+   ],
+   "G8": [
+    true,
+    "Sharpe 0.56 (al-tut -0.06), maks. düşüş 16.0% (al-tut 48.0%)"
+   ]
+  },
+  "C": {
+   "G1": [
+    true,
+    "temel TEST net getiri 1.0%"
+   ],
+   "G2": [
+    true,
+    "yüksek maliyet TEST net getiri -2.6%"
+   ],
+   "G3": [
+    true,
+    "gecikmeli TEST net getiri 5.8%"
+   ],
+   "G4": [
+    false,
+    "TEST işlem 17, en iyi işlem çıkarılınca -12.9%"
+   ],
+   "G5": [
+    true,
+    "4 parçadan 2 pozitif: -10.6%, -10.0%, 7.8%, 16.4%"
+   ],
+   "G6": [
+    true,
+    "komşu ayarların %100'i TEST'te pozitif"
+   ],
+   "G7": [
+    true,
+    "walk-forward ileri-örneklem 721.3%"
+   ],
+   "G8": [
+    true,
+    "Sharpe 0.16 (al-tut -0.06), maks. düşüş 30.1% (al-tut 48.0%)"
+   ]
+  },
+  "D": {
+   "G1": [
+    false,
+    "temel TEST net getiri -16.2%"
+   ],
+   "G2": [
+    false,
+    "yüksek maliyet TEST net getiri -28.2%"
+   ],
+   "G3": [
+    false,
+    "gecikmeli TEST net getiri -5.0%"
+   ],
+   "G4": [
+    false,
+    "TEST işlem 77, en iyi işlem çıkarılınca -32.1%"
+   ],
+   "G5": [
+    true,
+    "4 parçadan 2 pozitif: -4.3%, -20.5%, 2.6%, 7.5%"
+   ],
+   "G6": [
+    false,
+    "komşu ayarların %0'i TEST'te pozitif"
+   ],
+   "G7": [
+    true,
+    "walk-forward ileri-örneklem 186.7%"
+   ],
+   "G8": [
+    false,
+    "Sharpe -0.52 (al-tut -0.06), maks. düşüş 33.8% (al-tut 48.0%)"
+   ]
+  }
+ },
+ "git_sha": "6ba3a814c30f09747a5d529ed48bcb450753a7ec",
+ "integrity_final": [
+  {
+   "bad_ohlc": 0,
+   "bars": 637105,
+   "duplicates": 0,
+   "first": "2020-10-01T00:00:00+00:00",
+   "gap_count": 10,
+   "last": "2026-10-23T03:55:00+00:00",
+   "longest_gap_bars": 56,
+   "missing_bars": 287,
+   "missing_pct": 0.045027235986645577,
+   "off_grid": 0,
+   "tf": "5m",
+   "unsorted": 0
+  },
+  {
+   "bad_ohlc": 0,
+   "bars": 53096,
+   "duplicates": 0,
+   "first": "2020-10-01T00:00:00+00:00",
+   "gap_count": 10,
+   "last": "2026-10-23T03:00:00+00:00",
+   "longest_gap_bars": 4,
+   "missing_bars": 20,
+   "missing_pct": 0.037653437758867384,
+   "off_grid": 0,
+   "tf": "1h",
+   "unsorted": 0
+  },
+  {
+   "bad_ohlc": 0,
+   "bars": 13279,
+   "duplicates": 0,
+   "first": "2020-10-01T00:00:00+00:00",
+   "gap_count": 0,
+   "last": "2026-10-23T00:00:00+00:00",
+   "longest_gap_bars": 0,
+   "missing_bars": 0,
+   "missing_pct": 0.0,
+   "off_grid": 0,
+   "tf": "4h",
+   "unsorted": 0
+  }
+ ],
+ "metrics": {
+  "A[5m Bollinger+RSI+SMA50]": {
+   "cok_yuksek": {
+    "avg_trade_pct": -0.7643398282018904,
+    "best_trade_pct": 1.6330825919248726,
+    "cagr_pct": -68.45566565575365,
+    "ex_best_trade_return_pct": -74.24652274578186,
+    "fees_slip_pct_of_trades": 0.7969398441274849,
+    "max_dd_pct": 73.90427096191003,
+    "net_return_pct": -73.82594719192788,
+    "profit_factor": 0.030168082245528655,
+    "sharpe": -8.474545933567773,
+    "sortino": -7.861606243872024,
+    "stops": 0,
+    "time_in_market_pct": 6.497119664833726,
+    "trades": 174,
+    "win_rate_pct": 6.321839080459771
+   },
+   "gecikmeli": {
+    "avg_trade_pct": -0.29585208039893585,
+    "best_trade_pct": 2.1285350530081626,
+    "cagr_pct": -36.125303650468176,
+    "ex_best_trade_return_pct": -41.83076819574574,
+    "fees_slip_pct_of_trades": 0.29955607858334676,
+    "max_dd_pct": 40.857883920079395,
+    "net_return_pct": -40.59261570672652,
+    "profit_factor": 0.24335496653792954,
+    "sharpe": -4.121784374618808,
+    "sortino": -4.248687210207114,
+    "stops": 0,
+    "time_in_market_pct": 6.4979379418695995,
+    "trades": 174,
+    "win_rate_pct": 32.758620689655174
+   },
+   "sifir": {
+    "avg_trade_pct": 0.032730546389360037,
+    "best_trade_pct": 2.449409294162397,
+    "cagr_pct": 4.541704037870109,
+    "ex_best_trade_return_pct": 2.7780184993524415,
+    "fees_slip_pct_of_trades": 0.0,
+    "max_dd_pct": 13.98195119508235,
+    "net_return_pct": 5.295472836831561,
+    "profit_factor": 1.1399209453664232,
+    "sharpe": 0.4797167526100563,
+    "sortino": 0.5701595278340122,
+    "stops": 0,
+    "time_in_market_pct": 6.497119664833726,
+    "trades": 174,
+    "win_rate_pct": 66.66666666666666
+   },
+   "temel": {
+    "avg_trade_pct": -0.2669180225720597,
+    "best_trade_pct": 2.142521551338028,
+    "cagr_pct": -33.296026014983724,
+    "ex_best_trade_return_pct": -38.83522985271974,
+    "fees_slip_pct_of_trades": 0.2995995303589968,
+    "max_dd_pct": 37.711713649733845,
+    "net_return_pct": -37.52476147048797,
+    "profit_factor": 0.2954330047515761,
+    "sharpe": -3.7218802642245254,
+    "sortino": -3.893459117899338,
+    "stops": 0,
+    "time_in_market_pct": 6.497119664833726,
+    "trades": 174,
+    "win_rate_pct": 35.05747126436782
+   },
+   "yuksek": {
+    "avg_trade_pct": -0.46618506893085915,
+    "best_trade_pct": 1.938440436289568,
+    "cagr_pct": -50.56213707442222,
+    "ex_best_trade_return_pct": -56.72517757067326,
+    "fees_slip_pct_of_trades": 0.4988339441588305,
+    "max_dd_pct": 56.01832758787542,
+    "net_return_pct": -55.88632091397066,
+    "profit_factor": 0.10927216542638012,
+    "sharpe": -6.03583274194957,
+    "sortino": -5.9539057801147885,
+    "stops": 0,
+    "time_in_market_pct": 6.497119664833726,
+    "trades": 174,
+    "win_rate_pct": 18.39080459770115
+   }
+  },
+  "B[4h N=40 k=3.0 trail]": {
+   "cok_yuksek": {
+    "avg_trade_pct": 0.09214945342274813,
+    "best_trade_pct": 18.759774725378243,
+    "cagr_pct": -0.27742425920983527,
+    "ex_best_trade_return_pct": -16.067626280202298,
+    "fees_slip_pct_of_trades": 0.8003761066017058,
+    "max_dd_pct": 21.985421768624462,
+    "net_return_pct": -0.3221020487056636,
+    "profit_factor": 1.0624412687261156,
+    "sharpe": 0.07899765909037262,
+    "sortino": 0.136636077213614,
+    "stops": 21,
+    "time_in_market_pct": 22.505891594658287,
+    "trades": 21,
+    "win_rate_pct": 33.33333333333333
+   },
+   "gecikmeli": {
+    "avg_trade_pct": 0.4510379975302781,
+    "best_trade_pct": 19.691429268729,
+    "cagr_pct": 6.25915022153567,
+    "ex_best_trade_return_pct": -10.348758369387046,
+    "fees_slip_pct_of_trades": 0.300677722159746,
+    "max_dd_pct": 15.826786580596078,
+    "net_return_pct": 7.304852464842448,
+    "profit_factor": 1.3681924141349058,
+    "sharpe": 0.4152560067231023,
+    "sortino": 0.7415628399440548,
+    "stops": 21,
+    "time_in_market_pct": 21.75962293794187,
+    "trades": 21,
+    "win_rate_pct": 42.857142857142854
+   },
+   "sifir": {
+    "avg_trade_pct": 0.8960992323667936,
+    "best_trade_pct": 19.713664667389573,
+    "cagr_pct": 15.244633170910538,
+    "ex_best_trade_return_pct": -1.504425999232728,
+    "fees_slip_pct_of_trades": 0.0,
+    "max_dd_pct": 13.969305994772899,
+    "net_return_pct": 17.912661171499078,
+    "profit_factor": 1.9129489443335763,
+    "sharpe": 0.8475801072932944,
+    "sortino": 1.5523337734852174,
+    "stops": 21,
+    "time_in_market_pct": 22.505891594658287,
+    "trades": 21,
+    "win_rate_pct": 38.095238095238095
+   },
+   "temel": {
+    "avg_trade_pct": 0.5938644379786978,
+    "best_trade_pct": 19.355061757054393,
+    "cagr_pct": 9.159245943450077,
+    "ex_best_trade_return_pct": -7.240363082449419,
+    "fees_slip_pct_of_trades": 0.3008922120347656,
+    "max_dd_pct": 16.009463346084697,
+    "net_return_pct": 10.713321928561914,
+    "profit_factor": 1.5101755199335842,
+    "sharpe": 0.5570098673510826,
+    "sortino": 1.0025714205450038,
+    "stops": 21,
+    "time_in_market_pct": 22.505891594658287,
+    "trades": 21,
+    "win_rate_pct": 38.095238095238095
+   },
+   "yuksek": {
+    "avg_trade_pct": 0.3928775452552784,
+    "best_trade_pct": 19.116589926516948,
+    "cagr_pct": 5.2819027423800735,
+    "ex_best_trade_return_pct": -10.877524331993127,
+    "fees_slip_pct_of_trades": 0.5009856882329421,
+    "max_dd_pct": 18.39456820429494,
+    "net_return_pct": 6.159653873819559,
+    "profit_factor": 1.305646223622572,
+    "sharpe": 0.36418819374922884,
+    "sortino": 0.6462273084228298,
+    "stops": 21,
+    "time_in_market_pct": 22.505891594658287,
+    "trades": 21,
+    "win_rate_pct": 38.095238095238095
+   }
+  },
+  "C[4h EMA25/100]": {
+   "cok_yuksek": {
+    "avg_trade_pct": -0.06348094833607902,
+    "best_trade_pct": 19.060780565169733,
+    "cagr_pct": -6.6934254663175485,
+    "ex_best_trade_return_pct": -19.6341182088813,
+    "fees_slip_pct_of_trades": 0.7997517124371939,
+    "max_dd_pct": 33.13593787096439,
+    "net_return_pct": -7.730335925329779,
+    "profit_factor": 0.9719178409548063,
+    "sharpe": -0.14976912226538097,
+    "sortino": -0.228568215794294,
+    "stops": 0,
+    "time_in_market_pct": 48.114689709348,
+    "trades": 17,
+    "win_rate_pct": 23.52941176470588
+   },
+   "gecikmeli": {
+    "avg_trade_pct": 0.7208232845027231,
+    "best_trade_pct": 20.06980722427578,
+    "cagr_pct": 5.011854289305728,
+    "ex_best_trade_return_pct": -9.190214726694212,
+    "fees_slip_pct_of_trades": 0.3010828727208243,
+    "max_dd_pct": 28.485651847252928,
+    "net_return_pct": 5.843496106418589,
+    "profit_factor": 1.4142116106828964,
+    "sharpe": 0.31748087943354214,
+    "sortino": 0.4955960465183494,
+    "stops": 0,
+    "time_in_market_pct": 48.075412411626075,
+    "trades": 17,
+    "win_rate_pct": 29.411764705882355
+   },
+   "sifir": {
+    "avg_trade_pct": 0.7392187922405727,
+    "best_trade_pct": 20.017088215060053,
+    "cagr_pct": 5.624374692836986,
+    "ex_best_trade_return_pct": -8.659900147160638,
+    "fees_slip_pct_of_trades": 0.0,
+    "max_dd_pct": 28.144171409041263,
+    "net_return_pct": 6.560789198487393,
+    "profit_factor": 1.434376911383288,
+    "sharpe": 0.3409506271984932,
+    "sortino": 0.5377038882196631,
+    "stops": 0,
+    "time_in_market_pct": 48.114689709348,
+    "trades": 17,
+    "win_rate_pct": 29.411764705882355
+   },
+   "temel": {
+    "avg_trade_pct": 0.43745393403361066,
+    "best_trade_pct": 19.657576397896538,
+    "cagr_pct": 0.8253430675949192,
+    "ex_best_trade_return_pct": -12.940665759938085,
+    "fees_slip_pct_of_trades": 0.30065732226689146,
+    "max_dd_pct": 30.0583219440509,
+    "net_return_pct": 0.9591116178685688,
+    "profit_factor": 1.2292566234753504,
+    "sharpe": 0.15666164121989826,
+    "sortino": 0.24415225178912447,
+    "stops": 0,
+    "time_in_market_pct": 48.114689709348,
+    "trades": 17,
+    "win_rate_pct": 29.411764705882355
+   },
+   "yuksek": {
+    "avg_trade_pct": 0.23677955004373022,
+    "best_trade_pct": 19.41850014204938,
+    "cagr_pct": -2.252257623863707,
+    "ex_best_trade_return_pct": -15.682464680079411,
+    "fees_slip_pct_of_trades": 0.5005947005090778,
+    "max_dd_pct": 31.306010615231926,
+    "net_return_pct": -2.6107767373292456,
+    "profit_factor": 1.1157640188275497,
+    "sharpe": 0.033765769036690374,
+    "sortino": 0.052193236979765294,
+    "stops": 0,
+    "time_in_market_pct": 48.114689709348,
+    "trades": 17,
+    "win_rate_pct": 29.411764705882355
+   }
+  },
+  "D[4h mom20/50]": {
+   "cok_yuksek": {
+    "avg_trade_pct": -0.673248058450735,
+    "best_trade_pct": 22.834727451870673,
+    "cagr_pct": -38.3443603037795,
+    "ex_best_trade_return_pct": -53.57272473456132,
+    "fees_slip_pct_of_trades": 0.7973053072299692,
+    "max_dd_pct": 49.98149310117727,
+    "net_return_pct": -42.971182964368595,
+    "profit_factor": 0.5226212373100084,
+    "sharpe": -1.8119178992684506,
+    "sortino": -2.5475510161285535,
+    "stops": 0,
+    "time_in_market_pct": 38.177533385703065,
+    "trades": 77,
+    "win_rate_pct": 20.77922077922078
+   },
+   "gecikmeli": {
+    "avg_trade_pct": -0.019567853901529077,
+    "best_trade_pct": 22.329362041651258,
+    "cagr_pct": -4.307762852432728,
+    "ex_best_trade_return_pct": -22.32856774459129,
+    "fees_slip_pct_of_trades": 0.29997098893905777,
+    "max_dd_pct": 25.564315812099892,
+    "net_return_pct": -4.985032433345216,
+    "profit_factor": 0.9801106660693475,
+    "sharpe": -0.0748480734014541,
+    "sortino": -0.12053593743019934,
+    "stops": 0,
+    "time_in_market_pct": 38.57030636292223,
+    "trades": 66,
+    "win_rate_pct": 33.33333333333333
+   },
+   "sifir": {
+    "avg_trade_pct": 0.1245539740033452,
+    "best_trade_pct": 23.821347806422445,
+    "cagr_pct": 4.7946931745525,
+    "ex_best_trade_return_pct": -14.724437363172393,
+    "fees_slip_pct_of_trades": 0.0,
+    "max_dd_pct": 28.25797801593331,
+    "net_return_pct": 5.589351006429966,
+    "profit_factor": 1.1530939352698344,
+    "sharpe": 0.314353521141186,
+    "sortino": 0.5143100727444061,
+    "stops": 0,
+    "time_in_market_pct": 38.177533385703065,
+    "trades": 77,
+    "win_rate_pct": 29.87012987012987
+   },
+   "temel": {
+    "avg_trade_pct": -0.1753696525170477,
+    "best_trade_pct": 23.450440309702024,
+    "cagr_pct": -14.108150762584504,
+    "ex_best_trade_return_pct": -32.11005968343139,
+    "fees_slip_pct_of_trades": 0.2997370132955558,
+    "max_dd_pct": 33.81898560095459,
+    "net_return_pct": -16.18956975320215,
+    "profit_factor": 0.8297189833654764,
+    "sharpe": -0.5194781477687054,
+    "sortino": -0.8030315669062922,
+    "stops": 0,
+    "time_in_market_pct": 38.177533385703065,
+    "trades": 77,
+    "win_rate_pct": 25.97402597402597
+   },
+   "yuksek": {
+    "avg_trade_pct": -0.3748196128391788,
+    "best_trade_pct": 23.203785898503003,
+    "cagr_pct": -24.775320351463247,
+    "ex_best_trade_return_pct": -41.68334649067719,
+    "fees_slip_pct_of_trades": 0.4990627925285266,
+    "max_dd_pct": 40.83125130013756,
+    "net_return_pct": -28.151675067202063,
+    "profit_factor": 0.6819758106992029,
+    "sharpe": -1.0549234248369006,
+    "sortino": -1.5690542501386873,
+    "stops": 0,
+    "time_in_market_pct": 38.177533385703065,
+    "trades": 77,
+    "win_rate_pct": 22.07792207792208
+   }
+  },
+  "E[al-tut 4h]": {
+   "cok_yuksek": {
+    "avg_trade_pct": null,
+    "best_trade_pct": null,
+    "cagr_pct": -10.468158427443486,
+    "ex_best_trade_return_pct": null,
+    "fees_slip_pct_of_trades": null,
+    "max_dd_pct": 48.00600601405988,
+    "net_return_pct": -12.050930499348468,
+    "profit_factor": null,
+    "sharpe": -0.06114706057586969,
+    "sortino": -0.08647265429265408,
+    "stops": 0,
+    "time_in_market_pct": 100.0,
+    "trades": 0,
+    "win_rate_pct": null
+   },
+   "gecikmeli": {
+    "avg_trade_pct": null,
+    "best_trade_pct": null,
+    "cagr_pct": -10.468158427443486,
+    "ex_best_trade_return_pct": null,
+    "fees_slip_pct_of_trades": null,
+    "max_dd_pct": 48.00600601405988,
+    "net_return_pct": -12.050930499348468,
+    "profit_factor": null,
+    "sharpe": -0.061147060575869466,
+    "sortino": -0.08647265429265373,
+    "stops": 0,
+    "time_in_market_pct": 100.0,
+    "trades": 0,
+    "win_rate_pct": null
+   },
+   "sifir": {
+    "avg_trade_pct": null,
+    "best_trade_pct": null,
+    "cagr_pct": -10.468158427443486,
+    "ex_best_trade_return_pct": null,
+    "fees_slip_pct_of_trades": null,
+    "max_dd_pct": 48.00600601405988,
+    "net_return_pct": -12.050930499348455,
+    "profit_factor": null,
+    "sharpe": -0.06114706057586853,
+    "sortino": -0.08647265429265241,
+    "stops": 0,
+    "time_in_market_pct": 100.0,
+    "trades": 0,
+    "win_rate_pct": null
+   },
+   "temel": {
+    "avg_trade_pct": null,
+    "best_trade_pct": null,
+    "cagr_pct": -10.468158427443486,
+    "ex_best_trade_return_pct": null,
+    "fees_slip_pct_of_trades": null,
+    "max_dd_pct": 48.00600601405988,
+    "net_return_pct": -12.050930499348455,
+    "profit_factor": null,
+    "sharpe": -0.06114706057586878,
+    "sortino": -0.08647265429265275,
+    "stops": 0,
+    "time_in_market_pct": 100.0,
+    "trades": 0,
+    "win_rate_pct": null
+   },
+   "yuksek": {
+    "avg_trade_pct": null,
+    "best_trade_pct": null,
+    "cagr_pct": -10.468158427443486,
+    "ex_best_trade_return_pct": null,
+    "fees_slip_pct_of_trades": null,
+    "max_dd_pct": 48.006006014059885,
+    "net_return_pct": -12.050930499348455,
+    "profit_factor": null,
+    "sharpe": -0.061147060575868994,
+    "sortino": -0.08647265429265309,
+    "stops": 0,
+    "time_in_market_pct": 100.0,
+    "trades": 0,
+    "win_rate_pct": null
+   }
+  }
+ },
+ "neighbor_pos_share": {
+  "B[4h N=40 k=3.0 trail]": 0.875,
+  "C[4h EMA25/100]": 1.0,
+  "D[4h mom20/50]": 0.0
+ },
+ "quarters": {
+  "A[5m Bollinger+RSI+SMA50]": [
+   -24.211969519365116,
+   -2.9483023367076755,
+   -8.695786454142429,
+   -6.97207261811058
+  ],
+  "B[4h N=40 k=3.0 trail]": [
+   6.171496299988921,
+   -2.4505959800833255,
+   -5.235850384687646,
+   12.803676318878598
+  ],
+  "C[4h EMA25/100]": [
+   -10.561672280404688,
+   -10.032367291917488,
+   7.798747069886902,
+   16.39165503904554
+  ],
+  "D[4h mom20/50]": [
+   -4.329694165375308,
+   -20.548124780782352,
+   2.61484934362175,
+   7.450030752093828
+  ],
+  "E[al-tut 4h]": [
+   -16.449036701905285,
+   -18.95446954552463,
+   -7.348315641327485,
+   40.18366156085411
+  ]
+ },
+ "regimes": {
+  "A[5m Bollinger+RSI+SMA50]": {
+   "all": {
+    "dusus": {
+     "buyhold_pct": 117.22881911948448,
+     "days": 394.71875,
+     "strategy_pct": -17.310460649498406,
+     "time_in_market_pct": 5.377422391118852
+    },
+    "yatay": {
+     "buyhold_pct": -21.07317276882875,
+     "days": 704.3854166666666,
+     "strategy_pct": -57.00654947263823,
+     "time_in_market_pct": 6.6438926763382185
+    },
+    "yukselis": {
+     "buyhold_pct": 988.8197542541443,
+     "days": 1021.3229166666666,
+     "strategy_pct": -51.736113316338475,
+     "time_in_market_pct": 6.524421960896305
+    }
+   },
+   "test": {
+    "dusus": {
+     "buyhold_pct": -2.166268515146086,
+     "days": 153.09722222222223,
+     "strategy_pct": -8.612842222603234,
+     "time_in_market_pct": 5.284405334301007
+    },
+    "yatay": {
+     "buyhold_pct": -5.830040877231946,
+     "days": 180.5625,
+     "strategy_pct": -22.01279586033966,
+     "time_in_market_pct": 7.793931002653744
+    },
+    "yukselis": {
+     "buyhold_pct": -4.332044499176623,
+     "days": 90.67361111111111,
+     "strategy_pct": -12.340416814623012,
+     "time_in_market_pct": 5.9623190625718
+    }
+   }
+  },
+  "B[4h N=40 k=3.0 trail]": {
+   "all": {
+    "dusus": {
+     "buyhold_pct": 69.1945472207698,
+     "days": 395.3333333333333,
+     "strategy_pct": -11.563639088979617,
+     "time_in_market_pct": 13.448566610455313
+    },
+    "yatay": {
+     "buyhold_pct": -8.718804750325493,
+     "days": 705.3333333333334,
+     "strategy_pct": 95.62035625190029,
+     "time_in_market_pct": 26.134215500945178
+    },
+    "yukselis": {
+     "buyhold_pct": 1103.319960339064,
+     "days": 1020.5,
+     "strategy_pct": 172.06313257464032,
+     "time_in_market_pct": 31.749142577168055
+    }
+   },
+   "test": {
+    "dusus": {
+     "buyhold_pct": 0.34997878451910047,
+     "days": 153.66666666666666,
+     "strategy_pct": -0.36248829376596126,
+     "time_in_market_pct": 13.882863340563992
+    },
+    "yatay": {
+     "buyhold_pct": -10.59622890014028,
+     "days": 180.83333333333334,
+     "strategy_pct": 14.216793261275873,
+     "time_in_market_pct": 26.082949308755758
+    },
+    "yukselis": {
+     "buyhold_pct": -2.7390077035276073,
+     "days": 89.83333333333333,
+     "strategy_pct": -2.7147395508021477,
+     "time_in_market_pct": 30.0556586270872
+    }
+   }
+  },
+  "C[4h EMA25/100]": {
+   "all": {
+    "dusus": {
+     "buyhold_pct": 69.1945472207698,
+     "days": 395.3333333333333,
+     "strategy_pct": 29.096493517743948,
+     "time_in_market_pct": 32.75716694772344
+    },
+    "yatay": {
+     "buyhold_pct": -8.718804750325493,
+     "days": 705.3333333333334,
+     "strategy_pct": 87.18758740026135,
+     "time_in_market_pct": 51.39413988657845
+    },
+    "yukselis": {
+     "buyhold_pct": 1103.319960339064,
+     "days": 1020.5,
+     "strategy_pct": 453.49713131449823,
+     "time_in_market_pct": 70.35766780989711
+    }
+   },
+   "test": {
+    "dusus": {
+     "buyhold_pct": 0.34997878451910047,
+     "days": 153.66666666666666,
+     "strategy_pct": -3.4849408138640348,
+     "time_in_market_pct": 35.35791757049891
+    },
+    "yatay": {
+     "buyhold_pct": -10.59622890014028,
+     "days": 180.83333333333334,
+     "strategy_pct": 17.57367006818331,
+     "time_in_market_pct": 45.622119815668206
+    },
+    "yukselis": {
+     "buyhold_pct": -2.7390077035276073,
+     "days": 89.83333333333333,
+     "strategy_pct": -11.030660973872674,
+     "time_in_market_pct": 74.95361781076066
+    }
+   }
+  },
+  "D[4h mom20/50]": {
+   "all": {
+    "dusus": {
+     "buyhold_pct": 69.1945472207698,
+     "days": 395.3333333333333,
+     "strategy_pct": 19.00621710483792,
+     "time_in_market_pct": 30.775716694772342
+    },
+    "yatay": {
+     "buyhold_pct": -8.718804750325493,
+     "days": 705.3333333333334,
+     "strategy_pct": 42.84890856736527,
+     "time_in_market_pct": 43.71455576559546
+    },
+    "yukselis": {
+     "buyhold_pct": 1103.319960339064,
+     "days": 1020.5,
+     "strategy_pct": 118.03855689830014,
+     "time_in_market_pct": 48.08100604278948
+    }
+   },
+   "test": {
+    "dusus": {
+     "buyhold_pct": 0.34997878451910047,
+     "days": 153.66666666666666,
+     "strategy_pct": -20.179190537875748,
+     "time_in_market_pct": 33.839479392624725
+    },
+    "yatay": {
+     "buyhold_pct": -10.59622890014028,
+     "days": 180.83333333333334,
+     "strategy_pct": 20.204685135040144,
+     "time_in_market_pct": 42.11981566820276
+    },
+    "yukselis": {
+     "buyhold_pct": -2.7390077035276073,
+     "days": 89.83333333333333,
+     "strategy_pct": -12.650475072863198,
+     "time_in_market_pct": 37.66233766233766
+    }
+   }
+  },
+  "E[al-tut 4h]": {
+   "all": {
+    "dusus": {
+     "buyhold_pct": 69.1945472207698,
+     "days": 395.3333333333333,
+     "strategy_pct": 69.1945472207698,
+     "time_in_market_pct": 100.0
+    },
+    "yatay": {
+     "buyhold_pct": -8.718804750325493,
+     "days": 705.3333333333334,
+     "strategy_pct": -8.718804750325493,
+     "time_in_market_pct": 100.0
+    },
+    "yukselis": {
+     "buyhold_pct": 1103.319960339064,
+     "days": 1020.5,
+     "strategy_pct": 1103.319960339064,
+     "time_in_market_pct": 99.98366813653438
+    }
+   },
+   "test": {
+    "dusus": {
+     "buyhold_pct": 0.34997878451910047,
+     "days": 153.66666666666666,
+     "strategy_pct": 0.34997878451910047,
+     "time_in_market_pct": 100.0
+    },
+    "yatay": {
+     "buyhold_pct": -10.59622890014028,
+     "days": 180.83333333333334,
+     "strategy_pct": -10.59622890014028,
+     "time_in_market_pct": 100.0
+    },
+    "yukselis": {
+     "buyhold_pct": -2.7390077035276073,
+     "days": 89.83333333333333,
+     "strategy_pct": -2.7390077035276073,
+     "time_in_market_pct": 100.0
+    }
+   }
+  }
+ },
+ "show": [
+  "B[4h N=40 k=3.0 trail]",
+  "C[4h EMA25/100]",
+  "D[4h mom20/50]",
+  "A[5m Bollinger+RSI+SMA50]",
+  "E[al-tut 4h]"
+ ],
+ "test_all_base": {
+  "A[5m Bollinger+RSI+SMA50]": -37.52476147048797,
+  "B[1h N=20 k=2.0 chan10]": -27.581992840966574,
+  "B[1h N=20 k=2.0 trail]": -40.059082234978085,
+  "B[1h N=20 k=3.0 chan10]": -30.42467192460644,
+  "B[1h N=20 k=3.0 trail]": -28.459819499264107,
+  "B[1h N=40 k=2.0 chan10]": -34.40660958828792,
+  "B[1h N=40 k=2.0 trail]": -38.409481441307,
+  "B[1h N=40 k=3.0 chan10]": -32.48394281576047,
+  "B[1h N=40 k=3.0 trail]": -33.15647595689576,
+  "B[4h N=20 k=2.0 chan10]": 2.7735466808314735,
+  "B[4h N=20 k=2.0 trail]": -0.32239083290296344,
+  "B[4h N=20 k=3.0 chan10]": 2.671479020898526,
+  "B[4h N=20 k=3.0 trail]": 5.626891588344152,
+  "B[4h N=40 k=2.0 chan10]": 2.5162908541758844,
+  "B[4h N=40 k=2.0 trail]": 2.915049215223098,
+  "B[4h N=40 k=3.0 chan10]": 9.720842747430058,
+  "B[4h N=40 k=3.0 trail]": 10.713321928561914,
+  "C[1h EMA25/100]": -20.17989211358071,
+  "C[1h EMA50/200]": -2.469357682478124,
+  "C[4h EMA25/100]": 0.9591116178685688,
+  "C[4h EMA50/200]": 20.832844793485815,
+  "D[1h mom10/30]": -86.48185176482839,
+  "D[1h mom20/50]": -55.485685541893304,
+  "D[4h mom10/30]": -4.189431085384509,
+  "D[4h mom20/50]": -16.18956975320215,
+  "E[al-tut 4h]": -12.050930499348455
+ },
+ "yearly": {
+  "A[5m Bollinger+RSI+SMA50]": [
+   {
+    "max_dd_pct": 23.21559541068274,
+    "net_return_pct": -17.809817241426018,
+    "trades": 171,
+    "year": 2021
+   },
+   {
+    "max_dd_pct": 23.05186107715152,
+    "net_return_pct": -20.234057831805764,
+    "trades": 141,
+    "year": 2022
+   },
+   {
+    "max_dd_pct": 26.53989451523332,
+    "net_return_pct": -25.46031072891455,
+    "trades": 133,
+    "year": 2023
+   },
+   {
+    "max_dd_pct": 30.132511277402728,
+    "net_return_pct": -29.16818333637321,
+    "trades": 155,
+    "year": 2024
+   },
+   {
+    "max_dd_pct": 41.54977083036837,
+    "net_return_pct": -39.42037651698208,
+    "trades": 169,
+    "year": 2025
+   },
+   {
+    "max_dd_pct": 19.7631136758507,
+    "net_return_pct": -18.17327054066824,
+    "trades": 116,
+    "year": 2026
+   }
+  ],
+  "B[4h N=40 k=3.0 trail]": [
+   {
+    "max_dd_pct": 23.25674202530129,
+    "net_return_pct": 34.25455412026288,
+    "trades": 27,
+    "year": 2021
+   },
+   {
+    "max_dd_pct": 25.392422592261717,
+    "net_return_pct": -5.587051835751222,
+    "trades": 14,
+    "year": 2022
+   },
+   {
+    "max_dd_pct": 13.405668770002569,
+    "net_return_pct": 84.06162748187333,
+    "trades": 21,
+    "year": 2023
+   },
+   {
+    "max_dd_pct": 14.025221504482504,
+    "net_return_pct": 59.70691671667241,
+    "trades": 22,
+    "year": 2024
+   },
+   {
+    "max_dd_pct": 12.745287100914119,
+    "net_return_pct": 21.13651924174682,
+    "trades": 16,
+    "year": 2025
+   },
+   {
+    "max_dd_pct": 16.009463346084697,
+    "net_return_pct": 4.277820118254727,
+    "trades": 18,
+    "year": 2026
+   }
+  ],
+  "C[4h EMA25/100]": [
+   {
+    "max_dd_pct": 26.25492518808063,
+    "net_return_pct": 159.22622097662534,
+    "trades": 8,
+    "year": 2021
+   },
+   {
+    "max_dd_pct": 35.915912614060424,
+    "net_return_pct": -29.31479256991947,
+    "trades": 12,
+    "year": 2022
+   },
+   {
+    "max_dd_pct": 17.62065084846273,
+    "net_return_pct": 192.06547428445307,
+    "trades": 10,
+    "year": 2023
+   },
+   {
+    "max_dd_pct": 26.064592309359448,
+    "net_return_pct": 114.2524920356629,
+    "trades": 10,
+    "year": 2024
+   },
+   {
+    "max_dd_pct": 21.978571944316037,
+    "net_return_pct": -1.9018426956681767,
+    "trades": 16,
+    "year": 2025
+   },
+   {
+    "max_dd_pct": 18.0473757196629,
+    "net_return_pct": 18.913852463173207,
+    "trades": 11,
+    "year": 2026
+   }
+  ],
+  "D[4h mom20/50]": [
+   {
+    "max_dd_pct": 29.545178393430298,
+    "net_return_pct": 72.63725037522784,
+    "trades": 69,
+    "year": 2021
+   },
+   {
+    "max_dd_pct": 29.33528349262986,
+    "net_return_pct": -10.651472063676227,
+    "trades": 65,
+    "year": 2022
+   },
+   {
+    "max_dd_pct": 21.611365759711934,
+    "net_return_pct": 69.5003537839874,
+    "trades": 97,
+    "year": 2023
+   },
+   {
+    "max_dd_pct": 27.010270392845925,
+    "net_return_pct": 82.29268693096563,
+    "trades": 66,
+    "year": 2024
+   },
+   {
+    "max_dd_pct": 25.022554015389414,
+    "net_return_pct": -20.460754317352826,
+    "trades": 84,
+    "year": 2025
+   },
+   {
+    "max_dd_pct": 20.95215732645873,
+    "net_return_pct": -2.223015217422708,
+    "trades": 53,
+    "year": 2026
+   }
+  ],
+  "E[al-tut 4h]": [
+   {
+    "max_dd_pct": 50.941857962219004,
+    "net_return_pct": 183.58764210236913,
+    "trades": 0,
+    "year": 2021
+   },
+   {
+    "max_dd_pct": 57.7296898204639,
+    "net_return_pct": -49.10510481444737,
+    "trades": 0,
+    "year": 2022
+   },
+   {
+    "max_dd_pct": 20.037333677013798,
+    "net_return_pct": 307.4640253565768,
+    "trades": 0,
+    "year": 2023
+   },
+   {
+    "max_dd_pct": 25.70686228915654,
+    "net_return_pct": 158.1339178825545,
+    "trades": 0,
+    "year": 2024
+   },
+   {
+    "max_dd_pct": 32.89442100832915,
+    "net_return_pct": 13.560355805954494,
+    "trades": 0,
+    "year": 2025
+   },
+   {
+    "max_dd_pct": 35.21507898032707,
+    "net_return_pct": 7.801843207914172,
+    "trades": 0,
+    "year": 2026
+   }
+  ]
+ }
+}
