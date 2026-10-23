@@ -14,24 +14,24 @@
    "equity_try": 49380.0
   },
   {
-   "btc_price": 4050724.0,
+   "btc_price": 4046246.0,
    "date": "2026-10-23",
-   "equity_try": 49222.59158732721
+   "equity_try": 49168.17692833586
   }
  ],
  "fx_symbol": "USDTTRY",
  "gaps": [],
  "health": {
   "consecutive_failures": 0,
-  "data_lag_s": 72.593,
+  "data_lag_s": 135.733,
   "failures": 0,
-  "last_candle_open_ms": 1792758600000,
+  "last_candle_open_ms": 1792761000000,
   "last_error": null,
   "last_error_ms": null,
-  "last_run_ms": 1792758972195,
-  "last_success_ms": 1792758972195,
+  "last_run_ms": 1792761435247,
+  "last_success_ms": 1792761435247,
   "max_consecutive_failures": 0,
-  "runs": 54
+  "runs": 55
  },
  "initial": {
   "rate_time": "2026-10-20T23:31:27+00:00",
@@ -39,8 +39,8 @@
   "usdt": 1000.0,
   "usdt_try_rate": 49.38
  },
- "last_candle_open_ms": 1792758600000,
- "last_price": 4050724.0,
+ "last_candle_open_ms": 1792761000000,
+ "last_price": 4046246.0,
  "last_report_date": "2026-10-22",
  "max_drawdown_pct": 0.6415769198600939,
  "mode": "PAPER",
@@ -59,7 +59,7 @@
   "reason": "Alt banda temas + RSI<48 + SMA50 üstü"
  },
  "realized_pnl_try": 0.0,
- "skipped_stale_signals": 0,
+ "skipped_stale_signals": 1,
  "symbol": "BTCTRY",
  "trades": [],
  "version": 1
