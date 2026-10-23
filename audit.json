@@ -1,0 +1,2584 @@
+{
+ "A_provenance": {
+  "boundaries": {
+   "data_end": "2026-10-23 04:00",
+   "eval_start": "2021-01-01 00:00",
+   "train_end": "2024-06-26 16:00",
+   "val_end(test_start)": "2025-08-24 20:00"
+  },
+  "full_data": {
+   "gaps_4h": 0,
+   "integrity_equal_to_results_final": true,
+   "max_endTime_requested": "2026-10-23 03:59",
+   "pre_test_fingerprints_equal": {
+    "1h": true,
+    "4h": true,
+    "5m": true
+   },
+   "t_end": "2026-10-23 04:00"
+  },
+  "select_replica": {
+   "all_last_bars_before_val_end": true,
+   "chosen": {
+    "B": "B[4h N=40 k=3.0 trail]",
+    "C": "C[4h EMA25/100]",
+    "D": "D[4h mom20/50]"
+   },
+   "chosen_equal": true,
+   "fingerprints_equal_to_frozen": true,
+   "integrity_equal_to_frozen": true,
+   "last_bar_open_by_tf": {
+    "1h": "2025-08-24 19:00",
+    "4h": "2025-08-24 16:00",
+    "5m": "2025-08-24 19:55"
+   },
+   "max_endTime_before_val_end": true,
+   "max_klines_endTime_requested": 1756065599999,
+   "n_kline_requests": 569,
+   "t_val": 1756065600000,
+   "table_diffs": [],
+   "wf_diffs": []
+  },
+  "spec_hash_equal_to_frozen": true
+ },
+ "B_causality": {
+  "cutoffs": [
+   {
+    "candidates_checked": 26,
+    "cutoff": "2025-08-24 20:00"
+   },
+   {
+    "candidates_checked": 25,
+    "cutoff": "2025-11-03 12:00"
+   },
+   {
+    "candidates_checked": 25,
+    "cutoff": "2026-01-13 04:00"
+   },
+   {
+    "candidates_checked": 25,
+    "cutoff": "2026-03-25 00:00"
+   },
+   {
+    "candidates_checked": 25,
+    "cutoff": "2026-06-03 16:00"
+   },
+   {
+    "candidates_checked": 25,
+    "cutoff": "2026-08-13 08:00"
+   }
+  ],
+  "violations": []
+ },
+ "C_indep_sim": {
+  "candidate": "B[4h N=40 k=3.0 trail]",
+  "scenarios": {
+   "gecikmeli": {
+    "held_equal": true,
+    "indep_trades": 118,
+    "lab_trades": 118,
+    "max_abs_eq_diff": 8.881784197001252e-16,
+    "max_per_trade_cost_formula_error": 4.440892098500626e-16,
+    "n_trade_mismatches": 0,
+    "open_indep": false,
+    "open_lab": false,
+    "stop_checks": {
+     "fill_is_min_stop_open": true,
+     "gap_fills_below_stop": 0,
+     "low_le_stop_all": true,
+     "stop_exits": 118,
+     "stopped_on_entry_bar": 0
+    },
+    "trade_mismatches": []
+   },
+   "temel": {
+    "held_equal": true,
+    "indep_trades": 118,
+    "lab_trades": 118,
+    "max_abs_eq_diff": 8.881784197001252e-16,
+    "max_per_trade_cost_formula_error": 4.440892098500626e-16,
+    "n_trade_mismatches": 0,
+    "open_indep": false,
+    "open_lab": false,
+    "stop_checks": {
+     "fill_is_min_stop_open": true,
+     "gap_fills_below_stop": 0,
+     "low_le_stop_all": true,
+     "stop_exits": 118,
+     "stopped_on_entry_bar": 0
+    },
+    "trade_mismatches": []
+   },
+   "yuksek": {
+    "held_equal": true,
+    "indep_trades": 118,
+    "lab_trades": 118,
+    "max_abs_eq_diff": 2.6645352591003757e-14,
+    "max_per_trade_cost_formula_error": 2.220446049250313e-16,
+    "n_trade_mismatches": 0,
+    "open_indep": false,
+    "open_lab": false,
+    "stop_checks": {
+     "fill_is_min_stop_open": true,
+     "gap_fills_below_stop": 0,
+     "low_le_stop_all": true,
+     "stop_exits": 118,
+     "stopped_on_entry_bar": 0
+    },
+    "trade_mismatches": []
+   }
+  }
+ },
+ "D_trades": {
+  "gecikmeli": {
+   "analysis": {
+    "additive_ex_best_pct": -10.219631320593157,
+    "additive_sum_trade_ret_pct": 9.471797948135842,
+    "closure_error_pct_points": -1.0658141036401503e-14,
+    "equity_based_ex_top": {
+     "1": -10.348758369387046,
+     "2": -15.74317162260136,
+     "3": -18.35608005509589
+    },
+    "equity_based_ex_worst": {
+     "1": 13.569005610818085,
+     "2": 17.28729660098889,
+     "3": 20.961946343024596
+    },
+    "gross_gain_log_pct": 33.16885698101675,
+    "gross_loss_log_pct": -26.118488383985955,
+    "lab_def_ex_best_pct": -10.348758369387046,
+    "n_trades": 21,
+    "open_position_contrib_log_pct": null,
+    "ranking": [
+     {
+      "contrib_log_pct": 17.97468222473032,
+      "entry": "2026-08-18 20:00",
+      "exit": "2026-08-28 16:00",
+      "rank": 1,
+      "regime": "yatay",
+      "share_of_gross_gain_pct": 54.19144300033497,
+      "trade_ret_pct": 19.691429268729
+     },
+     {
+      "contrib_log_pct": 6.205743477302206,
+      "entry": "2025-09-29 20:00",
+      "exit": "2025-10-07 12:00",
+      "rank": 2,
+      "regime": "yatay",
+      "share_of_gross_gain_pct": 18.709548782021297,
+      "trade_ret_pct": 6.402345491871531
+     },
+     {
+      "contrib_log_pct": 3.1502263145388314,
+      "entry": "2026-09-18 20:00",
+      "exit": "2026-09-23 16:00",
+      "rank": 3,
+      "regime": "yukselis",
+      "share_of_gross_gain_pct": 9.497542578394466,
+      "trade_ret_pct": 3.2003711167442717
+     },
+     {
+      "contrib_log_pct": 3.0306986894880192,
+      "entry": "2026-04-06 04:00",
+      "exit": "2026-04-12 12:00",
+      "rank": 4,
+      "regime": "dusus",
+      "share_of_gross_gain_pct": 9.137181577352976,
+      "trade_ret_pct": 3.0770918551688453
+     },
+     {
+      "contrib_log_pct": 1.5622289773374605,
+      "entry": "2025-09-10 20:00",
+      "exit": "2025-09-21 16:00",
+      "rank": 5,
+      "regime": "yatay",
+      "share_of_gross_gain_pct": 4.709927080790145,
+      "trade_ret_pct": 1.574495568393175
+     },
+     {
+      "contrib_log_pct": 1.080804390855014,
+      "entry": "2026-04-14 04:00",
+      "exit": "2026-04-19 04:00",
+      "rank": 6,
+      "regime": "dusus",
+      "share_of_gross_gain_pct": 3.258491516525823,
+      "trade_ret_pct": 1.0866661806377298
+     },
+     {
+      "contrib_log_pct": 0.07553812584174936,
+      "entry": "2026-05-04 08:00",
+      "exit": "2026-05-07 12:00",
+      "rank": 7,
+      "regime": "yatay",
+      "share_of_gross_gain_pct": 0.22773810350167162,
+      "trade_ret_pct": 0.075566663069071
+     },
+     {
+      "contrib_log_pct": 0.07251378175868423,
+      "entry": "2026-01-04 08:00",
+      "exit": "2026-01-06 16:00",
+      "rank": 8,
+      "regime": "dusus",
+      "share_of_gross_gain_pct": 0.21862008027646362,
+      "trade_ret_pct": 0.07254007935748596
+     },
+     {
+      "contrib_log_pct": 0.016420999164465704,
+      "entry": "2026-01-14 00:00",
+      "exit": "2026-01-18 20:00",
+      "rank": 9,
+      "regime": "yatay",
+      "share_of_gross_gain_pct": 0.049507280802180774,
+      "trade_ret_pct": 0.01642234748433502
+     },
+     {
+      "contrib_log_pct": -0.46648796746480997,
+      "entry": "2026-07-20 20:00",
+      "exit": "2026-07-23 12:00",
+      "rank": 10,
+      "regime": "yatay",
+      "share_of_gross_gain_pct": -1.406403505950751,
+      "trade_ret_pct": -0.4654016022566654
+     },
+     {
+      "contrib_log_pct": -0.4783693183662461,
+      "entry": "2026-03-13 16:00",
+      "exit": "2026-03-18 12:00",
+      "rank": 11,
+      "regime": "dusus",
+      "share_of_gross_gain_pct": -1.4422243089052695,
+      "trade_ret_pct": -0.47722695464091913
+     },
+     {
+      "contrib_log_pct": -0.7532400083463519,
+      "entry": "2026-07-07 04:00",
+      "exit": "2026-07-13 04:00",
+      "rank": 12,
+      "regime": "yatay",
+      "share_of_gross_gain_pct": -2.270925430977158,
+      "trade_ret_pct": -0.7504102651722411
+     },
+     {
+      "contrib_log_pct": -1.405019091430625,
+      "entry": "2026-08-07 16:00",
+      "exit": "2026-08-10 12:00",
+      "rank": 13,
+      "regime": "yatay",
+      "share_of_gross_gain_pct": -4.235958725483811,
+      "trade_ret_pct": -1.395194763244767
+     },
+     {
+      "contrib_log_pct": -1.845748387005703,
+      "entry": "2026-10-02 08:00",
+      "exit": "2026-10-07 00:00",
+      "rank": 14,
+      "regime": "yukselis",
+      "share_of_gross_gain_pct": -5.564703022663893,
+      "trade_ret_pct": -1.8288187708499604
+     },
+     {
+      "contrib_log_pct": -2.0546938192320443,
+      "entry": "2026-07-14 20:00",
+      "exit": "2026-07-17 04:00",
+      "rank": 15,
+      "regime": "yatay",
+      "share_of_gross_gain_pct": -6.194647649172805,
+      "trade_ret_pct": -2.0337288201468073
+     },
+     {
+      "contrib_log_pct": -2.330210108260772,
+      "entry": "2026-04-22 20:00",
+      "exit": "2026-04-27 12:00",
+      "rank": 16,
+      "regime": "yatay",
+      "share_of_gross_gain_pct": -7.025295172499918,
+      "trade_ret_pct": -2.3032703690591516
+     },
+     {
+      "contrib_log_pct": -2.393724880728353,
+      "entry": "2026-07-05 00:00",
+      "exit": "2026-07-06 12:00",
+      "rank": 17,
+      "regime": "yatay",
+      "share_of_gross_gain_pct": -7.216784353160959,
+      "trade_ret_pct": -2.365302522716506
+     },
+     {
+      "contrib_log_pct": -2.4107816889327944,
+      "entry": "2025-10-27 04:00",
+      "exit": "2025-10-29 00:00",
+      "rank": 18,
+      "regime": "yatay",
+      "share_of_gross_gain_pct": -7.268208519553557,
+      "trade_ret_pct": -2.381954465620839
+     },
+     {
+      "contrib_log_pct": -3.08495516776355,
+      "entry": "2026-10-21 16:00",
+      "exit": "2026-10-22 08:00",
+      "rank": 19,
+      "regime": "yukselis",
+      "share_of_gross_gain_pct": -9.300758146502112,
+      "trade_ret_pct": -3.0378559977987885
+     },
+     {
+      "contrib_log_pct": -3.221582029587511,
+      "entry": "2026-09-03 20:00",
+      "exit": "2026-09-07 12:00",
+      "rank": 20,
+      "regime": "yukselis",
+      "share_of_gross_gain_pct": -9.712671230821405,
+      "trade_ret_pct": -3.1702418743782768
+     },
+     {
+      "contrib_log_pct": -5.6736759168671975,
+      "entry": "2026-03-04 16:00",
+      "exit": "2026-03-06 12:00",
+      "rank": 21,
+      "regime": "dusus",
+      "share_of_gross_gain_pct": -17.105430917062844,
+      "trade_ret_pct": -5.5157242174346806
+     }
+    ],
+    "sum_contrib_log_pct": 7.050368597030793,
+    "total_net_pct": 7.304852464842448
+   },
+   "monthly": [
+    {
+     "month": "2025-08",
+     "return_pct": 0.0
+    },
+    {
+     "month": "2025-09",
+     "return_pct": 0.9432537473519798
+    },
+    {
+     "month": "2025-10",
+     "return_pct": 4.517420908711145
+    },
+    {
+     "month": "2025-11",
+     "return_pct": 0.0
+    },
+    {
+     "month": "2025-12",
+     "return_pct": 0.0
+    },
+    {
+     "month": "2026-01",
+     "return_pct": 0.08897433962571366
+    },
+    {
+     "month": "2026-02",
+     "return_pct": 0.0
+    },
+    {
+     "month": "2026-03",
+     "return_pct": -5.966628649366346
+    },
+    {
+     "month": "2026-04",
+     "return_pct": 1.7972526171895709
+    },
+    {
+     "month": "2026-05",
+     "return_pct": 0.075566663069071
+    },
+    {
+     "month": "2026-06",
+     "return_pct": 0.0
+    },
+    {
+     "month": "2026-07",
+     "return_pct": -5.510499809595471
+    },
+    {
+     "month": "2026-08",
+     "return_pct": 18.02150071551887
+    },
+    {
+     "month": "2026-09",
+     "return_pct": -0.07133026291253897
+    },
+    {
+     "month": "2026-10",
+     "return_pct": -4.811117887929617
+    }
+   ],
+   "trades": [
+    {
+     "bars_held": 66,
+     "contrib_log_pct": 1.5622289773374605,
+     "entered_before_test": false,
+     "entry_i": 10835,
+     "entry_ref": 4689865.0,
+     "entry_time": "2025-09-10 20:00",
+     "equity_after": 1.0157449556839317,
+     "equity_before": 1.0,
+     "exit_i": 10900,
+     "exit_ref": 4778019.298454897,
+     "exit_time": "2025-09-21 16:00",
+     "month": "2025-09",
+     "reason": "stop",
+     "regime_at_signal": "yatay",
+     "trade_ret_pct": 1.574495568393175
+    },
+    {
+     "bars_held": 47,
+     "contrib_log_pct": 6.205743477302206,
+     "entered_before_test": false,
+     "entry_i": 10949,
+     "entry_ref": 4758208.0,
+     "entry_time": "2025-09-29 20:00",
+     "equity_after": 1.0807764570630745,
+     "equity_before": 1.0157449556839317,
+     "exit_i": 10995,
+     "exit_ref": 5078056.259538578,
+     "exit_time": "2025-10-07 12:00",
+     "month": "2025-09",
+     "reason": "stop",
+     "regime_at_signal": "yatay",
+     "trade_ret_pct": 6.402345491871531
+    },
+    {
+     "bars_held": 12,
+     "contrib_log_pct": -2.4107816889327944,
+     "entered_before_test": false,
+     "entry_i": 11113,
+     "entry_ref": 4817484.0,
+     "entry_time": "2025-10-27 04:00",
+     "equity_after": 1.055032853980682,
+     "equity_before": 1.0807764570630745,
+     "exit_i": 11124,
+     "exit_ref": 4716863.112923218,
+     "exit_time": "2025-10-29 00:00",
+     "month": "2025-10",
+     "reason": "stop",
+     "regime_at_signal": "yatay",
+     "trade_ret_pct": -2.381954465620839
+    },
+    {
+     "bars_held": 15,
+     "contrib_log_pct": 0.07251378175868423,
+     "entered_before_test": false,
+     "entry_i": 11528,
+     "entry_ref": 3925611.0,
+     "entry_time": "2026-01-04 08:00",
+     "equity_after": 1.055798175650207,
+     "equity_before": 1.055032853980682,
+     "exit_i": 11542,
+     "exit_ref": 3940261.715969084,
+     "exit_time": "2026-01-06 16:00",
+     "month": "2026-01",
+     "reason": "stop",
+     "regime_at_signal": "dusus",
+     "trade_ret_pct": 0.07254007935748596
+    },
+    {
+     "bars_held": 30,
+     "contrib_log_pct": 0.016420999164465704,
+     "entered_before_test": false,
+     "entry_i": 11586,
+     "entry_ref": 4091157.0,
+     "entry_time": "2026-01-14 00:00",
+     "equity_after": 1.0559715624953456,
+     "equity_before": 1.055798175650207,
+     "exit_i": 11615,
+     "exit_ref": 4104122.7853457555,
+     "exit_time": "2026-01-18 20:00",
+     "month": "2026-01",
+     "reason": "stop",
+     "regime_at_signal": "yatay",
+     "trade_ret_pct": 0.01642234748433502
+    },
+    {
+     "bars_held": 12,
+     "contrib_log_pct": -5.6736759168671975,
+     "entered_before_test": false,
+     "entry_i": 11884,
+     "entry_ref": 3210104.0,
+     "entry_time": "2026-03-04 16:00",
+     "equity_after": 0.9977270832935665,
+     "equity_before": 1.0559715624953456,
+     "exit_i": 11895,
+     "exit_ref": 3042156.311452342,
+     "exit_time": "2026-03-06 12:00",
+     "month": "2026-03",
+     "reason": "stop",
+     "regime_at_signal": "dusus",
+     "trade_ret_pct": -5.5157242174346806
+    },
+    {
+     "bars_held": 30,
+     "contrib_log_pct": -0.4783693183662461,
+     "entered_before_test": false,
+     "entry_i": 11938,
+     "entry_ref": 3167627.0,
+     "entry_time": "2026-03-13 16:00",
+     "equity_after": 0.992965660718337,
+     "equity_before": 0.9977270832935665,
+     "exit_i": 11967,
+     "exit_ref": 3161981.9636883815,
+     "exit_time": "2026-03-18 12:00",
+     "month": "2026-03",
+     "reason": "stop",
+     "regime_at_signal": "dusus",
+     "trade_ret_pct": -0.47722695464091913
+    },
+    {
+     "bars_held": 39,
+     "contrib_log_pct": 3.0306986894880192,
+     "entered_before_test": false,
+     "entry_i": 12079,
+     "entry_ref": 3072919.0,
+     "entry_time": "2026-04-06 04:00",
+     "equity_after": 1.0235201261889246,
+     "equity_before": 0.992965660718337,
+     "exit_i": 12117,
+     "exit_ref": 3176992.237172744,
+     "exit_time": "2026-04-12 12:00",
+     "month": "2026-04",
+     "reason": "stop",
+     "regime_at_signal": "dusus",
+     "trade_ret_pct": 3.0770918551688453
+    },
+    {
+     "bars_held": 31,
+     "contrib_log_pct": 1.080804390855014,
+     "entered_before_test": false,
+     "entry_i": 12127,
+     "entry_ref": 3320999.0,
+     "entry_time": "2026-04-14 04:00",
+     "equity_after": 1.03464237325224,
+     "equity_before": 1.0235201261889246,
+     "exit_i": 12157,
+     "exit_ref": 3367173.5590471826,
+     "exit_time": "2026-04-19 04:00",
+     "month": "2026-04",
+     "reason": "stop",
+     "regime_at_signal": "dusus",
+     "trade_ret_pct": 1.0866661806377298
+    },
+    {
+     "bars_held": 29,
+     "contrib_log_pct": -2.330210108260772,
+     "entered_before_test": false,
+     "entry_i": 12179,
+     "entry_ref": 3542544.0,
+     "entry_time": "2026-04-22 20:00",
+     "equity_after": 1.010811762043391,
+     "equity_before": 1.03464237325224,
+     "exit_i": 12207,
+     "exit_ref": 3471348.0751011535,
+     "exit_time": "2026-04-27 12:00",
+     "month": "2026-04",
+     "reason": "stop",
+     "regime_at_signal": "yatay",
+     "trade_ret_pct": -2.3032703690591516
+    },
+    {
+     "bars_held": 20,
+     "contrib_log_pct": 0.07553812584174936,
+     "entered_before_test": false,
+     "entry_i": 12248,
+     "entry_ref": 3596119.0,
+     "entry_time": "2026-05-04 08:00",
+     "equity_after": 1.0115755987618766,
+     "equity_before": 1.010811762043391,
+     "exit_i": 12267,
+     "exit_ref": 3609649.190207935,
+     "exit_time": "2026-05-07 12:00",
+     "month": "2026-05",
+     "reason": "stop",
+     "regime_at_signal": "yatay",
+     "trade_ret_pct": 0.075566663069071
+    },
+    {
+     "bars_held": 10,
+     "contrib_log_pct": -2.393724880728353,
+     "entered_before_test": false,
+     "entry_i": 12618,
+     "entry_ref": 2930351.0,
+     "entry_time": "2026-07-05 00:00",
+     "equity_after": 0.9876487756051774,
+     "equity_before": 1.0115755987618766,
+     "exit_i": 12627,
+     "exit_ref": 2869635.3415877377,
+     "exit_time": "2026-07-06 12:00",
+     "month": "2026-07",
+     "reason": "stop",
+     "regime_at_signal": "yatay",
+     "trade_ret_pct": -2.365302522716506
+    },
+    {
+     "bars_held": 37,
+     "contrib_log_pct": -0.7532400083463519,
+     "entered_before_test": false,
+     "entry_i": 12631,
+     "entry_ref": 2951890.0,
+     "entry_time": "2026-07-07 04:00",
+     "equity_after": 0.9802373578091882,
+     "equity_before": 0.9876487756051774,
+     "exit_i": 12667,
+     "exit_ref": 2938541.129788517,
+     "exit_time": "2026-07-13 04:00",
+     "month": "2026-07",
+     "reason": "stop",
+     "regime_at_signal": "yatay",
+     "trade_ret_pct": -0.7504102651722411
+    },
+    {
+     "bars_held": 15,
+     "contrib_log_pct": -2.0546938192320443,
+     "entered_before_test": false,
+     "entry_i": 12677,
+     "entry_ref": 3028909.0,
+     "entry_time": "2026-07-14 20:00",
+     "equity_after": 0.9603019881575772,
+     "equity_before": 0.9802373578091882,
+     "exit_i": 12691,
+     "exit_ref": 2976224.500831675,
+     "exit_time": "2026-07-17 04:00",
+     "month": "2026-07",
+     "reason": "stop",
+     "regime_at_signal": "yatay",
+     "trade_ret_pct": -2.0337288201468073
+    },
+    {
+     "bars_held": 17,
+     "contrib_log_pct": -0.46648796746480997,
+     "entered_before_test": false,
+     "entry_i": 12713,
+     "entry_ref": 3063719.0,
+     "entry_time": "2026-07-20 20:00",
+     "equity_after": 0.9558327273181892,
+     "equity_before": 0.9603019881575772,
+     "exit_i": 12729,
+     "exit_ref": 3058622.5224920637,
+     "exit_time": "2026-07-23 12:00",
+     "month": "2026-07",
+     "reason": "stop",
+     "regime_at_signal": "yatay",
+     "trade_ret_pct": -0.4654016022566654
+    },
+    {
+     "bars_held": 18,
+     "contrib_log_pct": -1.405019091430625,
+     "entered_before_test": false,
+     "entry_i": 12820,
+     "entry_ref": 3091141.0,
+     "entry_time": "2026-08-07 16:00",
+     "equity_after": 0.9424969991612663,
+     "equity_before": 0.9558327273181892,
+     "exit_i": 12837,
+     "exit_ref": 3057171.3354116837,
+     "exit_time": "2026-08-10 12:00",
+     "month": "2026-08",
+     "reason": "stop",
+     "regime_at_signal": "yatay",
+     "trade_ret_pct": -1.395194763244767
+    },
+    {
+     "bars_held": 60,
+     "contrib_log_pct": 17.97468222473032,
+     "entered_before_test": false,
+     "entry_i": 12887,
+     "entry_ref": 3091325.0,
+     "entry_time": "2026-08-18 20:00",
+     "equity_after": 1.1280881291110003,
+     "equity_before": 0.9424969991612663,
+     "exit_i": 12946,
+     "exit_ref": 3711167.8987450036,
+     "exit_time": "2026-08-28 16:00",
+     "month": "2026-08",
+     "reason": "stop",
+     "regime_at_signal": "yatay",
+     "trade_ret_pct": 19.691429268729
+    },
+    {
+     "bars_held": 23,
+     "contrib_log_pct": -3.221582029587511,
+     "entered_before_test": false,
+     "entry_i": 12983,
+     "entry_ref": 3931737.0,
+     "entry_time": "2026-09-03 20:00",
+     "equity_after": 1.092325006862033,
+     "equity_before": 1.1280881291110003,
+     "exit_i": 13005,
+     "exit_ref": 3818529.8534373716,
+     "exit_time": "2026-09-07 12:00",
+     "month": "2026-09",
+     "reason": "stop",
+     "regime_at_signal": "yukselis",
+     "trade_ret_pct": -3.1702418743782768
+    },
+    {
+     "bars_held": 30,
+     "contrib_log_pct": 3.1502263145388314,
+     "entered_before_test": false,
+     "entry_i": 13073,
+     "entry_ref": 3937402.0,
+     "entry_time": "2026-09-18 20:00",
+     "equity_after": 1.1272834608826203,
+     "equity_before": 1.092325006862033,
+     "exit_i": 13102,
+     "exit_ref": 4075622.0235036304,
+     "exit_time": "2026-09-23 16:00",
+     "month": "2026-09",
+     "reason": "stop",
+     "regime_at_signal": "yukselis",
+     "trade_ret_pct": 3.2003711167442717
+    },
+    {
+     "bars_held": 29,
+     "contrib_log_pct": -1.845748387005703,
+     "entered_before_test": false,
+     "entry_i": 13154,
+     "entry_ref": 4216100.0,
+     "entry_time": "2026-10-02 08:00",
+     "equity_after": 1.1066674893493118,
+     "equity_before": 1.1272834608826203,
+     "exit_i": 13182,
+     "exit_ref": 4151430.804548904,
+     "exit_time": "2026-10-07 00:00",
+     "month": "2026-10",
+     "reason": "stop",
+     "regime_at_signal": "yukselis",
+     "trade_ret_pct": -1.8288187708499604
+    },
+    {
+     "bars_held": 5,
+     "contrib_log_pct": -3.08495516776355,
+     "entered_before_test": false,
+     "entry_i": 13270,
+     "entry_ref": 4179206.0,
+     "entry_time": "2026-10-21 16:00",
+     "equity_after": 1.0730485246484245,
+     "equity_before": 1.1066674893493118,
+     "exit_i": 13274,
+     "exit_ref": 4064422.7395001855,
+     "exit_time": "2026-10-22 08:00",
+     "month": "2026-10",
+     "reason": "stop",
+     "regime_at_signal": "yukselis",
+     "trade_ret_pct": -3.0378559977987885
+    }
+   ]
+  },
+  "temel": {
+   "analysis": {
+    "additive_ex_best_pct": -6.883908559501741,
+    "additive_sum_trade_ret_pct": 12.471153197552653,
+    "closure_error_pct_points": 1.0658141036401503e-14,
+    "equity_based_ex_top": {
+     "1": -7.240363082449419,
+     "2": -13.278753654980468,
+     "3": -16.427301892956958
+    },
+    "equity_based_ex_worst": {
+     "1": 13.90875836239982,
+     "2": 17.09046178647171,
+     "3": 20.286634097905633
+    },
+    "gross_gain_log_pct": 34.888597472557926,
+    "gross_loss_log_pct": -24.711198561490328,
+    "lab_def_ex_best_pct": -7.240363082449419,
+    "n_trades": 21,
+    "open_position_contrib_log_pct": null,
+    "ranking": [
+     {
+      "contrib_log_pct": 17.693257693265263,
+      "entry": "2026-08-18 16:00",
+      "exit": "2026-08-28 16:00",
+      "rank": 1,
+      "regime": "yatay",
+      "share_of_gross_gain_pct": 50.7135825886441,
+      "trade_ret_pct": 19.355061757054393
+     },
+     {
+      "contrib_log_pct": 6.731268851832864,
+      "entry": "2025-09-29 16:00",
+      "exit": "2025-10-07 12:00",
+      "rank": 2,
+      "regime": "yatay",
+      "share_of_gross_gain_pct": 19.293606907321024,
+      "trade_ret_pct": 6.962988687348171
+     },
+     {
+      "contrib_log_pct": 3.6982020562178657,
+      "entry": "2026-09-18 16:00",
+      "exit": "2026-09-23 16:00",
+      "rank": 3,
+      "regime": "yukselis",
+      "share_of_gross_gain_pct": 10.60003073819959,
+      "trade_ret_pct": 3.7674363868732685
+     },
+     {
+      "contrib_log_pct": 2.895446570372875,
+      "entry": "2026-04-06 00:00",
+      "exit": "2026-04-12 12:00",
+      "rank": 4,
+      "regime": "dusus",
+      "share_of_gross_gain_pct": 8.29911999945061,
+      "trade_ret_pct": 2.9377721417831015
+     },
+     {
+      "contrib_log_pct": 1.435887272643828,
+      "entry": "2025-09-10 16:00",
+      "exit": "2025-09-21 16:00",
+      "rank": 5,
+      "regime": "yatay",
+      "share_of_gross_gain_pct": 4.1156348396442235,
+      "trade_ret_pct": 1.4462456527825518
+     },
+     {
+      "contrib_log_pct": 1.1917060057455542,
+      "entry": "2026-04-14 00:00",
+      "exit": "2026-04-19 04:00",
+      "rank": 6,
+      "regime": "dusus",
+      "share_of_gross_gain_pct": 3.41574638155892,
+      "trade_ret_pct": 1.1988351129532004
+     },
+     {
+      "contrib_log_pct": 0.9276383676970735,
+      "entry": "2026-01-13 20:00",
+      "exit": "2026-01-18 20:00",
+      "rank": 7,
+      "regime": "yatay",
+      "share_of_gross_gain_pct": 2.6588582943946637,
+      "trade_ret_pct": 0.9319542673942971
+     },
+     {
+      "contrib_log_pct": 0.3151906547826017,
+      "entry": "2026-01-04 04:00",
+      "exit": "2026-01-06 16:00",
+      "rank": 8,
+      "regime": "dusus",
+      "share_of_gross_gain_pct": 0.9034202507868624,
+      "trade_ret_pct": 0.3156879028161086
+     },
+     {
+      "contrib_log_pct": -0.6278543393870739,
+      "entry": "2026-05-04 04:00",
+      "exit": "2026-05-07 12:00",
+      "rank": 9,
+      "regime": "yatay",
+      "share_of_gross_gain_pct": -1.799597532921525,
+      "trade_ret_pct": -0.6258874525772118
+     },
+     {
+      "contrib_log_pct": -0.878593105524412,
+      "entry": "2026-03-13 12:00",
+      "exit": "2026-03-18 12:00",
+      "rank": 10,
+      "regime": "dusus",
+      "share_of_gross_gain_pct": -2.5182815279848403,
+      "trade_ret_pct": -0.8747447549934617
+     },
+     {
+      "contrib_log_pct": -1.1893273543005005,
+      "entry": "2026-07-20 16:00",
+      "exit": "2026-07-23 12:00",
+      "rank": 11,
+      "regime": "yatay",
+      "share_of_gross_gain_pct": -3.4089285338454243,
+      "trade_ret_pct": -1.1822828117365014
+     },
+     {
+      "contrib_log_pct": -1.2329307261977607,
+      "entry": "2026-10-02 04:00",
+      "exit": "2026-10-07 00:00",
+      "rank": 12,
+      "regime": "yukselis",
+      "share_of_gross_gain_pct": -3.5339073952959508,
+      "trade_ret_pct": -1.2253612759484778
+     },
+     {
+      "contrib_log_pct": -1.4609051603397971,
+      "entry": "2026-08-07 12:00",
+      "exit": "2026-08-10 12:00",
+      "rank": 13,
+      "regime": "yatay",
+      "share_of_gross_gain_pct": -4.18734276002035,
+      "trade_ret_pct": -1.4502857171290517
+     },
+     {
+      "contrib_log_pct": -1.9978800709498312,
+      "entry": "2026-07-07 00:00",
+      "exit": "2026-07-13 04:00",
+      "rank": 14,
+      "regime": "yatay",
+      "share_of_gross_gain_pct": -5.7264556780228535,
+      "trade_ret_pct": -1.978054695656284
+     },
+     {
+      "contrib_log_pct": -2.0721960108962203,
+      "entry": "2026-10-21 12:00",
+      "exit": "2026-10-22 08:00",
+      "rank": 15,
+      "regime": "yukselis",
+      "share_of_gross_gain_pct": -5.93946492840858,
+      "trade_ret_pct": -2.0508735642981946
+     },
+     {
+      "contrib_log_pct": -2.178607087173543,
+      "entry": "2025-10-27 00:00",
+      "exit": "2025-10-29 00:00",
+      "rank": 16,
+      "regime": "yatay",
+      "share_of_gross_gain_pct": -6.244467376159659,
+      "trade_ret_pct": -2.1550468481564944
+     },
+     {
+      "contrib_log_pct": -2.2103712510748266,
+      "entry": "2026-07-14 16:00",
+      "exit": "2026-07-17 04:00",
+      "rank": 17,
+      "regime": "yatay",
+      "share_of_gross_gain_pct": -6.33551191850983,
+      "trade_ret_pct": -2.186121543874864
+     },
+     {
+      "contrib_log_pct": -2.5691997602752417,
+      "entry": "2026-09-03 16:00",
+      "exit": "2026-09-07 04:00",
+      "rank": 18,
+      "regime": "yukselis",
+      "share_of_gross_gain_pct": -7.36400986682276,
+      "trade_ret_pct": -2.536476662780218
+     },
+     {
+      "contrib_log_pct": -2.6930698340439503,
+      "entry": "2026-07-04 20:00",
+      "exit": "2026-07-06 12:00",
+      "rank": 19,
+      "regime": "yatay",
+      "share_of_gross_gain_pct": -7.719054445115539,
+      "trade_ret_pct": -2.657130058882895
+     },
+     {
+      "contrib_log_pct": -2.7549051022914073,
+      "entry": "2026-04-22 16:00",
+      "exit": "2026-04-27 12:00",
+      "rank": 20,
+      "regime": "yatay",
+      "share_of_gross_gain_pct": -7.896290770812192,
+      "trade_ret_pct": -2.717303677454197
+     },
+     {
+      "contrib_log_pct": -2.84535875903576,
+      "entry": "2026-03-04 12:00",
+      "exit": "2026-03-06 12:00",
+      "rank": 21,
+      "regime": "dusus",
+      "share_of_gross_gain_pct": -8.155555009838999,
+      "trade_ret_pct": -2.8052596479645864
+     }
+    ],
+    "sum_contrib_log_pct": 10.177398911067602,
+    "total_net_pct": 10.713321928561914
+   },
+   "monthly": [
+    {
+     "month": "2025-08",
+     "return_pct": 0.0
+    },
+    {
+     "month": "2025-09",
+     "return_pct": 1.3470080566040599
+    },
+    {
+     "month": "2025-10",
+     "return_pct": 4.760365733431704
+    },
+    {
+     "month": "2025-11",
+     "return_pct": 0.0
+    },
+    {
+     "month": "2025-12",
+     "return_pct": 0.0
+    },
+    {
+     "month": "2026-01",
+     "return_pct": 1.2505842370923448
+    },
+    {
+     "month": "2026-02",
+     "return_pct": 0.0
+    },
+    {
+     "month": "2026-03",
+     "return_pct": -3.6554655413235326
+    },
+    {
+     "month": "2026-04",
+     "return_pct": 1.341161431824478
+    },
+    {
+     "month": "2026-05",
+     "return_pct": -0.6258874525772118
+    },
+    {
+     "month": "2026-06",
+     "return_pct": 0.0
+    },
+    {
+     "month": "2026-07",
+     "return_pct": -7.772006567552547
+    },
+    {
+     "month": "2026-08",
+     "return_pct": 17.624072343721274
+    },
+    {
+     "month": "2026-09",
+     "return_pct": 1.1353995793549343
+    },
+    {
+     "month": "2026-10",
+     "return_pct": -3.251104229771107
+    }
+   ],
+   "trades": [
+    {
+     "bars_held": 67,
+     "contrib_log_pct": 1.435887272643828,
+     "entered_before_test": false,
+     "entry_i": 10834,
+     "entry_ref": 4695794.0,
+     "entry_time": "2025-09-10 16:00",
+     "equity_after": 1.0144624565278255,
+     "equity_before": 1.0,
+     "exit_i": 10900,
+     "exit_ref": 4778019.298454897,
+     "exit_time": "2025-09-21 16:00",
+     "month": "2025-09",
+     "reason": "stop",
+     "regime_at_signal": "yatay",
+     "trade_ret_pct": 1.4462456527825518
+    },
+    {
+     "bars_held": 48,
+     "contrib_log_pct": 6.731268851832864,
+     "entered_before_test": false,
+     "entry_i": 10948,
+     "entry_ref": 4733268.0,
+     "entry_time": "2025-09-29 16:00",
+     "equity_after": 1.0850993626132523,
+     "equity_before": 1.0144624565278255,
+     "exit_i": 10995,
+     "exit_ref": 5078056.259538578,
+     "exit_time": "2025-10-07 12:00",
+     "month": "2025-09",
+     "reason": "stop",
+     "regime_at_signal": "yatay",
+     "trade_ret_pct": 6.962988687348171
+    },
+    {
+     "bars_held": 13,
+     "contrib_log_pct": -2.178607087173543,
+     "entered_before_test": false,
+     "entry_i": 11112,
+     "entry_ref": 4806312.0,
+     "entry_time": "2025-10-27 00:00",
+     "equity_after": 1.0617149629998892,
+     "equity_before": 1.0850993626132523,
+     "exit_i": 11124,
+     "exit_ref": 4716863.112923218,
+     "exit_time": "2025-10-29 00:00",
+     "month": "2025-10",
+     "reason": "stop",
+     "regime_at_signal": "yatay",
+     "trade_ret_pct": -2.1550468481564944
+    },
+    {
+     "bars_held": 16,
+     "contrib_log_pct": 0.3151906547826017,
+     "entered_before_test": false,
+     "entry_i": 11527,
+     "entry_ref": 3916096.0,
+     "entry_time": "2026-01-04 04:00",
+     "equity_after": 1.0650666687004682,
+     "equity_before": 1.0617149629998892,
+     "exit_i": 11542,
+     "exit_ref": 3940261.715969084,
+     "exit_time": "2026-01-06 16:00",
+     "month": "2026-01",
+     "reason": "stop",
+     "regime_at_signal": "dusus",
+     "trade_ret_pct": 0.3156879028161086
+    },
+    {
+     "bars_held": 31,
+     "contrib_log_pct": 0.9276383676970735,
+     "entered_before_test": false,
+     "entry_i": 11585,
+     "entry_ref": 4054047.0,
+     "entry_time": "2026-01-13 20:00",
+     "equity_after": 1.0749926029700165,
+     "equity_before": 1.0650666687004682,
+     "exit_i": 11615,
+     "exit_ref": 4104122.7853457555,
+     "exit_time": "2026-01-18 20:00",
+     "month": "2026-01",
+     "reason": "stop",
+     "regime_at_signal": "yatay",
+     "trade_ret_pct": 0.9319542673942971
+    },
+    {
+     "bars_held": 13,
+     "contrib_log_pct": -2.84535875903576,
+     "entered_before_test": false,
+     "entry_i": 11883,
+     "entry_ref": 3120584.0,
+     "entry_time": "2026-03-04 12:00",
+     "equity_after": 1.0448362692602944,
+     "equity_before": 1.0749926029700165,
+     "exit_i": 11895,
+     "exit_ref": 3042156.311452342,
+     "exit_time": "2026-03-06 12:00",
+     "month": "2026-03",
+     "reason": "stop",
+     "regime_at_signal": "dusus",
+     "trade_ret_pct": -2.8052596479645864
+    },
+    {
+     "bars_held": 31,
+     "contrib_log_pct": -0.878593105524412,
+     "entered_before_test": false,
+     "entry_i": 11937,
+     "entry_ref": 3180330.0,
+     "entry_time": "2026-03-13 12:00",
+     "equity_after": 1.0356966187966707,
+     "equity_before": 1.0448362692602944,
+     "exit_i": 11967,
+     "exit_ref": 3161981.9636883815,
+     "exit_time": "2026-03-18 12:00",
+     "month": "2026-03",
+     "reason": "stop",
+     "regime_at_signal": "dusus",
+     "trade_ret_pct": -0.8747447549934617
+    },
+    {
+     "bars_held": 40,
+     "contrib_log_pct": 2.895446570372875,
+     "entered_before_test": false,
+     "entry_i": 12078,
+     "entry_ref": 3077078.0,
+     "entry_time": "2026-04-06 00:00",
+     "equity_after": 1.0661230255370688,
+     "equity_before": 1.0356966187966707,
+     "exit_i": 12117,
+     "exit_ref": 3176992.237172744,
+     "exit_time": "2026-04-12 12:00",
+     "month": "2026-04",
+     "reason": "stop",
+     "regime_at_signal": "dusus",
+     "trade_ret_pct": 2.9377721417831015
+    },
+    {
+     "bars_held": 32,
+     "contrib_log_pct": 1.1917060057455542,
+     "entered_before_test": false,
+     "entry_i": 12126,
+     "entry_ref": 3317318.0,
+     "entry_time": "2026-04-14 00:00",
+     "equity_after": 1.078904082714486,
+     "equity_before": 1.0661230255370688,
+     "exit_i": 12157,
+     "exit_ref": 3367173.5590471826,
+     "exit_time": "2026-04-19 04:00",
+     "month": "2026-04",
+     "reason": "stop",
+     "regime_at_signal": "dusus",
+     "trade_ret_pct": 1.1988351129532004
+    },
+    {
+     "bars_held": 30,
+     "contrib_log_pct": -2.7549051022914073,
+     "entered_before_test": false,
+     "entry_i": 12178,
+     "entry_ref": 3557621.0,
+     "entry_time": "2026-04-22 16:00",
+     "equity_after": 1.0495869823986819,
+     "equity_before": 1.078904082714486,
+     "exit_i": 12207,
+     "exit_ref": 3471348.0751011535,
+     "exit_time": "2026-04-27 12:00",
+     "month": "2026-04",
+     "reason": "stop",
+     "regime_at_signal": "yatay",
+     "trade_ret_pct": -2.717303677454197
+    },
+    {
+     "bars_held": 21,
+     "contrib_log_pct": -0.6278543393870739,
+     "entered_before_test": false,
+     "entry_i": 12247,
+     "entry_ref": 3621503.0,
+     "entry_time": "2026-05-04 04:00",
+     "equity_after": 1.0430177491719648,
+     "equity_before": 1.0495869823986819,
+     "exit_i": 12267,
+     "exit_ref": 3609649.190207935,
+     "exit_time": "2026-05-07 12:00",
+     "month": "2026-05",
+     "reason": "stop",
+     "regime_at_signal": "yatay",
+     "trade_ret_pct": -0.6258874525772118
+    },
+    {
+     "bars_held": 11,
+     "contrib_log_pct": -2.6930698340439503,
+     "entered_before_test": false,
+     "entry_i": 12617,
+     "entry_ref": 2939136.0,
+     "entry_time": "2026-07-04 20:00",
+     "equity_after": 1.0153034110392327,
+     "equity_before": 1.0430177491719648,
+     "exit_i": 12627,
+     "exit_ref": 2869635.3415877377,
+     "exit_time": "2026-07-06 12:00",
+     "month": "2026-07",
+     "reason": "stop",
+     "regime_at_signal": "yatay",
+     "trade_ret_pct": -2.657130058882895
+    },
+    {
+     "bars_held": 38,
+     "contrib_log_pct": -1.9978800709498312,
+     "entered_before_test": false,
+     "entry_i": 12630,
+     "entry_ref": 2988860.0,
+     "entry_time": "2026-07-07 00:00",
+     "equity_after": 0.9952201542420128,
+     "equity_before": 1.0153034110392327,
+     "exit_i": 12667,
+     "exit_ref": 2938541.129788517,
+     "exit_time": "2026-07-13 04:00",
+     "month": "2026-07",
+     "reason": "stop",
+     "regime_at_signal": "yatay",
+     "trade_ret_pct": -1.978054695656284
+    },
+    {
+     "bars_held": 16,
+     "contrib_log_pct": -2.2103712510748266,
+     "entered_before_test": false,
+     "entry_i": 12676,
+     "entry_ref": 3033628.0,
+     "entry_time": "2026-07-14 16:00",
+     "equity_after": 0.9734634320411436,
+     "equity_before": 0.9952201542420128,
+     "exit_i": 12691,
+     "exit_ref": 2976224.500831675,
+     "exit_time": "2026-07-17 04:00",
+     "month": "2026-07",
+     "reason": "stop",
+     "regime_at_signal": "yatay",
+     "trade_ret_pct": -2.186121543874864
+    },
+    {
+     "bars_held": 18,
+     "contrib_log_pct": -1.1893273543005005,
+     "entered_before_test": false,
+     "entry_i": 12712,
+     "entry_ref": 3085945.0,
+     "entry_time": "2026-07-20 16:00",
+     "equity_after": 0.9619543412055809,
+     "equity_before": 0.9734634320411436,
+     "exit_i": 12729,
+     "exit_ref": 3058622.5224920637,
+     "exit_time": "2026-07-23 12:00",
+     "month": "2026-07",
+     "reason": "stop",
+     "regime_at_signal": "yatay",
+     "trade_ret_pct": -1.1822828117365014
+    },
+    {
+     "bars_held": 19,
+     "contrib_log_pct": -1.4609051603397971,
+     "entered_before_test": false,
+     "entry_i": 12819,
+     "entry_ref": 3092869.0,
+     "entry_time": "2026-08-07 12:00",
+     "equity_after": 0.9480032547897735,
+     "equity_before": 0.9619543412055809,
+     "exit_i": 12837,
+     "exit_ref": 3057171.3354116837,
+     "exit_time": "2026-08-10 12:00",
+     "month": "2026-08",
+     "reason": "stop",
+     "regime_at_signal": "yatay",
+     "trade_ret_pct": -1.4502857171290517
+    },
+    {
+     "bars_held": 61,
+     "contrib_log_pct": 17.693257693265263,
+     "entered_before_test": false,
+     "entry_i": 12886,
+     "entry_ref": 3100037.0,
+     "entry_time": "2026-08-18 16:00",
+     "equity_after": 1.13148987021322,
+     "equity_before": 0.9480032547897735,
+     "exit_i": 12946,
+     "exit_ref": 3711167.8987450036,
+     "exit_time": "2026-08-28 16:00",
+     "month": "2026-08",
+     "reason": "stop",
+     "regime_at_signal": "yatay",
+     "trade_ret_pct": 19.355061757054393
+    },
+    {
+     "bars_held": 22,
+     "contrib_log_pct": -2.5691997602752417,
+     "entered_before_test": false,
+     "entry_i": 12982,
+     "entry_ref": 3917334.0,
+     "entry_time": "2026-09-03 16:00",
+     "equity_after": 1.1027898937135394,
+     "equity_before": 1.13148987021322,
+     "exit_i": 13003,
+     "exit_ref": 3829442.8534373716,
+     "exit_time": "2026-09-07 04:00",
+     "month": "2026-09",
+     "reason": "stop",
+     "regime_at_signal": "yukselis",
+     "trade_ret_pct": -2.536476662780218
+    },
+    {
+     "bars_held": 31,
+     "contrib_log_pct": 3.6982020562178657,
+     "entered_before_test": false,
+     "entry_i": 13072,
+     "entry_ref": 3915885.0,
+     "entry_time": "2026-09-18 16:00",
+     "equity_after": 1.1443368014400643,
+     "equity_before": 1.1027898937135394,
+     "exit_i": 13102,
+     "exit_ref": 4075622.0235036304,
+     "exit_time": "2026-09-23 16:00",
+     "month": "2026-09",
+     "reason": "stop",
+     "regime_at_signal": "yukselis",
+     "trade_ret_pct": 3.7674363868732685
+    },
+    {
+     "bars_held": 30,
+     "contrib_log_pct": -1.2329307261977607,
+     "entered_before_test": false,
+     "entry_i": 13153,
+     "entry_ref": 4190342.0,
+     "entry_time": "2026-10-02 04:00",
+     "equity_after": 1.1303145414087903,
+     "equity_before": 1.1443368014400643,
+     "exit_i": 13182,
+     "exit_ref": 4151430.804548904,
+     "exit_time": "2026-10-07 00:00",
+     "month": "2026-10",
+     "reason": "stop",
+     "regime_at_signal": "yukselis",
+     "trade_ret_pct": -1.2253612759484778
+    },
+    {
+     "bars_held": 6,
+     "contrib_log_pct": -2.0721960108962203,
+     "entered_before_test": false,
+     "entry_i": 13269,
+     "entry_ref": 4130778.0,
+     "entry_time": "2026-10-21 12:00",
+     "equity_after": 1.1071332192856191,
+     "equity_before": 1.1303145414087903,
+     "exit_i": 13274,
+     "exit_ref": 4058217.3774350975,
+     "exit_time": "2026-10-22 08:00",
+     "month": "2026-10",
+     "reason": "stop",
+     "regime_at_signal": "yukselis",
+     "trade_ret_pct": -2.0508735642981946
+    }
+   ]
+  },
+  "yuksek": {
+   "analysis": {
+    "additive_ex_best_pct": -10.8661614761561,
+    "additive_sum_trade_ret_pct": 8.250428450360848,
+    "closure_error_pct_points": -7.993605777301127e-15,
+    "equity_based_ex_top": {
+     "1": -10.877524331993161,
+     "2": -16.51233733034997,
+     "3": -19.382411114936204
+    },
+    "equity_based_ex_worst": {
+     "1": 9.442327319039666,
+     "2": 12.724498176264,
+     "3": 16.0333294929941
+    },
+    "gross_gain_log_pct": 33.28859573922205,
+    "gross_loss_log_pct": -27.31120137816114,
+    "lab_def_ex_best_pct": -10.877524331993127,
+    "n_trades": 21,
+    "open_position_contrib_log_pct": null,
+    "ranking": [
+     {
+      "contrib_log_pct": 17.49325747659829,
+      "entry": "2026-08-18 16:00",
+      "exit": "2026-08-28 16:00",
+      "rank": 1,
+      "regime": "yatay",
+      "share_of_gross_gain_pct": 52.55030165176654,
+      "trade_ret_pct": 19.116589926516948
+     },
+     {
+      "contrib_log_pct": 6.5312686351658735,
+      "entry": "2025-09-29 16:00",
+      "exit": "2025-10-07 12:00",
+      "rank": 2,
+      "regime": "yatay",
+      "share_of_gross_gain_pct": 19.620138639463402,
+      "trade_ret_pct": 6.749276262114368
+     },
+     {
+      "contrib_log_pct": 3.498201839550879,
+      "entry": "2026-09-18 16:00",
+      "exit": "2026-09-23 16:00",
+      "rank": 3,
+      "regime": "yukselis",
+      "share_of_gross_gain_pct": 10.508709550127245,
+      "trade_ret_pct": 3.5601086863042974
+     },
+     {
+      "contrib_log_pct": 2.6954463537058877,
+      "entry": "2026-04-06 00:00",
+      "exit": "2026-04-12 12:00",
+      "rank": 4,
+      "regime": "dusus",
+      "share_of_gross_gain_pct": 8.097206547316134,
+      "trade_ret_pct": 2.732102113275503
+     },
+     {
+      "contrib_log_pct": 1.2358870559768251,
+      "entry": "2025-09-10 16:00",
+      "exit": "2025-09-21 16:00",
+      "rank": 5,
+      "regime": "yatay",
+      "share_of_gross_gain_pct": 3.7126440107554606,
+      "trade_ret_pct": 1.2435556994128572
+     },
+     {
+      "contrib_log_pct": 0.9917057890785718,
+      "entry": "2026-04-14 00:00",
+      "exit": "2026-04-19 04:00",
+      "rank": 6,
+      "regime": "dusus",
+      "share_of_gross_gain_pct": 2.9791157213342627,
+      "trade_ret_pct": 0.9966394867068074
+     },
+     {
+      "contrib_log_pct": 0.7276381510300901,
+      "entry": "2026-01-13 20:00",
+      "exit": "2026-01-18 20:00",
+      "rank": 7,
+      "regime": "yatay",
+      "share_of_gross_gain_pct": 2.185848140697493,
+      "trade_ret_pct": 0.7302918700100802
+     },
+     {
+      "contrib_log_pct": 0.1151904381156371,
+      "entry": "2026-01-04 04:00",
+      "exit": "2026-01-06 16:00",
+      "rank": 8,
+      "regime": "dusus",
+      "share_of_gross_gain_pct": 0.3460357385394746,
+      "trade_ret_pct": 0.1152568077821936
+     },
+     {
+      "contrib_log_pct": -0.8278545560540376,
+      "entry": "2026-05-04 04:00",
+      "exit": "2026-05-07 12:00",
+      "rank": 9,
+      "regime": "yatay",
+      "share_of_gross_gain_pct": -2.4869014077353335,
+      "trade_ret_pct": -0.824437276760237
+     },
+     {
+      "contrib_log_pct": -1.078593322191408,
+      "entry": "2026-03-13 12:00",
+      "exit": "2026-03-18 12:00",
+      "rank": 10,
+      "regime": "dusus",
+      "share_of_gross_gain_pct": -3.2401286333642574,
+      "trade_ret_pct": -1.0727973614165331
+     },
+     {
+      "contrib_log_pct": -1.3893275709675033,
+      "entry": "2026-07-20 16:00",
+      "exit": "2026-07-23 12:00",
+      "rank": 11,
+      "regime": "yatay",
+      "share_of_gross_gain_pct": -4.1735841963755105,
+      "trade_ret_pct": -1.379720956047359
+     },
+     {
+      "contrib_log_pct": -1.4329309428647508,
+      "entry": "2026-10-02 04:00",
+      "exit": "2026-10-07 00:00",
+      "rank": 12,
+      "regime": "yukselis",
+      "share_of_gross_gain_pct": -4.304570111908957,
+      "trade_ret_pct": -1.422713349337268
+     },
+     {
+      "contrib_log_pct": -1.6609053770067768,
+      "entry": "2026-08-07 12:00",
+      "exit": "2026-08-10 12:00",
+      "rank": 13,
+      "regime": "yatay",
+      "share_of_gross_gain_pct": -4.989412560439811,
+      "trade_ret_pct": -1.6471883906982399
+     },
+     {
+      "contrib_log_pct": -2.1978802876168246,
+      "entry": "2026-07-07 00:00",
+      "exit": "2026-07-13 04:00",
+      "rank": 14,
+      "regime": "yatay",
+      "share_of_gross_gain_pct": -6.602502264843775,
+      "trade_ret_pct": -2.1739028849618314
+     },
+     {
+      "contrib_log_pct": -2.2721962275631973,
+      "entry": "2026-10-21 12:00",
+      "exit": "2026-10-22 08:00",
+      "rank": 15,
+      "regime": "yukselis",
+      "share_of_gross_gain_pct": -6.825749711292262,
+      "trade_ret_pct": -2.2465762612496776
+     },
+     {
+      "contrib_log_pct": -2.378607303840567,
+      "entry": "2025-10-27 00:00",
+      "exit": "2025-10-29 00:00",
+      "rank": 16,
+      "regime": "yatay",
+      "share_of_gross_gain_pct": -7.1454119677328105,
+      "trade_ret_pct": -2.350541406522788
+     },
+     {
+      "contrib_log_pct": -2.410371467741808,
+      "entry": "2026-07-14 16:00",
+      "exit": "2026-07-17 04:00",
+      "rank": 17,
+      "regime": "yatay",
+      "share_of_gross_gain_pct": -7.240832526022732,
+      "trade_ret_pct": -2.3815540148904635
+     },
+     {
+      "contrib_log_pct": -2.7691999769422373,
+      "entry": "2026-09-03 16:00",
+      "exit": "2026-09-07 04:00",
+      "rank": 18,
+      "regime": "yukselis",
+      "share_of_gross_gain_pct": -8.318764776489045,
+      "trade_ret_pct": -2.731209123043765
+     },
+     {
+      "contrib_log_pct": -2.893070050710918,
+      "entry": "2026-07-04 20:00",
+      "exit": "2026-07-06 12:00",
+      "rank": 19,
+      "regime": "yatay",
+      "share_of_gross_gain_pct": -8.690874416496273,
+      "trade_ret_pct": -2.851621453239317
+     },
+     {
+      "contrib_log_pct": -2.9549053189583905,
+      "entry": "2026-04-22 16:00",
+      "exit": "2026-04-27 12:00",
+      "rank": 20,
+      "regime": "yatay",
+      "share_of_gross_gain_pct": -8.876629528342628,
+      "trade_ret_pct": -2.9116748447104213
+     },
+     {
+      "contrib_log_pct": -3.0453589757027237,
+      "entry": "2026-03-04 12:00",
+      "exit": "2026-03-06 12:00",
+      "rank": 21,
+      "regime": "dusus",
+      "share_of_gross_gain_pct": -9.148355189145306,
+      "trade_ret_pct": -2.9994550788843055
+     }
+    ],
+    "sum_contrib_log_pct": 5.977394361060911,
+    "total_net_pct": 6.159653873819559
+   },
+   "monthly": [
+    {
+     "month": "2025-08",
+     "return_pct": 0.0
+    },
+    {
+     "month": "2025-09",
+     "return_pct": 0.9424292830696901
+    },
+    {
+     "month": "2025-10",
+     "return_pct": 4.551054156557943
+    },
+    {
+     "month": "2025-11",
+     "return_pct": 0.0
+    },
+    {
+     "month": "2025-12",
+     "return_pct": 0.0
+    },
+    {
+     "month": "2026-01",
+     "return_pct": 0.84639038888914
+    },
+    {
+     "month": "2026-02",
+     "return_pct": 0.0
+    },
+    {
+     "month": "2026-03",
+     "return_pct": -4.0400743653576825
+    },
+    {
+     "month": "2026-04",
+     "return_pct": 0.7349343065453429
+    },
+    {
+     "month": "2026-05",
+     "return_pct": -0.824437276760237
+    },
+    {
+     "month": "2026-06",
+     "return_pct": 0.0
+    },
+    {
+     "month": "2026-07",
+     "return_pct": -8.50688786657079
+    },
+    {
+     "month": "2026-08",
+     "return_pct": 17.154515285851723
+    },
+    {
+     "month": "2026-09",
+     "return_pct": 0.731665550029903
+    },
+    {
+     "month": "2026-10",
+     "return_pct": -3.637327270215107
+    }
+   ],
+   "trades": [
+    {
+     "bars_held": 67,
+     "contrib_log_pct": 1.2358870559768251,
+     "entered_before_test": false,
+     "entry_i": 10834,
+     "entry_ref": 4695794.0,
+     "entry_time": "2025-09-10 16:00",
+     "equity_after": 1.0124355569941286,
+     "equity_before": 1.0,
+     "exit_i": 10900,
+     "exit_ref": 4778019.298454897,
+     "exit_time": "2025-09-21 16:00",
+     "month": "2025-09",
+     "reason": "stop",
+     "regime_at_signal": "yatay",
+     "trade_ret_pct": 1.2435556994128572
+    },
+    {
+     "bars_held": 48,
+     "contrib_log_pct": 6.5312686351658735,
+     "entered_before_test": false,
+     "entry_i": 10948,
+     "entry_ref": 4733268.0,
+     "entry_time": "2025-09-29 16:00",
+     "equity_after": 1.0807676297115385,
+     "equity_before": 1.0124355569941286,
+     "exit_i": 10995,
+     "exit_ref": 5078056.259538578,
+     "exit_time": "2025-10-07 12:00",
+     "month": "2025-09",
+     "reason": "stop",
+     "regime_at_signal": "yatay",
+     "trade_ret_pct": 6.749276262114368
+    },
+    {
+     "bars_held": 13,
+     "contrib_log_pct": -2.378607303840567,
+     "entered_before_test": false,
+     "entry_i": 11112,
+     "entry_ref": 4806312.0,
+     "entry_time": "2025-10-27 00:00",
+     "equity_after": 1.055363739066874,
+     "equity_before": 1.0807676297115385,
+     "exit_i": 11124,
+     "exit_ref": 4716863.112923218,
+     "exit_time": "2025-10-29 00:00",
+     "month": "2025-10",
+     "reason": "stop",
+     "regime_at_signal": "yatay",
+     "trade_ret_pct": -2.350541406522788
+    },
+    {
+     "bars_held": 16,
+     "contrib_log_pct": 0.1151904381156371,
+     "entered_before_test": false,
+     "entry_i": 11527,
+     "entry_ref": 3916096.0,
+     "entry_time": "2026-01-04 04:00",
+     "equity_after": 1.0565801176230132,
+     "equity_before": 1.055363739066874,
+     "exit_i": 11542,
+     "exit_ref": 3940261.715969084,
+     "exit_time": "2026-01-06 16:00",
+     "month": "2026-01",
+     "reason": "stop",
+     "regime_at_signal": "dusus",
+     "trade_ret_pct": 0.1152568077821936
+    },
+    {
+     "bars_held": 31,
+     "contrib_log_pct": 0.7276381510300901,
+     "entered_before_test": false,
+     "entry_i": 11585,
+     "entry_ref": 4054047.0,
+     "entry_time": "2026-01-13 20:00",
+     "equity_after": 1.064296236322157,
+     "equity_before": 1.0565801176230132,
+     "exit_i": 11615,
+     "exit_ref": 4104122.7853457555,
+     "exit_time": "2026-01-18 20:00",
+     "month": "2026-01",
+     "reason": "stop",
+     "regime_at_signal": "yatay",
+     "trade_ret_pct": 0.7302918700100802
+    },
+    {
+     "bars_held": 13,
+     "contrib_log_pct": -3.0453589757027237,
+     "entered_before_test": false,
+     "entry_i": 11883,
+     "entry_ref": 3120584.0,
+     "entry_time": "2026-03-04 12:00",
+     "equity_after": 1.0323731488074177,
+     "equity_before": 1.064296236322157,
+     "exit_i": 11895,
+     "exit_ref": 3042156.311452342,
+     "exit_time": "2026-03-06 12:00",
+     "month": "2026-03",
+     "reason": "stop",
+     "regime_at_signal": "dusus",
+     "trade_ret_pct": -2.9994550788843055
+    },
+    {
+     "bars_held": 31,
+     "contrib_log_pct": -1.078593322191408,
+     "entered_before_test": false,
+     "entry_i": 11937,
+     "entry_ref": 3180330.0,
+     "entry_time": "2026-03-13 12:00",
+     "equity_after": 1.021297876907039,
+     "equity_before": 1.0323731488074177,
+     "exit_i": 11967,
+     "exit_ref": 3161981.9636883815,
+     "exit_time": "2026-03-18 12:00",
+     "month": "2026-03",
+     "reason": "stop",
+     "regime_at_signal": "dusus",
+     "trade_ret_pct": -1.0727973614165331
+    },
+    {
+     "bars_held": 40,
+     "contrib_log_pct": 2.6954463537058877,
+     "entered_before_test": false,
+     "entry_i": 12078,
+     "entry_ref": 3077078.0,
+     "entry_time": "2026-04-06 00:00",
+     "equity_after": 1.049200777784854,
+     "equity_before": 1.021297876907039,
+     "exit_i": 12117,
+     "exit_ref": 3176992.237172744,
+     "exit_time": "2026-04-12 12:00",
+     "month": "2026-04",
+     "reason": "stop",
+     "regime_at_signal": "dusus",
+     "trade_ret_pct": 2.732102113275503
+    },
+    {
+     "bars_held": 32,
+     "contrib_log_pct": 0.9917057890785718,
+     "entered_before_test": false,
+     "entry_i": 12126,
+     "entry_ref": 3317318.0,
+     "entry_time": "2026-04-14 00:00",
+     "equity_after": 1.0596575270310928,
+     "equity_before": 1.049200777784854,
+     "exit_i": 12157,
+     "exit_ref": 3367173.5590471826,
+     "exit_time": "2026-04-19 04:00",
+     "month": "2026-04",
+     "reason": "stop",
+     "regime_at_signal": "dusus",
+     "trade_ret_pct": 0.9966394867068074
+    },
+    {
+     "bars_held": 30,
+     "contrib_log_pct": -2.9549053189583905,
+     "entered_before_test": false,
+     "entry_i": 12178,
+     "entry_ref": 3557621.0,
+     "entry_time": "2026-04-22 16:00",
+     "equity_after": 1.028803745376448,
+     "equity_before": 1.0596575270310928,
+     "exit_i": 12207,
+     "exit_ref": 3471348.0751011535,
+     "exit_time": "2026-04-27 12:00",
+     "month": "2026-04",
+     "reason": "stop",
+     "regime_at_signal": "yatay",
+     "trade_ret_pct": -2.9116748447104213
+    },
+    {
+     "bars_held": 21,
+     "contrib_log_pct": -0.8278545560540376,
+     "entered_before_test": false,
+     "entry_i": 12247,
+     "entry_ref": 3621503.0,
+     "entry_time": "2026-05-04 04:00",
+     "equity_after": 1.0203219037948592,
+     "equity_before": 1.028803745376448,
+     "exit_i": 12267,
+     "exit_ref": 3609649.190207935,
+     "exit_time": "2026-05-07 12:00",
+     "month": "2026-05",
+     "reason": "stop",
+     "regime_at_signal": "yatay",
+     "trade_ret_pct": -0.824437276760237
+    },
+    {
+     "bars_held": 11,
+     "contrib_log_pct": -2.893070050710918,
+     "entered_before_test": false,
+     "entry_i": 12617,
+     "entry_ref": 2939136.0,
+     "entry_time": "2026-07-04 20:00",
+     "equity_after": 0.9912261854941452,
+     "equity_before": 1.0203219037948592,
+     "exit_i": 12627,
+     "exit_ref": 2869635.3415877377,
+     "exit_time": "2026-07-06 12:00",
+     "month": "2026-07",
+     "reason": "stop",
+     "regime_at_signal": "yatay",
+     "trade_ret_pct": -2.851621453239317
+    },
+    {
+     "bars_held": 38,
+     "contrib_log_pct": -2.1978802876168246,
+     "entered_before_test": false,
+     "entry_i": 12630,
+     "entry_ref": 2988860.0,
+     "entry_time": "2026-07-07 00:00",
+     "equity_after": 0.9696778908511908,
+     "equity_before": 0.9912261854941452,
+     "exit_i": 12667,
+     "exit_ref": 2938541.129788517,
+     "exit_time": "2026-07-13 04:00",
+     "month": "2026-07",
+     "reason": "stop",
+     "regime_at_signal": "yatay",
+     "trade_ret_pct": -2.1739028849618314
+    },
+    {
+     "bars_held": 16,
+     "contrib_log_pct": -2.410371467741808,
+     "entered_before_test": false,
+     "entry_i": 12676,
+     "entry_ref": 3033628.0,
+     "entry_time": "2026-07-14 16:00",
+     "equity_after": 0.9465844881101191,
+     "equity_before": 0.9696778908511908,
+     "exit_i": 12691,
+     "exit_ref": 2976224.500831675,
+     "exit_time": "2026-07-17 04:00",
+     "month": "2026-07",
+     "reason": "stop",
+     "regime_at_signal": "yatay",
+     "trade_ret_pct": -2.3815540148904635
+    },
+    {
+     "bars_held": 18,
+     "contrib_log_pct": -1.3893275709675033,
+     "entered_before_test": false,
+     "entry_i": 12712,
+     "entry_ref": 3085945.0,
+     "entry_time": "2026-07-20 16:00",
+     "equity_after": 0.9335242635609702,
+     "equity_before": 0.9465844881101191,
+     "exit_i": 12729,
+     "exit_ref": 3058622.5224920637,
+     "exit_time": "2026-07-23 12:00",
+     "month": "2026-07",
+     "reason": "stop",
+     "regime_at_signal": "yatay",
+     "trade_ret_pct": -1.379720956047359
+    },
+    {
+     "bars_held": 19,
+     "contrib_log_pct": -1.6609053770067768,
+     "entered_before_test": false,
+     "entry_i": 12819,
+     "entry_ref": 3092869.0,
+     "entry_time": "2026-08-07 12:00",
+     "equity_after": 0.9181473602672426,
+     "equity_before": 0.9335242635609702,
+     "exit_i": 12837,
+     "exit_ref": 3057171.3354116837,
+     "exit_time": "2026-08-10 12:00",
+     "month": "2026-08",
+     "reason": "stop",
+     "regime_at_signal": "yatay",
+     "trade_ret_pct": -1.6471883906982399
+    },
+    {
+     "bars_held": 61,
+     "contrib_log_pct": 17.49325747659829,
+     "entered_before_test": false,
+     "entry_i": 12886,
+     "entry_ref": 3100037.0,
+     "entry_time": "2026-08-18 16:00",
+     "equity_after": 1.0936658260506715,
+     "equity_before": 0.9181473602672426,
+     "exit_i": 12946,
+     "exit_ref": 3711167.8987450036,
+     "exit_time": "2026-08-28 16:00",
+     "month": "2026-08",
+     "reason": "stop",
+     "regime_at_signal": "yatay",
+     "trade_ret_pct": 19.116589926516948
+    },
+    {
+     "bars_held": 22,
+     "contrib_log_pct": -2.7691999769422373,
+     "entered_before_test": false,
+     "entry_i": 12982,
+     "entry_ref": 3917334.0,
+     "entry_time": "2026-09-03 16:00",
+     "equity_after": 1.0637955252339637,
+     "equity_before": 1.0936658260506715,
+     "exit_i": 13003,
+     "exit_ref": 3829442.8534373716,
+     "exit_time": "2026-09-07 04:00",
+     "month": "2026-09",
+     "reason": "stop",
+     "regime_at_signal": "yukselis",
+     "trade_ret_pct": -2.731209123043765
+    },
+    {
+     "bars_held": 31,
+     "contrib_log_pct": 3.498201839550879,
+     "entered_before_test": false,
+     "entry_i": 13072,
+     "entry_ref": 3915885.0,
+     "entry_time": "2026-09-18 16:00",
+     "equity_after": 1.1016678021323343,
+     "equity_before": 1.0637955252339637,
+     "exit_i": 13102,
+     "exit_ref": 4075622.0235036304,
+     "exit_time": "2026-09-23 16:00",
+     "month": "2026-09",
+     "reason": "stop",
+     "regime_at_signal": "yukselis",
+     "trade_ret_pct": 3.5601086863042974
+    },
+    {
+     "bars_held": 30,
+     "contrib_log_pct": -1.4329309428647508,
+     "entered_before_test": false,
+     "entry_i": 13153,
+     "entry_ref": 4190342.0,
+     "entry_time": "2026-10-02 04:00",
+     "equity_after": 1.0859942272460472,
+     "equity_before": 1.1016678021323343,
+     "exit_i": 13182,
+     "exit_ref": 4151430.804548904,
+     "exit_time": "2026-10-07 00:00",
+     "month": "2026-10",
+     "reason": "stop",
+     "regime_at_signal": "yukselis",
+     "trade_ret_pct": -1.422713349337268
+    },
+    {
+     "bars_held": 6,
+     "contrib_log_pct": -2.2721962275631973,
+     "entered_before_test": false,
+     "entry_i": 13269,
+     "entry_ref": 4130778.0,
+     "entry_time": "2026-10-21 12:00",
+     "equity_after": 1.0615965387381956,
+     "equity_before": 1.0859942272460472,
+     "exit_i": 13274,
+     "exit_ref": 4058217.3774350975,
+     "exit_time": "2026-10-22 08:00",
+     "month": "2026-10",
+     "reason": "stop",
+     "regime_at_signal": "yukselis",
+     "trade_ret_pct": -2.2465762612496776
+    }
+   ]
+  }
+ },
+ "E_metrics": {
+  "gecikmeli": {
+   "diff": {
+    "cagr": 0.0,
+    "maxdd": 0.0,
+    "net": 0.0,
+    "sharpe": 6.106226635438361e-16,
+    "sortino": 3.3306690738754696e-16,
+    "trades": 0
+   },
+   "indep": {
+    "avg_trade_pct": 0.4510379975302781,
+    "cagr_pct": 6.25915022153567,
+    "days": 424.1666666666667,
+    "max_dd_incl_start_pct": 15.826786580596078,
+    "max_dd_lab_def_pct": 15.826786580596078,
+    "n_days": 426,
+    "net_return_pct": 7.304852464842448,
+    "profit_factor": 1.3681924141349058,
+    "sharpe": 0.4152560067231029,
+    "sharpe_bar_level": 0.4415764982683368,
+    "sortino": 0.7415628399440551,
+    "time_in_market_pct": 21.75962293794187,
+    "trades": 21,
+    "win_rate_pct": 42.857142857142854
+   },
+   "lab_report": {
+    "avg_trade_pct": 0.4510379975302781,
+    "cagr_pct": 6.25915022153567,
+    "ex_best_trade_return_pct": -10.348758369387046,
+    "max_dd_pct": 15.826786580596078,
+    "net_return_pct": 7.304852464842448,
+    "profit_factor": 1.3681924141349058,
+    "sharpe": 0.4152560067231023,
+    "sortino": 0.7415628399440548,
+    "time_in_market_pct": 21.75962293794187,
+    "trades": 21,
+    "win_rate_pct": 42.857142857142854
+   }
+  },
+  "temel": {
+   "diff": {
+    "cagr": 0.0,
+    "maxdd": 1.4210854715202004e-14,
+    "net": 0.0,
+    "sharpe": 5.551115123125783e-16,
+    "sortino": 1.9984014443252818e-15,
+    "trades": 0
+   },
+   "indep": {
+    "avg_trade_pct": 0.5938644379786978,
+    "cagr_pct": 9.159245943450077,
+    "days": 424.1666666666667,
+    "max_dd_incl_start_pct": 16.00946334608471,
+    "max_dd_lab_def_pct": 16.00946334608471,
+    "n_days": 426,
+    "net_return_pct": 10.713321928561914,
+    "profit_factor": 1.5101755199335842,
+    "sharpe": 0.5570098673510832,
+    "sharpe_bar_level": 0.5926988084162131,
+    "sortino": 1.0025714205450058,
+    "time_in_market_pct": 22.505891594658287,
+    "trades": 21,
+    "win_rate_pct": 38.095238095238095
+   },
+   "lab_report": {
+    "avg_trade_pct": 0.5938644379786978,
+    "cagr_pct": 9.159245943450077,
+    "ex_best_trade_return_pct": -7.240363082449419,
+    "max_dd_pct": 16.009463346084697,
+    "net_return_pct": 10.713321928561914,
+    "profit_factor": 1.5101755199335842,
+    "sharpe": 0.5570098673510826,
+    "sortino": 1.0025714205450038,
+    "time_in_market_pct": 22.505891594658287,
+    "trades": 21,
+    "win_rate_pct": 38.095238095238095
+   }
+  },
+  "yuksek": {
+   "diff": {
+    "cagr": 2.220446049250313e-14,
+    "maxdd": -2.842170943040401e-14,
+    "net": 4.440892098500626e-14,
+    "sharpe": 2.220446049250313e-16,
+    "sortino": 9.992007221626409e-16,
+    "trades": 0
+   },
+   "indep": {
+    "avg_trade_pct": 0.39287754525527946,
+    "cagr_pct": 5.281902742380096,
+    "days": 424.1666666666667,
+    "max_dd_incl_start_pct": 18.394568204294913,
+    "max_dd_lab_def_pct": 18.394568204294913,
+    "n_days": 426,
+    "net_return_pct": 6.159653873819604,
+    "profit_factor": 1.305646223622573,
+    "sharpe": 0.36418819374922906,
+    "sharpe_bar_level": 0.38282431873956585,
+    "sortino": 0.6462273084228308,
+    "time_in_market_pct": 22.505891594658287,
+    "trades": 21,
+    "win_rate_pct": 38.095238095238095
+   },
+   "lab_report": {
+    "avg_trade_pct": 0.3928775452552784,
+    "cagr_pct": 5.2819027423800735,
+    "ex_best_trade_return_pct": -10.877524331993127,
+    "max_dd_pct": 18.39456820429494,
+    "net_return_pct": 6.159653873819559,
+    "profit_factor": 1.305646223622572,
+    "sharpe": 0.36418819374922884,
+    "sortino": 0.6462273084228298,
+    "time_in_market_pct": 22.505891594658287,
+    "trades": 21,
+    "win_rate_pct": 38.095238095238095
+   }
+  }
+ },
+ "F_random_null": {
+  "calibrated_to_total_trades": 118,
+  "p_per_bar": 0.03,
+  "stats": {
+   "ex_best_quantiles": {
+    "p25": -19.671338676556324,
+    "p5": -28.264950729185742,
+    "p50": -12.720043148859878,
+    "p75": -5.694729810979728,
+    "p95": 3.682679242590959
+   },
+   "mean_test_trades": 22.58,
+   "n_sims": 1000,
+   "net_pct_quantiles": {
+    "p25": -12.15604576840009,
+    "p5": -22.636571308156675,
+    "p50": -2.8925517420775924,
+    "p75": 7.854732214274312,
+    "p95": 22.070437574350702
+   },
+   "restricted_15_28_trades": {
+    "n": 978,
+    "share_exbest_gt0": 0.09815950920245399,
+    "share_net_ge_real": 0.18813905930470348
+   },
+   "share_sims_exbest_gt0": 0.098,
+   "share_sims_net_ge_real": 0.186,
+   "share_sims_sharpe_ge_real": 0.195,
+   "sharpe_quantiles": {
+    "p25": -0.6456219468560803,
+    "p5": -1.4270899783809632,
+    "p50": -0.06677151393408998,
+    "p75": 0.4563564288571816,
+    "p95": 0.986540597826996
+   }
+  }
+ },
+ "G_neighbors": [
+  {
+   "best_trade": {
+    "entry": "2026-08-17 16:00",
+    "exit": "2026-08-23 08:00",
+    "ret_pct": 17.901717060996702
+   },
+   "ex_best_pct": -12.83117053531856,
+   "name": "B[4h N=20 k=2.0 chan10]",
+   "test_net_pct": 2.7735466808314735,
+   "trades": 28
+  },
+  {
+   "best_trade": {
+    "entry": "2026-08-17 16:00",
+    "exit": "2026-08-26 12:00",
+    "ret_pct": 21.809362365039007
+   },
+   "ex_best_pct": -18.169172523551502,
+   "name": "B[4h N=20 k=2.0 trail]",
+   "test_net_pct": -0.32239083290296344,
+   "trades": 34
+  },
+  {
+   "best_trade": {
+    "entry": "2026-08-17 16:00",
+    "exit": "2026-08-23 08:00",
+    "ret_pct": 17.901717060996724
+   },
+   "ex_best_pct": -12.917740657007382,
+   "name": "B[4h N=20 k=3.0 chan10]",
+   "test_net_pct": 2.671479020898526,
+   "trades": 27
+  },
+  {
+   "best_trade": {
+    "entry": "2026-08-17 16:00",
+    "exit": "2026-08-28 16:00",
+    "ret_pct": 20.568393133611917
+   },
+   "ex_best_pct": -12.3925526059801,
+   "name": "B[4h N=20 k=3.0 trail]",
+   "test_net_pct": 5.626891588344152,
+   "trades": 26
+  },
+  {
+   "best_trade": {
+    "entry": "2026-08-18 16:00",
+    "exit": "2026-08-23 08:00",
+    "ret_pct": 16.715221587829188
+   },
+   "ex_best_pct": -12.165448979564752,
+   "name": "B[4h N=40 k=2.0 chan10]",
+   "test_net_pct": 2.5162908541758844,
+   "trades": 23
+  },
+  {
+   "best_trade": {
+    "entry": "2026-08-18 16:00",
+    "exit": "2026-08-26 12:00",
+    "ret_pct": 20.58354258362929
+   },
+   "ex_best_pct": -14.652491533952416,
+   "name": "B[4h N=40 k=2.0 trail]",
+   "test_net_pct": 2.915049215223098,
+   "trades": 27
+  },
+  {
+   "best_trade": {
+    "entry": "2026-08-18 16:00",
+    "exit": "2026-08-23 08:00",
+    "ret_pct": 16.715221587829188
+   },
+   "ex_best_pct": -5.992687796197805,
+   "name": "B[4h N=40 k=3.0 chan10]",
+   "test_net_pct": 9.720842747430058,
+   "trades": 21
+  },
+  {
+   "best_trade": {
+    "entry": "2026-08-18 16:00",
+    "exit": "2026-08-28 16:00",
+    "ret_pct": 19.355061757054393
+   },
+   "ex_best_pct": -7.240363082449419,
+   "name": "B[4h N=40 k=3.0 trail]",
+   "test_net_pct": 10.713321928561914,
+   "trades": 21
+  }
+ ],
+ "H_walk_forward": {
+  "A": {
+   "bh_oos_pct": 1389.0326465927153,
+   "folds": [
+    {
+     "bh_same_days_pct": 161.09350237717922,
+     "fold_return_pct": -12.989187708986883,
+     "from_day": 730,
+     "pick": "A[5m Bollinger+RSI+SMA50]",
+     "to_day": 910
+    },
+    {
+     "bh_same_days_pct": 53.764127465857435,
+     "fold_return_pct": -14.537790595901956,
+     "from_day": 910,
+     "pick": "A[5m Bollinger+RSI+SMA50]",
+     "to_day": 1090
+    },
+    {
+     "bh_same_days_pct": 65.05520151077818,
+     "fold_return_pct": -2.471038175058682,
+     "from_day": 1090,
+     "pick": "A[5m Bollinger+RSI+SMA50]",
+     "to_day": 1270
+    },
+    {
+     "bh_same_days_pct": 65.89019066870382,
+     "fold_return_pct": -26.30621216397516,
+     "from_day": 1270,
+     "pick": "A[5m Bollinger+RSI+SMA50]",
+     "to_day": 1450
+    },
+    {
+     "bh_same_days_pct": 19.74199649959494,
+     "fold_return_pct": -20.498637069874647,
+     "from_day": 1450,
+     "pick": "A[5m Bollinger+RSI+SMA50]",
+     "to_day": 1630
+    },
+    {
+     "bh_same_days_pct": 13.124509975785358,
+     "fold_return_pct": -1.4076077876089665,
+     "from_day": 1630,
+     "pick": "A[5m Bollinger+RSI+SMA50]",
+     "to_day": 1696
+    }
+   ],
+   "oos_days": 966,
+   "oos_return_after_full_roundtrip_each_switch_pct": -58.108125043334205,
+   "oos_return_after_switch_cost_pct": -58.108125043334205,
+   "oos_return_pct": -58.108125043334205,
+   "pick_switches": 0,
+   "switches_with_state_change": 0
+  },
+  "B": {
+   "bh_oos_pct": 1389.0326465927153,
+   "folds": [
+    {
+     "bh_same_days_pct": 161.09350237717922,
+     "fold_return_pct": 38.83327429393822,
+     "from_day": 730,
+     "pick": "B[1h N=40 k=3.0 trail]",
+     "to_day": 910
+    },
+    {
+     "bh_same_days_pct": 53.764127465857435,
+     "fold_return_pct": 14.084809430096268,
+     "from_day": 910,
+     "pick": "B[4h N=40 k=2.0 trail]",
+     "switch": {
+      "from": "B[1h N=40 k=3.0 trail]",
+      "new_held": true,
+      "old_held": false
+     },
+     "to_day": 1090
+    },
+    {
+     "bh_same_days_pct": 65.05520151077818,
+     "fold_return_pct": 31.432172742676954,
+     "from_day": 1090,
+     "pick": "B[4h N=40 k=2.0 chan10]",
+     "switch": {
+      "from": "B[4h N=40 k=2.0 trail]",
+      "new_held": false,
+      "old_held": false
+     },
+     "to_day": 1270
+    },
+    {
+     "bh_same_days_pct": 65.89019066870382,
+     "fold_return_pct": 28.45433014015928,
+     "from_day": 1270,
+     "pick": "B[4h N=40 k=2.0 chan10]",
+     "to_day": 1450
+    },
+    {
+     "bh_same_days_pct": 19.74199649959494,
+     "fold_return_pct": 4.175038583460289,
+     "from_day": 1450,
+     "pick": "B[4h N=40 k=2.0 chan10]",
+     "to_day": 1630
+    },
+    {
+     "bh_same_days_pct": 13.124509975785358,
+     "fold_return_pct": -2.6171397367956373,
+     "from_day": 1630,
+     "pick": "B[4h N=40 k=3.0 chan10]",
+     "switch": {
+      "from": "B[4h N=40 k=2.0 chan10]",
+      "new_held": false,
+      "old_held": false
+     },
+     "to_day": 1696
+    }
+   ],
+   "oos_days": 966,
+   "oos_return_after_full_roundtrip_each_switch_pct": 168.84594776176874,
+   "oos_return_after_switch_cost_pct": 170.87323166140115,
+   "oos_return_pct": 171.280151889235,
+   "pick_switches": 3,
+   "switches_with_state_change": 1
+  },
+  "C": {
+   "bh_oos_pct": 1389.0326465927153,
+   "folds": [
+    {
+     "bh_same_days_pct": 161.09350237717922,
+     "fold_return_pct": 104.37382289477016,
+     "from_day": 730,
+     "pick": "C[1h EMA50/200]",
+     "to_day": 910
+    },
+    {
+     "bh_same_days_pct": 53.764127465857435,
+     "fold_return_pct": 59.93906078808049,
+     "from_day": 910,
+     "pick": "C[4h EMA25/100]",
+     "switch": {
+      "from": "C[1h EMA50/200]",
+      "new_held": true,
+      "old_held": true
+     },
+     "to_day": 1090
+    },
+    {
+     "bh_same_days_pct": 65.05520151077818,
+     "fold_return_pct": 45.64579031046574,
+     "from_day": 1090,
+     "pick": "C[4h EMA25/100]",
+     "to_day": 1270
+    },
+    {
+     "bh_same_days_pct": 65.89019066870382,
+     "fold_return_pct": 50.35962312487015,
+     "from_day": 1270,
+     "pick": "C[4h EMA25/100]",
+     "to_day": 1450
+    },
+    {
+     "bh_same_days_pct": 19.74199649959494,
+     "fold_return_pct": 6.624979693028155,
+     "from_day": 1450,
+     "pick": "C[4h EMA25/100]",
+     "to_day": 1630
+    },
+    {
+     "bh_same_days_pct": 13.124509975785358,
+     "fold_return_pct": 7.602834836646122,
+     "from_day": 1630,
+     "pick": "C[4h EMA25/100]",
+     "to_day": 1696
+    }
+   ],
+   "oos_days": 966,
+   "oos_return_after_full_roundtrip_each_switch_pct": 718.8169191900088,
+   "oos_return_after_switch_cost_pct": 721.2807614744321,
+   "oos_return_pct": 721.2807614744321,
+   "pick_switches": 1,
+   "switches_with_state_change": 0
+  },
+  "D": {
+   "bh_oos_pct": 1389.0326465927153,
+   "folds": [
+    {
+     "bh_same_days_pct": 161.09350237717922,
+     "fold_return_pct": 65.67731630187038,
+     "from_day": 730,
+     "pick": "D[4h mom20/50]",
+     "to_day": 910
+    },
+    {
+     "bh_same_days_pct": 53.764127465857435,
+     "fold_return_pct": 5.359638328489713,
+     "from_day": 910,
+     "pick": "D[4h mom20/50]",
+     "to_day": 1090
+    },
+    {
+     "bh_same_days_pct": 65.05520151077818,
+     "fold_return_pct": 43.377656466041635,
+     "from_day": 1090,
+     "pick": "D[4h mom20/50]",
+     "to_day": 1270
+    },
+    {
+     "bh_same_days_pct": 65.89019066870382,
+     "fold_return_pct": 25.56847576690093,
+     "from_day": 1270,
+     "pick": "D[4h mom20/50]",
+     "to_day": 1450
+    },
+    {
+     "bh_same_days_pct": 19.74199649959494,
+     "fold_return_pct": -9.796180712373737,
+     "from_day": 1450,
+     "pick": "D[4h mom20/50]",
+     "to_day": 1630
+    },
+    {
+     "bh_same_days_pct": 13.124509975785358,
+     "fold_return_pct": 1.1429334207706976,
+     "from_day": 1630,
+     "pick": "D[4h mom20/50]",
+     "to_day": 1696
+    }
+   ],
+   "oos_days": 966,
+   "oos_return_after_full_roundtrip_each_switch_pct": 186.72125814467674,
+   "oos_return_after_switch_cost_pct": 186.72125814467674,
+   "oos_return_pct": 186.72125814467674,
+   "pick_switches": 0,
+   "switches_with_state_change": 0
+  },
+  "E": {
+   "bh_oos_pct": 1389.0326465927153,
+   "folds": [
+    {
+     "bh_same_days_pct": 161.09350237717922,
+     "fold_return_pct": 161.09350237717922,
+     "from_day": 730,
+     "pick": "E[al-tut 4h]",
+     "to_day": 910
+    },
+    {
+     "bh_same_days_pct": 53.764127465857435,
+     "fold_return_pct": 53.764127465857435,
+     "from_day": 910,
+     "pick": "E[al-tut 4h]",
+     "to_day": 1090
+    },
+    {
+     "bh_same_days_pct": 65.05520151077818,
+     "fold_return_pct": 65.05520151077818,
+     "from_day": 1090,
+     "pick": "E[al-tut 4h]",
+     "to_day": 1270
+    },
+    {
+     "bh_same_days_pct": 65.89019066870382,
+     "fold_return_pct": 65.89019066870382,
+     "from_day": 1270,
+     "pick": "E[al-tut 4h]",
+     "to_day": 1450
+    },
+    {
+     "bh_same_days_pct": 19.74199649959494,
+     "fold_return_pct": 19.74199649959494,
+     "from_day": 1450,
+     "pick": "E[al-tut 4h]",
+     "to_day": 1630
+    },
+    {
+     "bh_same_days_pct": 13.124509975785358,
+     "fold_return_pct": 13.124509975785358,
+     "from_day": 1630,
+     "pick": "E[al-tut 4h]",
+     "to_day": 1696
+    }
+   ],
+   "oos_days": 966,
+   "oos_return_after_full_roundtrip_each_switch_pct": 1389.0326465927153,
+   "oos_return_after_switch_cost_pct": 1389.0326465927153,
+   "oos_return_pct": 1389.0326465927153,
+   "pick_switches": 0,
+   "switches_with_state_change": 0
+  }
+ },
+ "I_reproduction": {
+  "active_bot_changed_files_now": [],
+  "gates_diffs": [],
+  "metrics_diffs": [],
+  "quarters_diffs": [],
+  "regimes_diffs": [],
+  "test_all_base_diffs": [],
+  "yearly_diffs": []
+ }
+}
