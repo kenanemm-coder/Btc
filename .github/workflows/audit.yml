@@ -1,0 +1,49 @@
+name: Strateji Denetimi v2
+
+# Yalnızca audit-v2 dalına push ile çalışır. Salt okunur analiz: parametre/kural değiştirmez,
+# aktif botu etkilemez, emir göndermez. Çıktı audit-out dalına yazılır.
+on:
+  push:
+    branches: [audit-v2]
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: paper-audit
+  cancel-in-progress: false
+
+jobs:
+  audit:
+    runs-on: ubuntu-latest
+    timeout-minutes: 120
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - run: pip install -r requirements-dev.txt && pip check
+      - name: Dondurulmuş dosyaları lab dalından al
+        run: |
+          git fetch origin lab:refs/remotes/origin/lab
+          git show origin/lab:selection.json > /tmp/selection.json
+          git show origin/lab:results_final.json > /tmp/results_final.json
+          sha256sum /tmp/selection.json
+      - name: Denetim
+        run: python -m audit_v2.audit --sel /tmp/selection.json --res /tmp/results_final.json --out audit_out --n-sims 1000
+        env:
+          BINANCE_BASE_URL: ${{ vars.BINANCE_BASE_URL }}
+      - name: Çıktıyı audit-out dalına yaz
+        env:
+          REMOTE: https://x-access-token:${{ secrets.GITHUB_TOKEN }}@github.com/${{ github.repository }}.git
+        run: |
+          cd audit_out
+          git init -q -b audit-out
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add -A
+          git commit -q -m "Denetim çıktısı"
+          git push -q --force "$REMOTE" audit-out:audit-out
