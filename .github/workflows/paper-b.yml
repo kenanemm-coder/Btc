@@ -1,0 +1,97 @@
+name: BTC Paper B (izole)
+
+# Tek adayın (B: 4s Donchian N=40, ATR k=3.0 takip eden stop) İLERİYE DÖNÜK kâğıt izlemesi.
+# Gerçek emir YOK, API anahtarı YOK, bildirim YOK. Canlı bottan tamamen ayrı:
+# ayrı klasör (paper_b/), ayrı state dalı (data-b), ayrı eşzamanlılık grubu (paper-b).
+# 'data' dalına, bot.yml/watchdog.yml'e ve botun state'ine dokunmaz.
+
+on:
+  schedule:
+    - cron: '7 */4 * * *'   # 4 saatlik mumların kapanışından ~7 dk sonra (UTC)
+  workflow_dispatch:
+    inputs:
+      dry_run:
+        description: 'Kuru deneme (durum yazılmaz)'
+        type: boolean
+        default: false
+
+permissions:
+  contents: write
+
+concurrency:
+  group: paper-b
+  cancel-in-progress: false
+
+jobs:
+  run:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - run: pip install -r requirements-dev.txt && pip check
+
+      - name: Durum dalını hazırla (data-b)
+        id: data
+        env:
+          REMOTE: https://x-access-token:${{ secrets.GITHUB_TOKEN }}@github.com/${{ github.repository }}.git
+        run: |
+          set +e
+          git ls-remote --exit-code --heads "$REMOTE" data-b >/dev/null 2>&1
+          rc=$?
+          set -e
+          rm -rf data_b
+          if [ "$rc" -eq 0 ]; then
+            git clone --quiet --branch data-b "$REMOTE" data_b
+            if [ -f data_b/paper_b_state.json ]; then
+              echo "init=" >> "$GITHUB_OUTPUT"
+            elif [ -z "$(git -C data_b log --oneline -- paper_b_state.json | head -n 1)" ]; then
+              echo "data-b var ama durum yok: ilk kurulum"
+              echo "init=--init" >> "$GITHUB_OUTPUT"
+            else
+              echo "::error::paper_b_state.json geçmişte vardı ama şimdi yok; durduruldu"
+              exit 1
+            fi
+          elif [ "$rc" -eq 2 ]; then
+            echo "data-b dalı yok: ilk kurulum"
+            mkdir data_b
+            git -C data_b init -q -b data-b
+            git -C data_b remote add origin "$REMOTE"
+            echo "init=--init" >> "$GITHUB_OUTPUT"
+          else
+            echo "::error::GitHub'a erişilemedi (kod $rc); durum sıfırlanmasın diye durduruldu"
+            exit 1
+          fi
+
+      - name: Yeni tamamlanmış mumları işle
+        run: python -m paper_b.run --state data_b/paper_b_state.json ${{ steps.data.outputs.init }} ${{ inputs.dry_run && '--dry-run' || '' }}
+        env:
+          BINANCE_BASE_URL: ${{ vars.BINANCE_BASE_URL }}
+
+      - name: Durumu data-b dalına kaydet
+        if: ${{ !inputs.dry_run }}
+        env:
+          REMOTE: https://x-access-token:${{ secrets.GITHUB_TOKEN }}@github.com/${{ github.repository }}.git
+        run: |
+          cd data_b
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add paper_b_state.json
+          if git diff --cached --quiet; then
+            echo "Durum değişmedi."
+            exit 0
+          fi
+          git commit -q -m "paper-b: $(date -u +%Y-%m-%dT%H:%MZ) [skip ci]"
+          for i in 1 2 3; do
+            if git push -q "$REMOTE" HEAD:data-b; then
+              exit 0
+            fi
+            git pull -q --rebase "$REMOTE" data-b || true
+            sleep 3
+          done
+          echo "::error::Durum push edilemedi"
+          exit 1
