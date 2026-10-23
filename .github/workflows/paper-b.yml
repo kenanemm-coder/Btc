@@ -4,6 +4,11 @@ name: BTC Paper B (izole)
 # Gerçek emir YOK, API anahtarı YOK, bildirim YOK. Canlı bottan tamamen ayrı:
 # ayrı klasör (paper_b/), ayrı state dalı (data-b), ayrı eşzamanlılık grubu (paper-b).
 # 'data' dalına, bot.yml/watchdog.yml'e ve botun state'ine dokunmaz.
+#
+# YETKİ AYRIMI (en az yetki):
+#   run  : contents: read   -> kod, pip paketleri ve Binance verisiyle çalışan iş. YAZMA YETKİSİ YOK.
+#   save : contents: write  -> yalnızca sabit git/shell komutları. Üçüncü taraf action, pip, checkout, repo kodu YOK.
+# Yazma yetkili iş yalnızca 'data-b' dalına, tek dosya (paper_b_state.json) ve doğrulanmış içerikle push eder.
 
 on:
   schedule:
@@ -16,7 +21,7 @@ on:
         default: false
 
 permissions:
-  contents: write
+  contents: read
 
 concurrency:
   group: paper-b
@@ -26,8 +31,14 @@ jobs:
   run:
     runs-on: ubuntu-latest
     timeout-minutes: 10
+    permissions:
+      contents: read
+    outputs:
+      state: ${{ steps.pack.outputs.state }}
     steps:
       - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
 
       - uses: actions/setup-python@v5
         with:
@@ -35,10 +46,10 @@ jobs:
 
       - run: pip install -r requirements-dev.txt && pip check
 
-      - name: Durum dalını hazırla (data-b)
+      - name: Durum dalını hazırla (data-b, salt okunur)
         id: data
         env:
-          REMOTE: https://x-access-token:${{ secrets.GITHUB_TOKEN }}@github.com/${{ github.repository }}.git
+          REMOTE: https://x-access-token:${{ github.token }}@github.com/${{ github.repository }}.git
         run: |
           set +e
           git ls-remote --exit-code --heads "$REMOTE" data-b >/dev/null 2>&1
@@ -59,8 +70,6 @@ jobs:
           elif [ "$rc" -eq 2 ]; then
             echo "data-b dalı yok: ilk kurulum"
             mkdir data_b
-            git -C data_b init -q -b data-b
-            git -C data_b remote add origin "$REMOTE"
             echo "init=--init" >> "$GITHUB_OUTPUT"
           else
             echo "::error::GitHub'a erişilemedi (kod $rc); durum sıfırlanmasın diye durduruldu"
@@ -72,12 +81,70 @@ jobs:
         env:
           BINANCE_BASE_URL: ${{ vars.BINANCE_BASE_URL }}
 
-      - name: Durumu data-b dalına kaydet
+      - name: Durumu paketle (yazma işine aktarılır)
+        id: pack
         if: ${{ !inputs.dry_run }}
+        run: echo "state=$(gzip -9 -c data_b/paper_b_state.json | base64 -w0)" >> "$GITHUB_OUTPUT"
+
+  save:
+    needs: run
+    if: ${{ !inputs.dry_run }}
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    permissions:
+      contents: write
+    steps:
+      - name: Doğrula ve yalnızca data-b dalına yaz
         env:
-          REMOTE: https://x-access-token:${{ secrets.GITHUB_TOKEN }}@github.com/${{ github.repository }}.git
+          REMOTE: https://x-access-token:${{ github.token }}@github.com/${{ github.repository }}.git
+          STATE_B64: ${{ needs.run.outputs.state }}
         run: |
+          set -euo pipefail
+          : "${STATE_B64:?durum paketi boş}"
+          printf '%s' "$STATE_B64" | base64 -d | gunzip > /tmp/new_state.json
+          set +e
+          git ls-remote --exit-code --heads "$REMOTE" data-b >/dev/null 2>&1
+          rc=$?
+          set -e
+          rm -rf data_b
+          if [ "$rc" -eq 0 ]; then
+            git clone --quiet --branch data-b "$REMOTE" data_b
+          elif [ "$rc" -eq 2 ]; then
+            mkdir data_b
+            git -C data_b init -q -b data-b
+            git -C data_b remote add origin "$REMOTE"
+          else
+            echo "::error::GitHub'a erişilemedi (kod $rc); durduruldu"
+            exit 1
+          fi
+          old=""
+          if [ -f data_b/paper_b_state.json ]; then old=data_b/paper_b_state.json; fi
+          python3 - /tmp/new_state.json $old <<'PY'
+          import json, sys
+          EXPECTED = {"symbol": "BTCTRY", "tf": "4h", "start_open_ms": 1792728000000,
+                      "params": {"entry_n": 40, "atr_k": 3.0, "exit": "trail"},
+                      "costs": {"fee_buy": 0.001, "fee_sell": 0.001, "slip_buy": 0.0005,
+                                "slip_sell": 0.0005, "delay_bars": 0}}
+          new = json.load(open(sys.argv[1]))
+          assert new.get("version") == 1, "sürüm"
+          assert new.get("config") == EXPECTED, "ayarlar sabit değil"
+          for k in ("trades", "equity_log"):
+              assert isinstance(new.get(k), list), k
+          assert all(r[0] >= EXPECTED["start_open_ms"] for r in new["equity_log"]), "başlangıçtan önceki mum"
+          ids = [t["id"] for t in new["trades"]]
+          assert len(ids) == len(set(ids)), "yinelenen işlem"
+          ms = [r[0] for r in new["equity_log"]]
+          assert len(ms) == len(set(ms)), "yinelenen mum"
+          if len(sys.argv) > 2:
+              old = json.load(open(sys.argv[2]))
+              assert old["config"] == EXPECTED, "eski ayarlar farklı"
+              assert set(t["id"] for t in old["trades"]) <= set(ids), "defterden işlem kaybolmuş"
+              assert ms[:len(old["equity_log"])] == [r[0] for r in old["equity_log"]], "özkaynak günlüğü ekleme-yalnız değil"
+          print("durum doğrulandı")
+          PY
+          cp /tmp/new_state.json data_b/paper_b_state.json
           cd data_b
+          test "$(git symbolic-ref --short HEAD)" = "data-b"
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
           git add paper_b_state.json
@@ -85,6 +152,20 @@ jobs:
             echo "Durum değişmedi."
             exit 0
           fi
+          test "$(git diff --cached --name-only)" = "paper_b_state.json"
+          cat > .git/hooks/pre-push <<'HOOK'
+          #!/bin/sh
+          # Savunma katmanı: data-b dışındaki her hedefi ve silmeyi reddeder.
+          zero=0000000000000000000000000000000000000000
+          while read local_ref local_sha remote_ref remote_sha; do
+            if [ "$remote_ref" != "refs/heads/data-b" ] || [ "$local_sha" = "$zero" ]; then
+              echo "pre-push: izin verilmeyen hedef: $remote_ref" >&2
+              exit 1
+            fi
+          done
+          exit 0
+          HOOK
+          chmod +x .git/hooks/pre-push
           git commit -q -m "paper-b: $(date -u +%Y-%m-%dT%H:%MZ) [skip ci]"
           for i in 1 2 3; do
             if git push -q "$REMOTE" HEAD:data-b; then

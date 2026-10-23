@@ -224,8 +224,9 @@ class Isolation(unittest.TestCase):
         self.assertNotIn("paper-bot", w)
         self.assertNotIn("paper.runner", w)
         self.assertNotIn("bot.py", w)
-        # yalnızca GITHUB_TOKEN secret'ı kullanılır
-        self.assertEqual(set(re.findall(r"secrets\.([A-Z_]+)", w)), {"GITHUB_TOKEN"})
+        # hiçbir secret kullanılmaz; yalnızca iş başına kapsamlı github.token
+        self.assertNotIn("secrets.", w)
+        self.assertIn("github.token", w)
         # yalnızca data-b dalına yazılır; 'data' veya 'main' dalına push yok
         self.assertIn("HEAD:data-b", w)
         self.assertNotRegex(w, r"HEAD:(data|main)\b(?!-)")
@@ -235,12 +236,114 @@ class Isolation(unittest.TestCase):
         self.assertNotRegex(w, r"push\s+-f")
         self.assertIn("python -m paper_b.run", w)
         self.assertIn("pip check", w)
-        self.assertRegex(w, r"timeout-minutes: \d+")
+        self.assertEqual(len(re.findall(r"timeout-minutes: \d+", w)), 2)
 
     def test_state_decision_is_safe_when_github_unreachable(self):
         w = self.read(".github", "workflows", "paper-b.yml")
         self.assertIn("ls-remote --exit-code --heads", w)
         self.assertIn("\"$rc\" -eq 2", w)  # yalnızca 'dal yok' (2) ise ilk kurulum; başka hata = dur
+
+
+def _heredoc(text, marker):
+    import textwrap
+    m = re.search(r"<<'%s'\n(.*?)\n\s*%s\n" % (marker, marker), text, re.S)
+    assert m, marker
+    return textwrap.dedent(m.group(1)) + "\n"
+
+
+class PrivilegeSeparation(unittest.TestCase):
+    @classmethod
+    def setUpClass(cls):
+        with open(os.path.join(ROOT, ".github", "workflows", "paper-b.yml"), encoding="utf-8") as f:
+            cls.w = f.read()
+        i = cls.w.index("\n  run:\n")
+        j = cls.w.index("\n  save:\n")
+        cls.head, cls.jrun, cls.jsave = cls.w[:i], cls.w[i:j], cls.w[j:]
+
+    def test_write_permission_only_in_save_job(self):
+        code_lines = [ln for ln in self.w.splitlines() if not ln.lstrip().startswith("#")]
+        self.assertEqual(sum(1 for ln in code_lines if "contents: write" in ln), 1)
+        self.assertIn("contents: write", self.jsave)
+        self.assertIn("contents: read", self.head)
+        self.assertIn("contents: read", self.jrun)
+        self.assertNotIn("write", self.jrun.replace("writes", ""))  # run işinde hiçbir yazma izni/komutu yok
+        self.assertNotIn("git push", self.jrun)
+        self.assertNotIn("git commit", self.jrun)
+
+    def test_run_job_never_persists_credentials(self):
+        self.assertIn("persist-credentials: false", self.jrun)
+
+    def test_save_job_has_no_third_party_code(self):
+        self.assertNotRegex(self.jsave, r"\bpip\b")
+        for bad in ("uses:", "python -m", "setup-python", "checkout@", "requirements", "paper_b.run",
+                    "strategy_lab", "needs.run.steps"):
+            self.assertNotIn(bad, self.jsave, bad)
+        self.assertIn("needs: run", self.jsave)
+        self.assertIn("HEAD:data-b", self.jsave)
+        self.assertNotRegex(self.jsave, r"git push[^\n]*(--force|-f\b|--delete|:refs)")
+
+    def test_validator_matches_code_and_rejects_bad_states(self):
+        import copy
+        import subprocess
+        import sys
+        code = _heredoc(self.jsave, "PY")
+        good = PB.new_state()
+        good["trades"] = [{"id": "5", "entry_open_ms": 5, "exit_open_ms": 6, "entry_ref": 1.0, "exit_ref": 1.0,
+                           "ret": 0.0, "reason": "stop"}]
+        good["equity_log"] = [[PB.START_OPEN_MS, 1.0], [PB.START_OPEN_MS + PB.BAR_MS, 1.01]]
+        with tempfile.TemporaryDirectory() as d:
+            def check(new, old=None):
+                a = os.path.join(d, "new.json")
+                with open(a, "w") as f:
+                    json.dump(new, f)
+                args = [sys.executable, "-", a]
+                if old is not None:
+                    b = os.path.join(d, "old.json")
+                    with open(b, "w") as f:
+                        json.dump(old, f)
+                    args.append(b)
+                return subprocess.run(args, input=code, text=True, capture_output=True).returncode
+            self.assertEqual(check(good), 0, "kodun sabitleri iş akışındaki sabitlerle aynı olmalı")
+            self.assertEqual(check(good, copy.deepcopy(good)), 0)
+            bad = copy.deepcopy(good); bad["config"]["params"]["atr_k"] = 2.0
+            self.assertNotEqual(check(bad), 0)
+            bad = copy.deepcopy(good); bad["equity_log"][0][0] = PB.START_OPEN_MS - PB.BAR_MS
+            self.assertNotEqual(check(bad), 0)
+            bad = copy.deepcopy(good); bad["trades"].append(dict(bad["trades"][0]))
+            self.assertNotEqual(check(bad), 0)
+            shrunk = copy.deepcopy(good); shrunk["trades"] = []
+            self.assertNotEqual(check(shrunk, good), 0)  # defterden işlem kaybolamaz
+            rewritten = copy.deepcopy(good); rewritten["equity_log"][0][0] += 1
+            self.assertNotEqual(check(rewritten, good), 0)
+
+    def test_pre_push_hook_really_blocks_other_branches_deletes_and_tags(self):
+        import subprocess
+        hook = _heredoc(self.jsave, "HOOK")
+        with tempfile.TemporaryDirectory() as d:
+            def git(*a, cwd=None, check=True):
+                return subprocess.run(["git", *a], cwd=cwd or work, text=True, capture_output=True, check=check)
+            bare, work = os.path.join(d, "bare.git"), os.path.join(d, "work")
+            subprocess.run(["git", "init", "-q", "--bare", bare], check=True)
+            os.makedirs(work)
+            git("init", "-q", "-b", "data-b", cwd=work)
+            git("config", "user.email", "t@t", cwd=work)
+            git("config", "user.name", "t", cwd=work)
+            with open(os.path.join(work, "f"), "w") as f:
+                f.write("1")
+            git("add", "f"); git("commit", "-qm", "c")
+            hp = os.path.join(work, ".git", "hooks", "pre-push")
+            with open(hp, "w") as f:
+                f.write(hook)
+            os.chmod(hp, 0o755)
+            self.assertEqual(git("push", "-q", bare, "HEAD:data-b", check=False).returncode, 0)
+            for target in ("HEAD:main", "HEAD:data", "HEAD:refs/heads/other", "HEAD:refs/tags/v1"):
+                r = git("push", "-q", bare, target, check=False)
+                self.assertNotEqual(r.returncode, 0, target)
+            self.assertNotEqual(git("push", "-q", bare, ":data-b", check=False).returncode, 0)
+            self.assertNotEqual(git("push", "-q", "--force", bare, "HEAD:main", check=False).returncode, 0)
+            heads = subprocess.run(["git", "-C", bare, "for-each-ref", "--format=%(refname)"], text=True,
+                                   capture_output=True).stdout.split()
+            self.assertEqual(heads, ["refs/heads/data-b"])
 
 
 if __name__ == "__main__":
