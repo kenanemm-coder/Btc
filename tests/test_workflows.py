@@ -19,7 +19,7 @@ class WorkflowTests(unittest.TestCase):
 
     def test_only_expected_workflows_exist(self):
         names = sorted(os.listdir(os.path.join(ROOT, ".github", "workflows")))
-        self.assertEqual(names, ["bot.yml", "research.yml", "test.yml", "watchdog.yml"])
+        self.assertEqual(names, ["bot.yml", "lab.yml", "research.yml", "test.yml", "watchdog.yml"])
 
     def test_bot_runs_only_tested_version(self):
         self.assertIn("workflows/test.yml/runs?branch=main&status=success", self.bot)
@@ -62,6 +62,18 @@ class WorkflowTests(unittest.TestCase):
         self.assertNotRegex(r, r"push[^\n]*(main|data)\b")
         self.assertNotIn("NTFY_TOPIC", r)
         self.assertIn("unittest tests.test_research", r)
+
+    def test_lab_is_manual_freezes_selection_before_final_and_never_touches_bot(self):
+        t = read(".github", "workflows", "lab.yml")
+        self.assertNotIn("schedule:", t)
+        self.assertNotIn("NTFY_TOPIC", t)
+        i_sel = t.index("strategy_lab.run select")
+        i_frz = t.index("SEÇİM DONDURULDU")
+        i_fin = t.index("strategy_lab.run final")
+        self.assertLess(i_sel, i_frz)
+        self.assertLess(i_frz, i_fin)
+        self.assertIn("fetch-depth: 0", t)
+        self.assertNotRegex(t, r"push[^\n]*(HEAD:main|main)\b")
 
     def test_tests_run_on_push_but_not_for_data_branch(self):
         self.assertIn("branches-ignore: [data]", self.test)

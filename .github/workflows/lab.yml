@@ -1,0 +1,68 @@
+name: Strateji Laboratuvarı v2
+
+# Elle çalıştırılır. Ön kayıtlı protokol: (1) testler, (2) seçim - test verisi İNDİRİLMEZ,
+# (3) seçimi dondurup 'lab' dalına yaz, (4) dondurulmuş seçimle test dönemini TEK SEFER değerlendir.
+# Canlı botu ve gerçek emirleri etkilemez; yalnızca geçmiş veri ve kâğıt işlem mantığı.
+
+on:
+  workflow_dispatch:
+    inputs:
+      base_sha:
+        description: 'Ön kayıt commit sha (aktif bot değişmedi kontrolü için)'
+        default: '39ea75f'
+
+permissions:
+  contents: write
+
+concurrency:
+  group: paper-lab
+  cancel-in-progress: false
+
+jobs:
+  lab:
+    runs-on: ubuntu-latest
+    timeout-minutes: 90
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - run: pip install -r requirements-dev.txt && pip check
+
+      - name: Testler (kod doğrulanmadan protokol çalıştırılmaz)
+        run: python -W error::ResourceWarning -m unittest discover -s tests -t .
+
+      - name: Aşama 1 - Seçim (test verisi indirilmez)
+        run: python -m strategy_lab.run select --out lab_out
+        env:
+          BINANCE_BASE_URL: ${{ vars.BINANCE_BASE_URL }}
+
+      - name: Seçimi dondur ve lab dalına yaz
+        env:
+          REMOTE: https://x-access-token:${{ secrets.GITHUB_TOKEN }}@github.com/${{ github.repository }}.git
+        run: |
+          cd lab_out
+          git init -q -b lab
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add selection.json
+          git commit -q -m "SEÇİM DONDURULDU (test verisi henüz değerlendirilmedi) $(sha256sum selection.json | cut -c1-16)"
+          git push -q --force "$REMOTE" lab:lab
+
+      - name: Aşama 2 - Dondurulmuş seçimle TEK test değerlendirmesi
+        run: python -m strategy_lab.run final --out lab_out --base-sha "${{ inputs.base_sha }}"
+        env:
+          BINANCE_BASE_URL: ${{ vars.BINANCE_BASE_URL }}
+
+      - name: Sonuçları lab dalına ekle
+        env:
+          REMOTE: https://x-access-token:${{ secrets.GITHUB_TOKEN }}@github.com/${{ github.repository }}.git
+        run: |
+          cd lab_out
+          git add -A
+          git commit -q -m "Test sonuçları ve rapor"
+          git push -q "$REMOTE" lab:lab
