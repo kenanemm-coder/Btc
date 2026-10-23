@@ -1,0 +1,1430 @@
+{
+ "boundaries_ms": {
+  "data_end": 1792728000000,
+  "eval_start": 1609459200000,
+  "train_end": 1719417600000,
+  "val_end": 1756065600000
+ },
+ "candidate_count": 26,
+ "candidates": [
+  {
+   "eligible": true,
+   "family": "B",
+   "name": "B[1h N=20 k=2.0 chan10]",
+   "params": {
+    "atr_k": 2.0,
+    "entry_n": 20,
+    "exit": "chan10"
+   },
+   "score": -1.3018353554350923,
+   "tf": "1h",
+   "trades_trainval": 484,
+   "train": {
+    "avg_trade_pct": 0.07505277521236946,
+    "best_trade_pct": 21.084976878135954,
+    "cagr_pct": 1.597680817373659,
+    "ex_best_trade_return_pct": -12.724037302327895,
+    "fees_slip_pct_of_trades": 0.30011308564642813,
+    "max_dd_pct": 52.18258318574309,
+    "net_return_pct": 5.678079252646939,
+    "profit_factor": 1.0712311097775984,
+    "sharpe": 0.20455501177655394,
+    "sortino": 0.37567191018048907,
+    "stops": 155,
+    "time_in_market_pct": 26.698329511955453,
+    "trades": 345,
+    "win_rate_pct": 27.246376811594203
+   },
+   "val": {
+    "avg_trade_pct": -0.273457738511428,
+    "best_trade_pct": 8.625817989267826,
+    "cagr_pct": -29.770079171904985,
+    "ex_best_trade_return_pct": -38.92691181046602,
+    "fees_slip_pct_of_trades": 0.2995897093283111,
+    "max_dd_pct": 45.252586032451276,
+    "net_return_pct": -33.65885838281179,
+    "profit_factor": 0.7093608964414477,
+    "sharpe": -1.3018353554350923,
+    "sortino": -2.0384093656952125,
+    "stops": 57,
+    "time_in_market_pct": 28.742632612966602,
+    "trades": 139,
+    "win_rate_pct": 28.05755395683453
+   }
+  },
+  {
+   "eligible": true,
+   "family": "B",
+   "name": "B[1h N=20 k=2.0 trail]",
+   "params": {
+    "atr_k": 2.0,
+    "entry_n": 20,
+    "exit": "trail"
+   },
+   "score": -2.6899201715606202,
+   "tf": "1h",
+   "trades_trainval": 598,
+   "train": {
+    "avg_trade_pct": -0.1537755808917985,
+    "best_trade_pct": 15.722475252683799,
+    "cagr_pct": -20.141726787603453,
+    "ex_best_trade_return_pct": -60.532489682607164,
+    "fees_slip_pct_of_trades": 0.29976944223315166,
+    "max_dd_pct": 63.37751380265898,
+    "net_return_pct": -54.32722014010463,
+    "profit_factor": 0.8253106383686016,
+    "sharpe": -0.7548364059282805,
+    "sortino": -1.3022569898077514,
+    "stops": 430,
+    "time_in_market_pct": 17.248607926629546,
+    "trades": 430,
+    "win_rate_pct": 30.465116279069765
+   },
+   "val": {
+    "avg_trade_pct": -0.39478284764112875,
+    "best_trade_pct": 7.770427363170884,
+    "cagr_pct": -44.63574605284112,
+    "ex_best_trade_return_pct": -53.297432744842375,
+    "fees_slip_pct_of_trades": 0.29940750911795594,
+    "max_dd_pct": 53.753843219948905,
+    "net_return_pct": -49.66844367954434,
+    "profit_factor": 0.5377547816706971,
+    "sharpe": -2.6899201715606202,
+    "sortino": -3.906712120114705,
+    "stops": 168,
+    "time_in_market_pct": 20.12770137524558,
+    "trades": 168,
+    "win_rate_pct": 27.976190476190478
+   }
+  },
+  {
+   "eligible": true,
+   "family": "B",
+   "name": "B[1h N=20 k=3.0 chan10]",
+   "params": {
+    "atr_k": 3.0,
+    "entry_n": 20,
+    "exit": "chan10"
+   },
+   "score": -0.7727140330579085,
+   "tf": "1h",
+   "trades_trainval": 455,
+   "train": {
+    "avg_trade_pct": 0.048694388210037305,
+    "best_trade_pct": 21.084976878135954,
+    "cagr_pct": -1.6678479916534816,
+    "ex_best_trade_return_pct": -22.1140481699743,
+    "fees_slip_pct_of_trades": 0.30007350188927445,
+    "max_dd_pct": 53.9480652922199,
+    "net_return_pct": -5.691813235297049,
+    "profit_factor": 1.0413377220397477,
+    "sharpe": 0.10921353595320764,
+    "sortino": 0.1923915430182116,
+    "stops": 80,
+    "time_in_market_pct": 29.282672780871273,
+    "trades": 326,
+    "win_rate_pct": 30.368098159509206
+   },
+   "val": {
+    "avg_trade_pct": -0.18103259183934436,
+    "best_trade_pct": 8.625817989267826,
+    "cagr_pct": -20.568517793897968,
+    "ex_best_trade_return_pct": -29.540537116598607,
+    "fees_slip_pct_of_trades": 0.29972850896580194,
+    "max_dd_pct": 34.041810558895804,
+    "net_return_pct": -23.46283209206066,
+    "profit_factor": 0.8128240647973382,
+    "sharpe": -0.7727140330579085,
+    "sortino": -1.2103719684963081,
+    "stops": 23,
+    "time_in_market_pct": 32.524557956778,
+    "trades": 129,
+    "win_rate_pct": 32.55813953488372
+   }
+  },
+  {
+   "eligible": true,
+   "family": "B",
+   "name": "B[1h N=20 k=3.0 trail]",
+   "params": {
+    "atr_k": 3.0,
+    "entry_n": 20,
+    "exit": "trail"
+   },
+   "score": -1.0230421197721482,
+   "tf": "1h",
+   "trades_trainval": 450,
+   "train": {
+    "avg_trade_pct": 0.08631985085221738,
+    "best_trade_pct": 18.17306020125993,
+    "cagr_pct": 2.9550691953766473,
+    "ex_best_trade_return_pct": -6.341007657576537,
+    "fees_slip_pct_of_trades": 0.30013000599841816,
+    "max_dd_pct": 45.33639794482323,
+    "net_return_pct": 10.679697404705646,
+    "profit_factor": 1.0792308046726218,
+    "sharpe": 0.24513677649558663,
+    "sortino": 0.4478488524750475,
+    "stops": 326,
+    "time_in_market_pct": 27.713724205699314,
+    "trades": 326,
+    "win_rate_pct": 32.82208588957055
+   },
+   "val": {
+    "avg_trade_pct": -0.23626526352961696,
+    "best_trade_pct": 8.684065136505081,
+    "cagr_pct": -24.24815800564737,
+    "ex_best_trade_return_pct": -33.35208052442885,
+    "fees_slip_pct_of_trades": 0.2996455631974232,
+    "max_dd_pct": 35.5812711863985,
+    "net_return_pct": -27.564331785044903,
+    "profit_factor": 0.748657733150096,
+    "sharpe": -1.0230421197721482,
+    "sortino": -1.5683152698180836,
+    "stops": 124,
+    "time_in_market_pct": 33.09430255402751,
+    "trades": 124,
+    "win_rate_pct": 34.67741935483871
+   }
+  },
+  {
+   "eligible": true,
+   "family": "B",
+   "name": "B[1h N=40 k=2.0 chan10]",
+   "params": {
+    "atr_k": 2.0,
+    "entry_n": 40,
+    "exit": "chan10"
+   },
+   "score": -1.3367940543615238,
+   "tf": "1h",
+   "trades_trainval": 381,
+   "train": {
+    "avg_trade_pct": 0.1798974073995544,
+    "best_trade_pct": 21.084976878135954,
+    "cagr_pct": 9.559354791287443,
+    "ex_best_trade_return_pct": 13.516418481129634,
+    "fees_slip_pct_of_trades": 0.30027053626960215,
+    "max_dd_pct": 40.97447507493794,
+    "net_return_pct": 37.451329070763585,
+    "profit_factor": 1.1692667221724429,
+    "sharpe": 0.4603782869592576,
+    "sortino": 0.8428749262054611,
+    "stops": 127,
+    "time_in_market_pct": 20.85817228955126,
+    "trades": 271,
+    "win_rate_pct": 29.88929889298893
+   },
+   "val": {
+    "avg_trade_pct": -0.32017034078775225,
+    "best_trade_pct": 8.625817989267826,
+    "cagr_pct": -27.650858743774144,
+    "ex_best_trade_return_pct": -36.7817817063096,
+    "fees_slip_pct_of_trades": 0.2995195585901652,
+    "max_dd_pct": 38.45449265539399,
+    "net_return_pct": -31.328693260237884,
+    "profit_factor": 0.6694428066243889,
+    "sharpe": -1.3367940543615238,
+    "sortino": -2.088285595897564,
+    "stops": 49,
+    "time_in_market_pct": 21.05108055009823,
+    "trades": 110,
+    "win_rate_pct": 29.09090909090909
+   }
+  },
+  {
+   "eligible": true,
+   "family": "B",
+   "name": "B[1h N=40 k=2.0 trail]",
+   "params": {
+    "atr_k": 2.0,
+    "entry_n": 40,
+    "exit": "trail"
+   },
+   "score": -2.2287859254244524,
+   "tf": "1h",
+   "trades_trainval": 464,
+   "train": {
+    "avg_trade_pct": -0.11049544736827178,
+    "best_trade_pct": 15.132058649800628,
+    "cagr_pct": -12.59630133899049,
+    "ex_best_trade_return_pct": -45.665141087023486,
+    "fees_slip_pct_of_trades": 0.2998344382549047,
+    "max_dd_pct": 50.066054779782675,
+    "net_return_pct": -37.44315836902553,
+    "profit_factor": 0.8799101240984593,
+    "sharpe": -0.4776576739607359,
+    "sortino": -0.8063671925142181,
+    "stops": 334,
+    "time_in_market_pct": 13.137897150343925,
+    "trades": 334,
+    "win_rate_pct": 29.94011976047904
+   },
+   "val": {
+    "avg_trade_pct": -0.38835497500375626,
+    "best_trade_pct": 7.770427363170906,
+    "cagr_pct": -36.31262988122989,
+    "ex_best_trade_return_pct": -45.04985086191162,
+    "fees_slip_pct_of_trades": 0.2994171621877533,
+    "max_dd_pct": 46.244615656777896,
+    "net_return_pct": -40.779989437182394,
+    "profit_factor": 0.5470701663542883,
+    "sharpe": -2.2287859254244524,
+    "sortino": -3.3620815108666386,
+    "stops": 130,
+    "time_in_market_pct": 15.530451866404714,
+    "trades": 130,
+    "win_rate_pct": 27.692307692307693
+   }
+  },
+  {
+   "eligible": true,
+   "family": "B",
+   "name": "B[1h N=40 k=3.0 chan10]",
+   "params": {
+    "atr_k": 3.0,
+    "entry_n": 40,
+    "exit": "chan10"
+   },
+   "score": -0.9641449696419935,
+   "tf": "1h",
+   "trades_trainval": 361,
+   "train": {
+    "avg_trade_pct": 0.11799928403434562,
+    "best_trade_pct": 21.084976878135954,
+    "cagr_pct": 3.579245595159275,
+    "ex_best_trade_return_pct": -6.647939996506991,
+    "fees_slip_pct_of_trades": 0.3001775806466592,
+    "max_dd_pct": 44.73711442213549,
+    "net_return_pct": 13.035320270493212,
+    "profit_factor": 1.0964899688777348,
+    "sharpe": 0.264788430754953,
+    "sortino": 0.45460771963674823,
+    "stops": 74,
+    "time_in_market_pct": 23.177202751392073,
+    "trades": 259,
+    "win_rate_pct": 32.04633204633205
+   },
+   "val": {
+    "avg_trade_pct": -0.2625339264202124,
+    "best_trade_pct": 8.625817989267848,
+    "cagr_pct": -22.46069025601424,
+    "ex_best_trade_return_pct": -31.48576639425572,
+    "fees_slip_pct_of_trades": 0.29960611418362193,
+    "max_dd_pct": 31.33946134810174,
+    "net_return_pct": -25.575853306682472,
+    "profit_factor": 0.7469568128810063,
+    "sharpe": -0.9641449696419935,
+    "sortino": -1.4980146879660712,
+    "stops": 23,
+    "time_in_market_pct": 24.21414538310413,
+    "trades": 102,
+    "win_rate_pct": 34.31372549019608
+   }
+  },
+  {
+   "eligible": true,
+   "family": "B",
+   "name": "B[1h N=40 k=3.0 trail]",
+   "params": {
+    "atr_k": 3.0,
+    "entry_n": 40,
+    "exit": "trail"
+   },
+   "score": -1.184144304123925,
+   "tf": "1h",
+   "trades_trainval": 365,
+   "train": {
+    "avg_trade_pct": 0.07799000773214931,
+    "best_trade_pct": 18.173060201259904,
+    "cagr_pct": 1.5280788737306539,
+    "ex_best_trade_return_pct": -10.786737043465877,
+    "fees_slip_pct_of_trades": 0.30011749664087783,
+    "max_dd_pct": 33.28351082987245,
+    "net_return_pct": 5.42604294113358,
+    "profit_factor": 1.0666367165194275,
+    "sharpe": 0.1914331454745789,
+    "sortino": 0.3369019640296155,
+    "stops": 264,
+    "time_in_market_pct": 21.578774975433998,
+    "trades": 264,
+    "win_rate_pct": 34.090909090909086
+   },
+   "val": {
+    "avg_trade_pct": -0.31897392436241373,
+    "best_trade_pct": 7.57196568835925,
+    "cagr_pct": -25.84161877412895,
+    "ex_best_trade_return_pct": -34.305026694166166,
+    "fees_slip_pct_of_trades": 0.2995213553107783,
+    "max_dd_pct": 37.130628588613654,
+    "net_return_pct": -29.33062585647168,
+    "profit_factor": 0.684126749672745,
+    "sharpe": -1.184144304123925,
+    "sortino": -1.8108955965013804,
+    "stops": 101,
+    "time_in_market_pct": 25.6188605108055,
+    "trades": 101,
+    "win_rate_pct": 34.65346534653465
+   }
+  },
+  {
+   "eligible": true,
+   "family": "C",
+   "name": "C[1h EMA50/200]",
+   "params": {
+    "pair": [
+     50,
+     200
+    ]
+   },
+   "score": 0.9638510544622182,
+   "tf": "1h",
+   "trades_trainval": 110,
+   "train": {
+    "avg_trade_pct": 2.050586963814371,
+    "best_trade_pct": 73.37605044828301,
+    "cagr_pct": 35.34037555791614,
+    "ex_best_trade_return_pct": 65.55324621357923,
+    "fees_slip_pct_of_trades": 0.3030798478221195,
+    "max_dd_pct": 51.68385646707101,
+    "net_return_pct": 187.02967967402492,
+    "profit_factor": 1.8223808320019592,
+    "sharpe": 0.9638510544622182,
+    "sortino": 1.4934403394578866,
+    "stops": 0,
+    "time_in_market_pct": 53.377006223386836,
+    "trades": 80,
+    "win_rate_pct": 31.25
+   },
+   "val": {
+    "avg_trade_pct": 1.449268073531103,
+    "best_trade_pct": 29.697577976754964,
+    "cagr_pct": 33.68543590926394,
+    "ex_best_trade_return_pct": 8.012955032168879,
+    "fees_slip_pct_of_trades": 0.30217681604999547,
+    "max_dd_pct": 31.31037059998786,
+    "net_return_pct": 40.090186577844555,
+    "profit_factor": 1.7535603631357721,
+    "sharpe": 1.0608756139643534,
+    "sortino": 1.7027026796066485,
+    "stops": 0,
+    "time_in_market_pct": 61.13948919449902,
+    "trades": 30,
+    "win_rate_pct": 30.0
+   }
+  },
+  {
+   "eligible": true,
+   "family": "C",
+   "name": "C[1h EMA25/100]",
+   "params": {
+    "pair": [
+     25,
+     100
+    ]
+   },
+   "score": 0.6021881030855378,
+   "tf": "1h",
+   "trades_trainval": 229,
+   "train": {
+    "avg_trade_pct": 0.572136036943856,
+    "best_trade_pct": 45.20618998978168,
+    "cagr_pct": 17.407777456719376,
+    "ex_best_trade_return_pct": 20.46383667547589,
+    "fees_slip_pct_of_trades": 0.3008595813677281,
+    "max_dd_pct": 66.8705057012053,
+    "net_return_pct": 74.92094755197189,
+    "profit_factor": 1.329933533593082,
+    "sharpe": 0.6021881030855378,
+    "sortino": 0.9447691620432563,
+    "stops": 0,
+    "time_in_market_pct": 51.48051097281363,
+    "trades": 178,
+    "win_rate_pct": 25.280898876404496
+   },
+   "val": {
+    "avg_trade_pct": 0.9515526631408249,
+    "best_trade_pct": 33.58199716893162,
+    "cagr_pct": 37.05213713994488,
+    "ex_best_trade_return_pct": 10.989114285938385,
+    "fees_slip_pct_of_trades": 0.30142937099826117,
+    "max_dd_pct": 34.08856236644927,
+    "net_return_pct": 44.19512183707881,
+    "profit_factor": 1.7249568884001263,
+    "sharpe": 1.1382838353375277,
+    "sortino": 1.874594713439925,
+    "stops": 0,
+    "time_in_market_pct": 59.715127701375245,
+    "trades": 51,
+    "win_rate_pct": 37.254901960784316
+   }
+  },
+  {
+   "eligible": true,
+   "family": "D",
+   "name": "D[1h mom20/50]",
+   "params": {
+    "pair": [
+     20,
+     50
+    ]
+   },
+   "score": -3.12444822208045,
+   "tf": "1h",
+   "trades_trainval": 1558,
+   "train": {
+    "avg_trade_pct": -0.12949414264734432,
+    "best_trade_pct": 20.411382117823763,
+    "cagr_pct": -39.43576231753365,
+    "ex_best_trade_return_pct": -85.52835690647349,
+    "fees_slip_pct_of_trades": 0.29980590692861,
+    "max_dd_pct": 89.99829368515516,
+    "net_return_pct": -82.5744945359262,
+    "profit_factor": 0.8075744825788488,
+    "sharpe": -1.1407008090157624,
+    "sortino": -1.8758184671785827,
+    "stops": 0,
+    "time_in_market_pct": 41.421552571241406,
+    "trades": 1138,
+    "win_rate_pct": 20.56239015817223
+   },
+   "val": {
+    "avg_trade_pct": -0.2847256469191359,
+    "best_trade_pct": 13.398723615529672,
+    "cagr_pct": -65.86061160890604,
+    "ex_best_trade_return_pct": -74.68297841616103,
+    "fees_slip_pct_of_trades": 0.29957278772570967,
+    "max_dd_pct": 72.80067833945418,
+    "net_return_pct": -71.29082066645847,
+    "profit_factor": 0.5610193600033929,
+    "sharpe": -3.12444822208045,
+    "sortino": -4.407938034769965,
+    "stops": 0,
+    "time_in_market_pct": 44.59724950884086,
+    "trades": 420,
+    "win_rate_pct": 16.428571428571427
+   }
+  },
+  {
+   "eligible": true,
+   "family": "D",
+   "name": "D[1h mom10/30]",
+   "params": {
+    "pair": [
+     10,
+     30
+    ]
+   },
+   "score": -3.385754458903835,
+   "tf": "1h",
+   "trades_trainval": 2271,
+   "train": {
+    "avg_trade_pct": -0.2637950833724175,
+    "best_trade_pct": 15.13063683710425,
+    "cagr_pct": -75.24489267458763,
+    "ex_best_trade_return_pct": -99.32983574745315,
+    "fees_slip_pct_of_trades": 0.2996042202388009,
+    "max_dd_pct": 99.37527638345104,
+    "net_return_pct": -99.22843562818818,
+    "profit_factor": 0.6103130411752985,
+    "sharpe": -3.126707741119889,
+    "sortino": -4.390797859429129,
+    "stops": 0,
+    "time_in_market_pct": 39.25646904683918,
+    "trades": 1742,
+    "win_rate_pct": 19.747416762342134
+   },
+   "val": {
+    "avg_trade_pct": -0.24678380664599453,
+    "best_trade_pct": 9.817758128454269,
+    "cagr_pct": -68.81789035352651,
+    "ex_best_trade_return_pct": -76.46820485707862,
+    "fees_slip_pct_of_trades": 0.2996297669555542,
+    "max_dd_pct": 76.25539139994999,
+    "net_return_pct": -74.15791012666331,
+    "profit_factor": 0.5784597360101295,
+    "sharpe": -3.385754458903835,
+    "sortino": -4.710671266815556,
+    "stops": 0,
+    "time_in_market_pct": 40.06876227897839,
+    "trades": 529,
+    "win_rate_pct": 21.73913043478261
+   }
+  },
+  {
+   "eligible": true,
+   "family": "B",
+   "name": "B[4h N=20 k=2.0 chan10]",
+   "params": {
+    "atr_k": 2.0,
+    "entry_n": 20,
+    "exit": "chan10"
+   },
+   "score": 0.6108162393251448,
+   "tf": "4h",
+   "trades_trainval": 127,
+   "train": {
+    "avg_trade_pct": 1.8908648930281338,
+    "best_trade_pct": 45.72939298940406,
+    "cagr_pct": 46.60353567151467,
+    "ex_best_trade_return_pct": 160.18723575635124,
+    "fees_slip_pct_of_trades": 0.3028399849025255,
+    "max_dd_pct": 37.561151171216984,
+    "net_return_pct": 279.1692793036403,
+    "profit_factor": 1.9633201529005784,
+    "sharpe": 1.269964531355772,
+    "sortino": 2.0935009019834725,
+    "stops": 42,
+    "time_in_market_pct": 31.744368779465688,
+    "trades": 92,
+    "win_rate_pct": 31.521739130434785
+   },
+   "val": {
+    "avg_trade_pct": 0.5664780895263972,
+    "best_trade_pct": 29.710636737545435,
+    "cagr_pct": 13.05440084811158,
+    "ex_best_trade_return_pct": -11.103819001814962,
+    "fees_slip_pct_of_trades": 0.30085108453457476,
+    "max_dd_pct": 22.961337710624488,
+    "net_return_pct": 15.307802408106674,
+    "profit_factor": 1.3898582215215085,
+    "sharpe": 0.6108162393251448,
+    "sortino": 0.9962381836517006,
+    "stops": 13,
+    "time_in_market_pct": 36.62082514734774,
+    "trades": 35,
+    "win_rate_pct": 34.285714285714285
+   }
+  },
+  {
+   "eligible": true,
+   "family": "B",
+   "name": "B[4h N=20 k=2.0 trail]",
+   "params": {
+    "atr_k": 2.0,
+    "entry_n": 20,
+    "exit": "trail"
+   },
+   "score": -0.07515255299949485,
+   "tf": "4h",
+   "trades_trainval": 166,
+   "train": {
+    "avg_trade_pct": 0.7839051228347585,
+    "best_trade_pct": 25.978187283876174,
+    "cagr_pct": 24.27537663826429,
+    "ex_best_trade_return_pct": 69.25218379850048,
+    "fees_slip_pct_of_trades": 0.301177605989942,
+    "max_dd_pct": 30.072131589252134,
+    "net_return_pct": 113.22083308772504,
+    "profit_factor": 1.5272468805322779,
+    "sharpe": 0.9366276192708356,
+    "sortino": 1.6903552072908818,
+    "stops": 120,
+    "time_in_market_pct": 20.69146149816658,
+    "trades": 120,
+    "win_rate_pct": 39.166666666666664
+   },
+   "val": {
+    "avg_trade_pct": -0.04741394893003046,
+    "best_trade_pct": 15.075597971891508,
+    "cagr_pct": -3.9904347404792873,
+    "ex_best_trade_return_pct": -17.112970998548615,
+    "fees_slip_pct_of_trades": 0.29992917101358396,
+    "max_dd_pct": 25.871484016726644,
+    "net_return_pct": -4.617255735444681,
+    "profit_factor": 0.9617140871322882,
+    "sharpe": -0.07515255299949485,
+    "sortino": -0.12741462351563318,
+    "stops": 46,
+    "time_in_market_pct": 25.265225933202355,
+    "trades": 46,
+    "win_rate_pct": 32.608695652173914
+   }
+  },
+  {
+   "eligible": true,
+   "family": "B",
+   "name": "B[4h N=20 k=3.0 chan10]",
+   "params": {
+    "atr_k": 3.0,
+    "entry_n": 20,
+    "exit": "chan10"
+   },
+   "score": 0.5749382240886042,
+   "tf": "4h",
+   "trades_trainval": 119,
+   "train": {
+    "avg_trade_pct": 1.8953544864289893,
+    "best_trade_pct": 45.72939298940408,
+    "cagr_pct": 41.38610582294206,
+    "ex_best_trade_return_pct": 129.3280277547839,
+    "fees_slip_pct_of_trades": 0.30284672715784217,
+    "max_dd_pct": 36.73610668094053,
+    "net_return_pct": 234.19834280161868,
+    "profit_factor": 1.8261670233509915,
+    "sharpe": 1.130134817826875,
+    "sortino": 1.8151534692839741,
+    "stops": 23,
+    "time_in_market_pct": 34.21948664222106,
+    "trades": 86,
+    "win_rate_pct": 36.04651162790697
+   },
+   "val": {
+    "avg_trade_pct": 0.5848708898033403,
+    "best_trade_pct": 29.710636737545435,
+    "cagr_pct": 12.37378759209058,
+    "ex_best_trade_return_pct": -11.724775229160745,
+    "fees_slip_pct_of_trades": 0.30087870595691124,
+    "max_dd_pct": 24.62731222521262,
+    "net_return_pct": 14.50235613175499,
+    "profit_factor": 1.3693601948490326,
+    "sharpe": 0.5749382240886042,
+    "sortino": 0.91350269111537,
+    "stops": 5,
+    "time_in_market_pct": 39.13555992141454,
+    "trades": 33,
+    "win_rate_pct": 36.36363636363637
+   }
+  },
+  {
+   "eligible": true,
+   "family": "B",
+   "name": "B[4h N=20 k=3.0 trail]",
+   "params": {
+    "atr_k": 3.0,
+    "entry_n": 20,
+    "exit": "trail"
+   },
+   "score": 0.7172991756424681,
+   "tf": "4h",
+   "trades_trainval": 127,
+   "train": {
+    "avg_trade_pct": 1.2129244833962458,
+    "best_trade_pct": 53.792629991922226,
+    "cagr_pct": 26.847916492854075,
+    "ex_best_trade_return_pct": 48.90005581663264,
+    "fees_slip_pct_of_trades": 0.3018218866199076,
+    "max_dd_pct": 35.59905873396289,
+    "net_return_pct": 128.99731189983942,
+    "profit_factor": 1.5819089743247359,
+    "sharpe": 0.9169261101814019,
+    "sortino": 1.5644931610940085,
+    "stops": 95,
+    "time_in_market_pct": 31.024096385542173,
+    "trades": 95,
+    "win_rate_pct": 43.15789473684211
+   },
+   "val": {
+    "avg_trade_pct": 0.6408742514366881,
+    "best_trade_pct": 14.66967164057622,
+    "cagr_pct": 16.12700728320078,
+    "ex_best_trade_return_pct": 3.735903422824549,
+    "fees_slip_pct_of_trades": 0.3009628091103606,
+    "max_dd_pct": 25.137335202716226,
+    "net_return_pct": 18.953619828338187,
+    "profit_factor": 1.4856811342788145,
+    "sharpe": 0.7172991756424681,
+    "sortino": 1.1918032954045823,
+    "stops": 32,
+    "time_in_market_pct": 38.03536345776031,
+    "trades": 32,
+    "win_rate_pct": 50.0
+   }
+  },
+  {
+   "eligible": true,
+   "family": "B",
+   "name": "B[4h N=40 k=2.0 chan10]",
+   "params": {
+    "atr_k": 2.0,
+    "entry_n": 40,
+    "exit": "chan10"
+   },
+   "score": 1.1122304435541144,
+   "tf": "4h",
+   "trades_trainval": 97,
+   "train": {
+    "avg_trade_pct": 2.7591870327546157,
+    "best_trade_pct": 45.729392989404104,
+    "cagr_pct": 55.62123481884018,
+    "ex_best_trade_return_pct": 220.33503530115857,
+    "fees_slip_pct_of_trades": 0.3041439893056488,
+    "max_dd_pct": 28.337838443079793,
+    "net_return_pct": 366.82230247677154,
+    "profit_factor": 2.443212210885185,
+    "sharpe": 1.5138111882304035,
+    "sortino": 2.5558078103696578,
+    "stops": 31,
+    "time_in_market_pct": 26.46673651126244,
+    "trades": 69,
+    "win_rate_pct": 36.231884057971016
+   },
+   "val": {
+    "avg_trade_pct": 1.1599459643649774,
+    "best_trade_pct": 29.710636737545435,
+    "cagr_pct": 26.495079397499822,
+    "ex_best_trade_return_pct": 1.2783121885136195,
+    "fees_slip_pct_of_trades": 0.30174232602951684,
+    "max_dd_pct": 14.843558705109613,
+    "net_return_pct": 31.368743616760053,
+    "profit_factor": 1.9353749808362806,
+    "sharpe": 1.1122304435541144,
+    "sortino": 1.8742019075201168,
+    "stops": 8,
+    "time_in_market_pct": 31.630648330058943,
+    "trades": 28,
+    "win_rate_pct": 39.285714285714285
+   }
+  },
+  {
+   "eligible": true,
+   "family": "B",
+   "name": "B[4h N=40 k=2.0 trail]",
+   "params": {
+    "atr_k": 2.0,
+    "entry_n": 40,
+    "exit": "trail"
+   },
+   "score": 0.039155300286667805,
+   "tf": "4h",
+   "trades_trainval": 132,
+   "train": {
+    "avg_trade_pct": 1.1542991974566505,
+    "best_trade_pct": 25.978187283876174,
+    "cagr_pct": 30.151253741895424,
+    "ex_best_trade_return_pct": 98.80760971336251,
+    "fees_slip_pct_of_trades": 0.3017338459867134,
+    "max_dd_pct": 21.481444829676416,
+    "net_return_pct": 150.4542228992973,
+    "profit_factor": 1.8390735761154593,
+    "sharpe": 1.1931102148301829,
+    "sortino": 2.2502544153744473,
+    "stops": 93,
+    "time_in_market_pct": 17.640125720272394,
+    "trades": 93,
+    "win_rate_pct": 41.935483870967744
+   },
+   "val": {
+    "avg_trade_pct": 0.018184904823177646,
+    "best_trade_pct": 15.075597971891508,
+    "cagr_pct": -1.2954256705179246,
+    "ex_best_trade_return_pct": -14.406024468674605,
+    "fees_slip_pct_of_trades": 0.30002768421533266,
+    "max_dd_pct": 22.330537949909427,
+    "net_return_pct": -1.5022208294128148,
+    "profit_factor": 1.0154572475093528,
+    "sharpe": 0.039155300286667805,
+    "sortino": 0.06627292352823762,
+    "stops": 39,
+    "time_in_market_pct": 21.139489194499017,
+    "trades": 39,
+    "win_rate_pct": 35.8974358974359
+   }
+  },
+  {
+   "eligible": true,
+   "family": "B",
+   "name": "B[4h N=40 k=3.0 chan10]",
+   "params": {
+    "atr_k": 3.0,
+    "entry_n": 40,
+    "exit": "chan10"
+   },
+   "score": 1.112017909199175,
+   "tf": "4h",
+   "trades_trainval": 92,
+   "train": {
+    "avg_trade_pct": 2.7399248504455898,
+    "best_trade_pct": 45.72939298940406,
+    "cagr_pct": 50.96333925263308,
+    "ex_best_trade_return_pct": 188.15485861874404,
+    "fees_slip_pct_of_trades": 0.30411506228721275,
+    "max_dd_pct": 28.00234180537109,
+    "net_return_pct": 319.92632633457134,
+    "profit_factor": 2.259564301953139,
+    "sharpe": 1.374508360084203,
+    "sortino": 2.2534577750261224,
+    "stops": 16,
+    "time_in_market_pct": 27.94656888423258,
+    "trades": 66,
+    "win_rate_pct": 39.39393939393939
+   },
+   "val": {
+    "avg_trade_pct": 1.2915960817073229,
+    "best_trade_pct": 29.710636737545435,
+    "cagr_pct": 27.55525318475305,
+    "ex_best_trade_return_pct": 2.2643361547505014,
+    "fees_slip_pct_of_trades": 0.3019400318403344,
+    "max_dd_pct": 16.807796665139673,
+    "net_return_pct": 32.647721581750844,
+    "profit_factor": 1.9736117421684773,
+    "sharpe": 1.112017909199175,
+    "sortino": 1.817671456595073,
+    "stops": 5,
+    "time_in_market_pct": 33.87033398821218,
+    "trades": 26,
+    "win_rate_pct": 42.30769230769231
+   }
+  },
+  {
+   "eligible": true,
+   "family": "B",
+   "name": "B[4h N=40 k=3.0 trail]",
+   "params": {
+    "atr_k": 3.0,
+    "entry_n": 40,
+    "exit": "trail"
+   },
+   "score": 1.2031303608979291,
+   "tf": "4h",
+   "trades_trainval": 97,
+   "train": {
+    "avg_trade_pct": 1.9860817277421172,
+    "best_trade_pct": 53.792629991922226,
+    "cagr_pct": 39.028872443301644,
+    "ex_best_trade_return_pct": 104.94161406838435,
+    "fees_slip_pct_of_trades": 0.30298297696277393,
+    "max_dd_pct": 25.39242259226172,
+    "net_return_pct": 215.1850982236632,
+    "profit_factor": 2.0729523034251303,
+    "sharpe": 1.300820661178417,
+    "sortino": 2.340276512669633,
+    "stops": 72,
+    "time_in_market_pct": 25.615505500261914,
+    "trades": 72,
+    "win_rate_pct": 47.22222222222222
+   },
+   "val": {
+    "avg_trade_pct": 1.2984450307717443,
+    "best_trade_pct": 13.354015799795249,
+    "cagr_pct": 29.402639163121847,
+    "ex_best_trade_return_pct": 18.990457593483345,
+    "fees_slip_pct_of_trades": 0.30195031726244703,
+    "max_dd_pct": 16.150851612600107,
+    "net_return_pct": 34.88046210076574,
+    "profit_factor": 2.3891145612794196,
+    "sharpe": 1.2031303608979291,
+    "sortino": 2.051915437550623,
+    "stops": 25,
+    "time_in_market_pct": 33.00589390962672,
+    "trades": 25,
+    "win_rate_pct": 60.0
+   }
+  },
+  {
+   "eligible": true,
+   "family": "C",
+   "name": "C[4h EMA50/200]",
+   "params": {
+    "pair": [
+     50,
+     200
+    ]
+   },
+   "score": 1.0579037157782463,
+   "tf": "4h",
+   "trades_trainval": 26,
+   "train": {
+    "avg_trade_pct": 9.0584685982019,
+    "best_trade_pct": 72.35876566595263,
+    "cagr_pct": 40.61005901338477,
+    "ex_best_trade_return_pct": 90.21430142440947,
+    "fees_slip_pct_of_trades": 0.3136039472199299,
+    "max_dd_pct": 63.32949132337408,
+    "net_return_pct": 227.85102205522665,
+    "profit_factor": 3.2215847021753605,
+    "sharpe": 1.0579037157782463,
+    "sortino": 1.5508730490528033,
+    "stops": 0,
+    "time_in_market_pct": 53.457307490832896,
+    "trades": 18,
+    "win_rate_pct": 38.88888888888889
+   },
+   "val": {
+    "avg_trade_pct": 10.170013585612336,
+    "best_trade_pct": 62.38614909013342,
+    "cagr_pct": 66.00170138890091,
+    "ex_best_trade_return_pct": 10.909406071146188,
+    "fees_slip_pct_of_trades": 0.3152732119910756,
+    "max_dd_pct": 21.423872199532315,
+    "net_return_pct": 80.10151349767291,
+    "profit_factor": 4.1587595263717105,
+    "sharpe": 1.7258994403225787,
+    "sortino": 2.897674103794818,
+    "stops": 0,
+    "time_in_market_pct": 70.09823182711199,
+    "trades": 8,
+    "win_rate_pct": 25.0
+   }
+  },
+  {
+   "eligible": true,
+   "family": "C",
+   "name": "C[4h EMA25/100]",
+   "params": {
+    "pair": [
+     25,
+     100
+    ]
+   },
+   "score": 1.616308705491173,
+   "tf": "4h",
+   "trades_trainval": 50,
+   "train": {
+    "avg_trade_pct": 7.838859756133541,
+    "best_trade_pct": 66.64535875778877,
+    "cagr_pct": 79.52473154972802,
+    "ex_best_trade_return_pct": 360.8443011781608,
+    "fees_slip_pct_of_trades": 0.31177239735222073,
+    "max_dd_pct": 46.561939382974536,
+    "net_return_pct": 667.9756390131706,
+    "profit_factor": 3.382735354465791,
+    "sharpe": 1.616308705491173,
+    "sortino": 2.5631776649036313,
+    "stops": 0,
+    "time_in_market_pct": 58.26348873755893,
+    "trades": 35,
+    "win_rate_pct": 37.142857142857146
+   },
+   "val": {
+    "avg_trade_pct": 4.72415909003698,
+    "best_trade_pct": 59.291212233520696,
+    "cagr_pct": 59.95604443641487,
+    "ex_best_trade_return_pct": 8.298411305960784,
+    "fees_slip_pct_of_trades": 0.3070948897808043,
+    "max_dd_pct": 21.01634759193554,
+    "net_return_pct": 72.50985219890917,
+    "profit_factor": 3.9554254109955194,
+    "sharpe": 1.6580018985088114,
+    "sortino": 2.8366620537540745,
+    "stops": 0,
+    "time_in_market_pct": 62.31827111984283,
+    "trades": 15,
+    "win_rate_pct": 40.0
+   }
+  },
+  {
+   "eligible": true,
+   "family": "D",
+   "name": "D[4h mom20/50]",
+   "params": {
+    "pair": [
+     20,
+     50
+    ]
+   },
+   "score": 0.5468637249404691,
+   "tf": "4h",
+   "trades_trainval": 357,
+   "train": {
+    "avg_trade_pct": 0.6984017504595496,
+    "best_trade_pct": 51.72159689226894,
+    "cagr_pct": 47.361989894753755,
+    "ex_best_trade_return_pct": 154.44463996780567,
+    "fees_slip_pct_of_trades": 0.3010492011399929,
+    "max_dd_pct": 34.79973711898171,
+    "net_return_pct": 286.04747096593934,
+    "profit_factor": 1.5732099715055248,
+    "sharpe": 1.1663781221984193,
+    "sortino": 1.950341830780206,
+    "stops": 0,
+    "time_in_market_pct": 44.31639601885804,
+    "trades": 263,
+    "win_rate_pct": 28.517110266159694
+   },
+   "val": {
+    "avg_trade_pct": 0.19943126058468386,
+    "best_trade_pct": 18.114860887746698,
+    "cagr_pct": 12.42432326194971,
+    "ex_best_trade_return_pct": -3.0078578503199616,
+    "fees_slip_pct_of_trades": 0.3002998712702858,
+    "max_dd_pct": 24.922051594821383,
+    "net_return_pct": 14.562133772140173,
+    "profit_factor": 1.2168283429695534,
+    "sharpe": 0.5468637249404691,
+    "sortino": 0.8939330070996071,
+    "stops": 0,
+    "time_in_market_pct": 45.89390962671906,
+    "trades": 94,
+    "win_rate_pct": 32.97872340425532
+   }
+  },
+  {
+   "eligible": true,
+   "family": "D",
+   "name": "D[4h mom10/30]",
+   "params": {
+    "pair": [
+     10,
+     30
+    ]
+   },
+   "score": -0.1044761909162489,
+   "tf": "4h",
+   "trades_trainval": 541,
+   "train": {
+    "avg_trade_pct": 0.24442987677410233,
+    "best_trade_pct": 23.7270311382469,
+    "cagr_pct": 20.764688019319323,
+    "ex_best_trade_return_pct": 55.95786712231732,
+    "fees_slip_pct_of_trades": 0.3003674480266087,
+    "max_dd_pct": 57.318914928081696,
+    "net_return_pct": 92.96203881697534,
+    "profit_factor": 1.242299805834066,
+    "sharpe": 0.6872866541333029,
+    "sortino": 1.114465064007898,
+    "stops": 0,
+    "time_in_market_pct": 42.338920900995284,
+    "trades": 398,
+    "win_rate_pct": 25.628140703517587
+   },
+   "val": {
+    "avg_trade_pct": -0.020442637934103523,
+    "best_trade_pct": 18.114860887746698,
+    "cagr_pct": -7.24721883742977,
+    "ex_best_trade_return_pct": -22.416926998517393,
+    "fees_slip_pct_of_trades": 0.29996967523049567,
+    "max_dd_pct": 37.70465769987825,
+    "net_return_pct": -8.362861251859844,
+    "profit_factor": 0.9771165882805652,
+    "sharpe": -0.1044761909162489,
+    "sortino": -0.16396877106021196,
+    "stops": 0,
+    "time_in_market_pct": 44.67583497053045,
+    "trades": 143,
+    "win_rate_pct": 26.573426573426573
+   }
+  },
+  {
+   "eligible": true,
+   "family": "A",
+   "name": "A[5m Bollinger+RSI+SMA50]",
+   "params": {},
+   "score": -3.8575300064798865,
+   "tf": "5m",
+   "trades_trainval": 711,
+   "train": {
+    "avg_trade_pct": -0.13876315403460895,
+    "best_trade_pct": 2.4251634186724935,
+    "cagr_pct": -19.0832188204744,
+    "ex_best_trade_return_pct": -53.316164714776136,
+    "fees_slip_pct_of_trades": 0.29979198717336203,
+    "max_dd_pct": 54.564576692893105,
+    "net_return_pct": -52.18400541900574,
+    "profit_factor": 0.6216887343146592,
+    "sharpe": -1.7094756068255392,
+    "sortino": -1.944638320132842,
+    "stops": 0,
+    "time_in_market_pct": 6.025961262847549,
+    "trades": 514,
+    "win_rate_pct": 50.583657587548636
+   },
+   "val": {
+    "avg_trade_pct": -0.2766586557899267,
+    "best_trade_pct": 1.6522350389413631,
+    "cagr_pct": -37.96450498847068,
+    "ex_best_trade_return_pct": -43.496269945216035,
+    "fees_slip_pct_of_trades": 0.29958490234477864,
+    "max_dd_pct": 44.256905691274405,
+    "net_return_pct": -42.562695518941986,
+    "profit_factor": 0.32682304864295475,
+    "sharpe": -3.8575300064798865,
+    "sortino": -3.9658803302987935,
+    "stops": 0,
+    "time_in_market_pct": 7.177472167648985,
+    "trades": 197,
+    "win_rate_pct": 41.62436548223351
+   }
+  },
+  {
+   "eligible": false,
+   "family": "E",
+   "name": "E[al-tut 4h]",
+   "params": {},
+   "score": 1.379363077944977,
+   "tf": "4h",
+   "trades_trainval": 0,
+   "train": {
+    "avg_trade_pct": null,
+    "best_trade_pct": null,
+    "cagr_pct": 89.37667871620651,
+    "ex_best_trade_return_pct": null,
+    "fees_slip_pct_of_trades": null,
+    "max_dd_pct": 64.29999428799908,
+    "net_return_pct": 825.0857116922251,
+    "profit_factor": null,
+    "sharpe": 1.379363077944977,
+    "sortino": 2.077889035063443,
+    "stops": 0,
+    "time_in_market_pct": 99.9869041382923,
+    "trades": 0,
+    "win_rate_pct": null
+   },
+   "val": {
+    "avg_trade_pct": null,
+    "best_trade_pct": null,
+    "cagr_pct": 103.71767153599491,
+    "ex_best_trade_return_pct": null,
+    "fees_slip_pct_of_trades": null,
+    "max_dd_pct": 26.062255189744445,
+    "net_return_pct": 128.4207637302317,
+    "profit_factor": null,
+    "sharpe": 1.7981024224773494,
+    "sortino": 2.91860484896505,
+    "stops": 0,
+    "time_in_market_pct": 100.0,
+    "trades": 0,
+    "win_rate_pct": null
+   }
+  }
+ ],
+ "chosen": {
+  "B": "B[4h N=40 k=3.0 trail]",
+  "C": "C[4h EMA25/100]",
+  "D": "D[4h mom20/50]"
+ },
+ "created_utc": "2026-10-23T04:28:01+00:00",
+ "fingerprints_pre_test": {
+  "1h": "3860a9ccd8da56f89cf5b1ad88b7411c884afb7e0eab75b82f463262e7177e9b",
+  "4h": "39b7ef0d07be43117df98f7af090bb25c882c5cfeaa97e5b8a96aae26a9f9b3a",
+  "5m": "7c165128d54afec33a9b49f5908ae8f1c26bbbd6ef865dce02f02dc0f32b3673"
+ },
+ "git_sha": "6ba3a814c30f09747a5d529ed48bcb450753a7ec",
+ "integrity": [
+  {
+   "bad_ohlc": 0,
+   "bars": 514897,
+   "duplicates": 0,
+   "first": "2020-10-01T00:00:00+00:00",
+   "gap_count": 10,
+   "last": "2025-08-24T19:55:00+00:00",
+   "longest_gap_bars": 56,
+   "missing_bars": 287,
+   "missing_pct": 0.0557082518090624,
+   "off_grid": 0,
+   "tf": "5m",
+   "unsorted": 0
+  },
+  {
+   "bad_ohlc": 0,
+   "bars": 42912,
+   "duplicates": 0,
+   "first": "2020-10-01T00:00:00+00:00",
+   "gap_count": 10,
+   "last": "2025-08-24T19:00:00+00:00",
+   "longest_gap_bars": 4,
+   "missing_bars": 20,
+   "missing_pct": 0.04658529768005218,
+   "off_grid": 0,
+   "tf": "1h",
+   "unsorted": 0
+  },
+  {
+   "bad_ohlc": 0,
+   "bars": 10733,
+   "duplicates": 0,
+   "first": "2020-10-01T00:00:00+00:00",
+   "gap_count": 0,
+   "last": "2025-08-24T16:00:00+00:00",
+   "longest_gap_bars": 0,
+   "missing_bars": 0,
+   "missing_pct": 0.0,
+   "off_grid": 0,
+   "tf": "4h",
+   "unsorted": 0
+  }
+ ],
+ "spec_sha256": "3d7a3ea9944cd3efd14b80c8c512f0ed5ad1c838cdd9ba32f2d124c9d3b90c46",
+ "walk_forward": {
+  "A": {
+   "folds": 6,
+   "oos_days": 966,
+   "oos_return_pct": -58.108125043334205,
+   "oos_sharpe": -3.24626299056046,
+   "picks": [
+    {
+     "from_day": 730,
+     "pick": "A[5m Bollinger+RSI+SMA50]",
+     "to_day": 910
+    },
+    {
+     "from_day": 910,
+     "pick": "A[5m Bollinger+RSI+SMA50]",
+     "to_day": 1090
+    },
+    {
+     "from_day": 1090,
+     "pick": "A[5m Bollinger+RSI+SMA50]",
+     "to_day": 1270
+    },
+    {
+     "from_day": 1270,
+     "pick": "A[5m Bollinger+RSI+SMA50]",
+     "to_day": 1450
+    },
+    {
+     "from_day": 1450,
+     "pick": "A[5m Bollinger+RSI+SMA50]",
+     "to_day": 1630
+    },
+    {
+     "from_day": 1630,
+     "pick": "A[5m Bollinger+RSI+SMA50]",
+     "to_day": 1696
+    }
+   ]
+  },
+  "B": {
+   "folds": 6,
+   "oos_days": 966,
+   "oos_return_pct": 171.280151889235,
+   "oos_sharpe": 1.545401127723885,
+   "picks": [
+    {
+     "from_day": 730,
+     "pick": "B[1h N=40 k=3.0 trail]",
+     "to_day": 910
+    },
+    {
+     "from_day": 910,
+     "pick": "B[4h N=40 k=2.0 trail]",
+     "to_day": 1090
+    },
+    {
+     "from_day": 1090,
+     "pick": "B[4h N=40 k=2.0 chan10]",
+     "to_day": 1270
+    },
+    {
+     "from_day": 1270,
+     "pick": "B[4h N=40 k=2.0 chan10]",
+     "to_day": 1450
+    },
+    {
+     "from_day": 1450,
+     "pick": "B[4h N=40 k=2.0 chan10]",
+     "to_day": 1630
+    },
+    {
+     "from_day": 1630,
+     "pick": "B[4h N=40 k=3.0 chan10]",
+     "to_day": 1696
+    }
+   ]
+  },
+  "C": {
+   "folds": 6,
+   "oos_days": 966,
+   "oos_return_pct": 721.2807614744321,
+   "oos_sharpe": 2.4360195302234664,
+   "picks": [
+    {
+     "from_day": 730,
+     "pick": "C[1h EMA50/200]",
+     "to_day": 910
+    },
+    {
+     "from_day": 910,
+     "pick": "C[4h EMA25/100]",
+     "to_day": 1090
+    },
+    {
+     "from_day": 1090,
+     "pick": "C[4h EMA25/100]",
+     "to_day": 1270
+    },
+    {
+     "from_day": 1270,
+     "pick": "C[4h EMA25/100]",
+     "to_day": 1450
+    },
+    {
+     "from_day": 1450,
+     "pick": "C[4h EMA25/100]",
+     "to_day": 1630
+    },
+    {
+     "from_day": 1630,
+     "pick": "C[4h EMA25/100]",
+     "to_day": 1696
+    }
+   ]
+  },
+  "D": {
+   "folds": 6,
+   "oos_days": 966,
+   "oos_return_pct": 186.72125814467674,
+   "oos_sharpe": 1.4036804138671264,
+   "picks": [
+    {
+     "from_day": 730,
+     "pick": "D[4h mom20/50]",
+     "to_day": 910
+    },
+    {
+     "from_day": 910,
+     "pick": "D[4h mom20/50]",
+     "to_day": 1090
+    },
+    {
+     "from_day": 1090,
+     "pick": "D[4h mom20/50]",
+     "to_day": 1270
+    },
+    {
+     "from_day": 1270,
+     "pick": "D[4h mom20/50]",
+     "to_day": 1450
+    },
+    {
+     "from_day": 1450,
+     "pick": "D[4h mom20/50]",
+     "to_day": 1630
+    },
+    {
+     "from_day": 1630,
+     "pick": "D[4h mom20/50]",
+     "to_day": 1696
+    }
+   ]
+  },
+  "E": {
+   "folds": 6,
+   "oos_days": 966,
+   "oos_return_pct": 1389.0326465927153,
+   "oos_sharpe": 2.470435909988474,
+   "picks": [
+    {
+     "from_day": 730,
+     "pick": "E[al-tut 4h]",
+     "to_day": 910
+    },
+    {
+     "from_day": 910,
+     "pick": "E[al-tut 4h]",
+     "to_day": 1090
+    },
+    {
+     "from_day": 1090,
+     "pick": "E[al-tut 4h]",
+     "to_day": 1270
+    },
+    {
+     "from_day": 1270,
+     "pick": "E[al-tut 4h]",
+     "to_day": 1450
+    },
+    {
+     "from_day": 1450,
+     "pick": "E[al-tut 4h]",
+     "to_day": 1630
+    },
+    {
+     "from_day": 1630,
+     "pick": "E[al-tut 4h]",
+     "to_day": 1696
+    }
+   ]
+  }
+ }
+}
