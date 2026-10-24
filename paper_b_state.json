@@ -1,0 +1,51 @@
+{
+ "config": {
+  "costs": {
+   "delay_bars": 0,
+   "fee_buy": 0.001,
+   "fee_sell": 0.001,
+   "slip_buy": 0.0005,
+   "slip_sell": 0.0005
+  },
+  "params": {
+   "atr_k": 3.0,
+   "entry_n": 40,
+   "exit": "trail"
+  },
+  "start_open_ms": 1792728000000,
+  "symbol": "BTCTRY",
+  "tf": "4h"
+ },
+ "equity_log": [
+  [
+   1792728000000,
+   1.0
+  ],
+  [
+   1792742400000,
+   1.0
+  ],
+  [
+   1792756800000,
+   1.0
+  ],
+  [
+   1792771200000,
+   1.0
+  ],
+  [
+   1792785600000,
+   1.0
+  ],
+  [
+   1792800000000,
+   1.0
+  ]
+ ],
+ "last_bar_open_ms": 1792800000000,
+ "open_position": null,
+ "pending_entry": false,
+ "trades": [],
+ "updated_utc": "2026-10-24T05:25:11Z",
+ "version": 1
+}
