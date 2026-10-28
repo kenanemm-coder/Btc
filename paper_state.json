@@ -39,24 +39,24 @@
    "equity_try": 49123.44707385288
   },
   {
-   "btc_price": 4046152.0,
+   "btc_price": 4019461.0,
    "date": "2026-10-28",
-   "equity_try": 49028.935616366005
+   "equity_try": 48705.50947702758
   }
  ],
  "fx_symbol": "USDTTRY",
  "gaps": [],
  "health": {
   "consecutive_failures": 0,
-  "data_lag_s": 243.024,
+  "data_lag_s": 105.029,
   "failures": 0,
-  "last_candle_open_ms": 1793187000000,
+  "last_candle_open_ms": 1793189400000,
   "last_error": null,
   "last_error_ms": null,
-  "last_run_ms": 1793187542506,
-  "last_success_ms": 1793187542506,
+  "last_run_ms": 1793189804464,
+  "last_success_ms": 1793189804464,
   "max_consecutive_failures": 0,
-  "runs": 286
+  "runs": 287
  },
  "initial": {
   "rate_time": "2026-10-20T23:31:27+00:00",
@@ -64,10 +64,10 @@
   "usdt": 1000.0,
   "usdt_try_rate": 49.38
  },
- "last_candle_open_ms": 1793187000000,
- "last_price": 4046152.0,
+ "last_candle_open_ms": 1793189400000,
+ "last_price": 4019461.0,
  "last_report_date": "2026-10-27",
- "max_drawdown_pct": 1.0942793928588044,
+ "max_drawdown_pct": 1.4013971397865013,
  "mode": "PAPER",
  "next_outbox_id": 16,
  "outbox": [],
