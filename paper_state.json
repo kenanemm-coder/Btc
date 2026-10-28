@@ -1,6 +1,6 @@
 {
- "btc": 0.0,
- "cash_try": 49123.44707385288,
+ "btc": 0.01213562043948231,
+ "cash_try": 0.0,
  "created_at": "2026-10-20T23:31:27+00:00",
  "daily_equity": [
   {
@@ -39,24 +39,24 @@
    "equity_try": 49123.44707385288
   },
   {
-   "btc_price": 4047777.0,
+   "btc_price": 4046152.0,
    "date": "2026-10-28",
-   "equity_try": 49123.44707385288
+   "equity_try": 49028.935616366005
   }
  ],
  "fx_symbol": "USDTTRY",
  "gaps": [],
  "health": {
   "consecutive_failures": 0,
-  "data_lag_s": 124.817,
+  "data_lag_s": 243.024,
   "failures": 0,
-  "last_candle_open_ms": 1793184900000,
+  "last_candle_open_ms": 1793187000000,
   "last_error": null,
   "last_error_ms": null,
-  "last_run_ms": 1793185324398,
-  "last_success_ms": 1793185324398,
+  "last_run_ms": 1793187542506,
+  "last_success_ms": 1793187542506,
   "max_consecutive_failures": 0,
-  "runs": 285
+  "runs": 286
  },
  "initial": {
   "rate_time": "2026-10-20T23:31:27+00:00",
@@ -64,15 +64,25 @@
   "usdt": 1000.0,
   "usdt_try_rate": 49.38
  },
- "last_candle_open_ms": 1793184900000,
- "last_price": 4047777.0,
+ "last_candle_open_ms": 1793187000000,
+ "last_price": 4046152.0,
  "last_report_date": "2026-10-27",
  "max_drawdown_pct": 1.0942793928588044,
  "mode": "PAPER",
- "next_outbox_id": 15,
+ "next_outbox_id": 16,
  "outbox": [],
  "peak_equity_try": 49397.76839036857,
- "position": null,
+ "position": {
+  "cost_try": 49123.44707385288,
+  "detected_at": "2026-10-28T11:39:03+00:00",
+  "entry_candle_open_ms": 1793185800000,
+  "entry_fee_try": 49.07437270115174,
+  "entry_price": 4043828.9039999996,
+  "entry_ref_price": 4041808.0,
+  "entry_time": "2026-10-28T11:15:00+00:00",
+  "qty": 0.01213562043948231,
+  "reason": "Alt banda temas + RSI<48 + SMA50 üstü"
+ },
  "realized_pnl_try": -256.5529261471165,
  "skipped_stale_signals": 2,
  "symbol": "BTCTRY",
