@@ -1,6 +1,6 @@
 {
- "btc": 0.012038597527955368,
- "cash_try": 0.0,
+ "btc": 0.0,
+ "cash_try": 45706.81459830781,
  "created_at": "2026-10-20T23:31:27+00:00",
  "daily_equity": [
   {
@@ -84,24 +84,24 @@
    "equity_try": 45874.28261659543
   },
   {
-   "btc_price": 3776412.0,
+   "btc_price": 3801962.0,
    "date": "2026-11-06",
-   "equity_try": 45394.532842841465
+   "equity_try": 45706.81459830781
   }
  ],
  "fx_symbol": "USDTTRY",
  "gaps": [],
  "health": {
   "consecutive_failures": 0,
-  "data_lag_s": 1.084,
+  "data_lag_s": 92.033,
   "failures": 0,
-  "last_candle_open_ms": 1793981400000,
+  "last_candle_open_ms": 1793984100000,
   "last_error": null,
   "last_error_ms": null,
-  "last_run_ms": 1793981700577,
-  "last_success_ms": 1793981700577,
+  "last_run_ms": 1793984491413,
+  "last_success_ms": 1793984491413,
   "max_consecutive_failures": 0,
-  "runs": 584
+  "runs": 585
  },
  "initial": {
   "rate_time": "2026-10-20T23:31:27+00:00",
@@ -109,26 +109,16 @@
   "usdt": 1000.0,
   "usdt_try_rate": 49.38
  },
- "last_candle_open_ms": 1793981400000,
- "last_price": 3776412.0,
+ "last_candle_open_ms": 1793984100000,
+ "last_price": 3801962.0,
  "last_report_date": "2026-11-05",
  "max_drawdown_pct": 8.960897836852668,
  "mode": "PAPER",
- "next_outbox_id": 35,
+ "next_outbox_id": 36,
  "outbox": [],
  "peak_equity_try": 49397.76839036857,
- "position": {
-  "cost_try": 45874.28261659543,
-  "detected_at": "2026-11-06T11:17:39+00:00",
-  "entry_candle_open_ms": 1793962500000,
-  "entry_fee_try": 45.828454162433005,
-  "entry_price": 3806793.4455,
-  "entry_ref_price": 3804891.0,
-  "entry_time": "2026-11-06T11:00:00+00:00",
-  "qty": 0.012038597527955368,
-  "reason": "Alt banda temas + RSI<48 + SMA50 üstü"
- },
- "realized_pnl_try": -3505.717383404568,
+ "position": null,
+ "realized_pnl_try": -3673.1854016921934,
  "skipped_stale_signals": 6,
  "symbol": "BTCTRY",
  "trades": [
@@ -315,6 +305,29 @@
    "return_pct": 1.141289515627621,
    "side": "LONG",
    "slippage_cost_try": 45.615925438510104
+  },
+  {
+   "cost_try": 45874.28261659543,
+   "entry_candle_open_ms": 1793962500000,
+   "entry_fee_try": 45.828454162433005,
+   "entry_price": 3806793.4455,
+   "entry_reason": "Alt banda temas + RSI<48 + SMA50 üstü",
+   "entry_ref_price": 3804891.0,
+   "entry_time": "2026-11-06T11:00:00+00:00",
+   "exit_candle_open_ms": 1793983800000,
+   "exit_detected_at": "2026-11-06T17:01:32+00:00",
+   "exit_fee_try": 45.75256716547328,
+   "exit_price": 3800489.8045,
+   "exit_reason": "Üst banda temas",
+   "exit_ref_price": 3802391.0,
+   "exit_time": "2026-11-06T16:55:00+00:00",
+   "id": 9,
+   "net_pnl_try": -167.46801828762545,
+   "proceeds_try": 45706.81459830781,
+   "qty": 0.012038597527955368,
+   "return_pct": -0.36505860960764625,
+   "side": "LONG",
+   "slippage_cost_try": 45.79050313982762
   }
  ],
  "version": 1
