@@ -109,7 +109,7 @@
    "equity_try": 45706.81459830781
   },
   {
-   "btc_price": 3737613.0,
+   "btc_price": 3741948.0,
    "date": "2026-11-11",
    "equity_try": 45639.91013332128
   }
@@ -118,15 +118,15 @@
  "gaps": [],
  "health": {
   "consecutive_failures": 0,
-  "data_lag_s": 149.656,
+  "data_lag_s": 60.591,
   "failures": 0,
-  "last_candle_open_ms": 1794418200000,
+  "last_candle_open_ms": 1794421200000,
   "last_error": null,
   "last_error_ms": null,
-  "last_run_ms": 1794418649120,
-  "last_success_ms": 1794418649120,
+  "last_run_ms": 1794421559846,
+  "last_success_ms": 1794421559846,
   "max_consecutive_failures": 0,
-  "runs": 745
+  "runs": 746
  },
  "initial": {
   "rate_time": "2026-10-20T23:31:27+00:00",
@@ -134,12 +134,12 @@
   "usdt": 1000.0,
   "usdt_try_rate": 49.38
  },
- "last_candle_open_ms": 1794418200000,
- "last_price": 3737613.0,
- "last_report_date": "2026-11-10",
+ "last_candle_open_ms": 1794421200000,
+ "last_price": 3741948.0,
+ "last_report_date": "2026-11-11",
  "max_drawdown_pct": 8.960897836852668,
  "mode": "PAPER",
- "next_outbox_id": 43,
+ "next_outbox_id": 44,
  "outbox": [],
  "peak_equity_try": 49397.76839036857,
  "position": null,
