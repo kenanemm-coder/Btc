@@ -119,8 +119,13 @@
    "equity_try": 43803.408100428285
   },
   {
-   "btc_price": 3472555.0,
+   "btc_price": 3472459.0,
    "date": "2026-11-13",
+   "equity_try": 42433.78353753644
+  },
+  {
+   "btc_price": 3448701.0,
+   "date": "2026-11-14",
    "equity_try": 42433.78353753644
   }
  ],
@@ -128,15 +133,15 @@
  "gaps": [],
  "health": {
   "consecutive_failures": 0,
-  "data_lag_s": 137.233,
+  "data_lag_s": 20.631,
   "failures": 0,
-  "last_candle_open_ms": 1794601500000,
+  "last_candle_open_ms": 1794604500000,
   "last_error": null,
   "last_error_ms": null,
-  "last_run_ms": 1794601936735,
-  "last_success_ms": 1794601936735,
+  "last_run_ms": 1794604819944,
+  "last_success_ms": 1794604819944,
   "max_consecutive_failures": 0,
-  "runs": 801
+  "runs": 802
  },
  "initial": {
   "rate_time": "2026-10-20T23:31:27+00:00",
@@ -144,8 +149,8 @@
   "usdt": 1000.0,
   "usdt_try_rate": 49.38
  },
- "last_candle_open_ms": 1794601500000,
- "last_price": 3472555.0,
+ "last_candle_open_ms": 1794604500000,
+ "last_price": 3448701.0,
  "last_report_date": "2026-11-13",
  "max_drawdown_pct": 15.580360878180933,
  "mode": "PAPER",
@@ -154,7 +159,7 @@
  "peak_equity_try": 49397.76839036857,
  "position": null,
  "realized_pnl_try": -6946.2164624635625,
- "skipped_stale_signals": 10,
+ "skipped_stale_signals": 11,
  "symbol": "BTCTRY",
  "trades": [
   {
