@@ -548,12 +548,16 @@
   [
    1794628800000,
    1.0
+  ],
+  [
+   1794643200000,
+   1.0
   ]
  ],
- "last_bar_open_ms": 1794628800000,
+ "last_bar_open_ms": 1794643200000,
  "open_position": null,
  "pending_entry": false,
  "trades": [],
- "updated_utc": "2026-11-14T08:52:44Z",
+ "updated_utc": "2026-11-14T12:51:27Z",
  "version": 1
 }
