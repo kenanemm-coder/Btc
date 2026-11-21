@@ -159,7 +159,7 @@
    "equity_try": 42433.78353753644
   },
   {
-   "btc_price": 2971675.0,
+   "btc_price": 3062538.0,
    "date": "2026-11-21",
    "equity_try": 42433.78353753644
   }
@@ -168,15 +168,15 @@
  "gaps": [],
  "health": {
   "consecutive_failures": 0,
-  "data_lag_s": 271.201,
+  "data_lag_s": 242.189,
   "failures": 0,
-  "last_candle_open_ms": 1795263600000,
+  "last_candle_open_ms": 1795289400000,
   "last_error": null,
   "last_error_ms": null,
-  "last_run_ms": 1795264170734,
-  "last_success_ms": 1795264170734,
+  "last_run_ms": 1795289941662,
+  "last_success_ms": 1795289941662,
   "max_consecutive_failures": 0,
-  "runs": 863
+  "runs": 864
  },
  "initial": {
   "rate_time": "2026-10-20T23:31:27+00:00",
@@ -184,17 +184,24 @@
   "usdt": 1000.0,
   "usdt_try_rate": 49.38
  },
- "last_candle_open_ms": 1795263600000,
- "last_price": 2971675.0,
- "last_report_date": "2026-11-20",
+ "last_candle_open_ms": 1795289400000,
+ "last_price": 3062538.0,
+ "last_report_date": "2026-11-21",
  "max_drawdown_pct": 15.580360878180933,
  "mode": "PAPER",
- "next_outbox_id": 55,
- "outbox": [],
+ "next_outbox_id": 56,
+ "outbox": [
+  {
+   "body": "📊 PAPER Günlük Rapor — 21/11/2026 (TSİ)\nMod: PAPER | Parite: BTCTRY\nSon fiyat: ₺3,062,538.00\nToplam portföy: 859.33 USDT (başlangıç kuru) = ₺42,433.78\nToplam net K/Z: -140.67 USDT / -14.07% (TRY bazlı)\n  Gerçekleşmiş: -₺6,946.22 | Gerçekleşmemiş: +₺0.00\nNakit: ₺42,433.78 | BTC: 0.00000000\nAçık pozisyon: yok\nBugün kapanan: 0 (K 0 / Z 0), net +₺0.00\nToplam kapanan: 11 (K 1 / Z 10), kazanma oranı %9\nMaks. drawdown: %15.58\nOrt. kazanç: ₺517.65 | Ort. kayıp: ₺-746.39 | Kâr faktörü: 0.07\nMaliyet: komisyon ₺1,033.07 + slipaj ₺516.53 (maliyetsiz sonuç -₺5,396.61 → net -₺6,946.22)\nSağlık: 863 çalışma, 0 hata, ardışık hata 0, veri gecikmesi 5 dk\nKur (USDT/TRY): başlangıç 49.3800\n  güncel 50.7800 → portföy 835.64 USDT; kur etkisi -23.69 USDT (strateji sonucundan ayrı)",
+   "created_ms": 1795289942189,
+   "id": 55,
+   "title": "Paper Gunluk Rapor"
+  }
+ ],
  "peak_equity_try": 49397.76839036857,
  "position": null,
  "realized_pnl_try": -6946.2164624635625,
- "skipped_stale_signals": 18,
+ "skipped_stale_signals": 20,
  "symbol": "BTCTRY",
  "trades": [
   {
